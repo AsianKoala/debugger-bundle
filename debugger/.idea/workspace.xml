@@ -2,31 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc0f0ec4-7354-4b8d-bb63-314f84595278" name="Default Changelist" comment="added logging">
-      <change beforePath="$PROJECT_DIR$/../simulation/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../simulation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simulation/out/production/PurePursuitTutorial/com/company/Robot.class" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/out/production/PurePursuitTutorial/com/company/Robot.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simulation/out/production/PurePursuitTutorial/treamcode/MyOpMode$progStages.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simulation/out/production/PurePursuitTutorial/treamcode/MyOpMode.class" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/out/production/PurePursuitTutorial/treamcode/MyOpMode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simulation/out/production/PurePursuitTutorial/treamcode/RobotMovement.class" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/out/production/PurePursuitTutorial/treamcode/RobotMovement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simulation/src/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/src/Main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simulation/src/com/company/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/src/com/company/Robot.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../simulation/src/newteamcode/control/controllers/PurePursuitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/src/newteamcode/control/controllers/PurePursuitController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simulation/src/newteamcode/control/localization/BaseOdometry.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simulation/src/newteamcode/control/localization/Encoder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simulation/src/newteamcode/control/localization/EulerIntegration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simulation/src/newteamcode/control/localization/ExactArcOdometry.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simulation/src/newteamcode/control/path/Function.java" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/src/newteamcode/control/path/Function.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simulation/src/newteamcode/control/path/Path.java" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/src/newteamcode/control/path/Path.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simulation/src/newteamcode/control/path/PathPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/src/newteamcode/control/path/PathPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simulation/src/newteamcode/control/path/PathPointMod.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simulation/src/newteamcode/control/path/builders/PathBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/src/newteamcode/control/path/builders/PathBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simulation/src/newteamcode/control/path/builders/PathPointBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/src/newteamcode/control/path/builders/PathPointBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simulation/src/newteamcode/util/MathUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/src/newteamcode/util/MathUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simulation/src/newteamcode/util/OpModeClock.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simulation/src/newteamcode/util/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/src/newteamcode/util/Point.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simulation/src/newteamcode/util/Pose.java" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/src/newteamcode/util/Pose.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simulation/src/newteamcode/util/SignaturePose.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simulation/src/treamcode/MyOpMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/src/treamcode/MyOpMode.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +106,7 @@
       <workItem from="1612283996794" duration="3721000" />
       <workItem from="1612546988452" duration="761000" />
       <workItem from="1612576701538" duration="597000" />
-      <workItem from="1614753667017" duration="608000" />
+      <workItem from="1614753667017" duration="951000" />
     </task>
     <task id="LOCAL-00001" summary="Udp working">
       <created>1544285862701</created>
