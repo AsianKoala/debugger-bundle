@@ -1,7 +1,8 @@
-package org.firstinspires.ftc.teamcode.control.path.builders;
+package newteamcode.control.path.builders;
 
-import org.firstinspires.ftc.teamcode.control.path.Path;
-import org.firstinspires.ftc.teamcode.control.path.PathPoint;
+
+import newteamcode.control.path.Path;
+import newteamcode.control.path.PathPoint;
 
 public class PathBuilder {
     public Path path;

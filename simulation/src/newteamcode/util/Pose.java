@@ -1,6 +1,6 @@
-package org.firstinspires.ftc.teamcode.util;
+package newteamcode.util;
 
-import android.annotation.SuppressLint;
+import static newteamcode.util.MathUtil.sgn;
 
 public class Pose extends Point {
     public double heading;
@@ -18,9 +18,7 @@ public class Pose extends Point {
         this(0, 0, 0);
     }
 
-    public Pose(Point p, double heading) {
-        this(p.x, p.y, heading);
-    }
+    public Pose(double a) { this(a,a,a); }
 
     // im going to trust myself to angle wrap if it comes to it
     public Pose add(Pose p) {
@@ -34,28 +32,10 @@ public class Pose extends Point {
         return add(new Pose(-p.x, -p.y, -p.heading));
     }
 
-    public Pose add(double a) {
-        return add(new Pose(a, a, a));
-    }
-
-    public Pose subtract(double a) {
-        return subtract(new Pose(a, a, a));
-    }
-
-    public Pose divide(double a) {
-        if (a == 0) {
-            throw new IllegalArgumentException("Attempted to divide by zero through pose division");
-        }
-        x /= a;
-        y /= a;
-        heading /= a;
-        return new Pose(this);
-    }
-
-    public Pose multiply(double a) {
-        x *= a;
-        y *= a;
-        heading *= a;
+    public Pose multiply(Pose p) {
+        x *= p.x;
+        y *= p.y;
+        heading *= p.heading;
         return new Pose(this);
     }
 
@@ -72,11 +52,52 @@ public class Pose extends Point {
         return Math.sin(heading);
     }
 
-    public boolean poseClose(Pose p) {
-        return distance(p) < 2 && Math.abs(MathUtil.angleWrap(heading - p.heading)) < Math.toRadians(2);
+    // make sure to wrap
+    public Pose distancePose(Pose target) {
+        double distance = subtract(target).hypot();
+        Pose dH = new Pose(0, 0, subtract(target).atan() - heading);
+        double dX = distance * dH.cos();
+        double dY = distance * dH.sin();
+        return new Pose(dX, dY, dH.heading);
     }
 
-    @SuppressLint("DefaultLocale")
+    public Pose clipMax(Pose max) {
+        if (Math.abs(x) > max.x) {
+            x = max.x;
+        }
+        if (Math.abs(y) > max.y) {
+            y = max.y;
+        }
+        if (Math.abs(heading) > max.heading) {
+            heading = max.heading;
+        }
+
+
+        return new Pose(multiply(new Pose(sgn(max.x), sgn(max.y), sgn(max.heading))));
+    }
+
+    public Pose abs() {
+        return new Pose(Math.abs(x), Math.abs(y), Math.abs(heading));
+    }
+
+    public Pose set(Pose p) {
+        x = p.x;
+        y = p.y;
+        heading = p.heading;
+        return new Pose(this);
+    }
+
+    public Pose sgns() {
+        return new Pose(sgn(x), sgn(y), sgn(heading));
+    }
+
+    public Pose pow(Pose p) {
+        x = Math.pow(x, p.x);
+        y = Math.pow(y, p.y);
+        heading = Math.pow(heading, p.heading);
+        return new Pose(this);
+    }
+
     @Override
     public String toString() {
         return String.format("(%.1f, %.1f, %.1f)", x, y, Math.toRadians(heading));

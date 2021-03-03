@@ -1,23 +1,25 @@
 package Main;
 
-import RobotUtilities.MovementVars;
+
 import com.company.ComputerDebugging;
 import com.company.FloatPoint;
 import com.company.Robot;
-import com.company.UdpServer;
+
+import newteamcode.util.Pose;
 import treamcode.MyOpMode;
 import treamcode.OpMode;
 
-import java.io.IOException;
-import java.net.DatagramPacket;
-import java.net.DatagramSocket;
-import java.net.InetAddress;
 
 public class Main {
 
 
     public static void main(String[] args) {
-        new Main().run();
+//        new Main().run();
+        Pose p1 = new Pose(5, 5, Math.toRadians(90));
+        Pose p3 = new Pose(1,1,0);
+        Pose p2 = new Pose(2,2, Math.toRadians(45));
+        System.out.println(Math.toDegrees(p1.subtract(p3).subtract(p2).atan()));
+        System.out.println(p1.x);
     }
 
     /**

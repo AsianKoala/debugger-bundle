@@ -1,11 +1,18 @@
 package com.company;
 
-import RobotUtilities.MovementVars;
 import RobotUtilities.SpeedOmeter;
+import newteamcode.util.Pose;
+
+import static RobotUtilities.MovementVars.*;
 
 public class Robot {
     public static boolean usingComputer = true;
+    
+    public Pose speeds;
+    public Pose currPose;
+    public Pose currVel;
 
+    
     /**
      * Creates a robot simulation
      */
@@ -62,18 +69,18 @@ public class Robot {
         worldXPosition += totalSpeed * Math.cos(outputAngle) * elapsedTime * 1000 * 0.2;
         worldYPosition += totalSpeed * Math.sin(outputAngle) * elapsedTime * 1000 * 0.2;
 
-        worldAngle_rad += MovementVars.movement_turn * elapsedTime * 20 / (2 * Math.PI);
+        worldAngle_rad += movement_turn * elapsedTime * 20 / (2 * Math.PI);
 
 
-        xSpeed += Range.clip((MovementVars.movement_x-xSpeed)/0.2,-1,1) * elapsedTime;
-        ySpeed += Range.clip((MovementVars.movement_y-ySpeed)/0.2,-1,1) * elapsedTime;
-        turnSpeed += Range.clip((MovementVars.movement_turn-turnSpeed)/0.2,-1,1) * elapsedTime;
+        xSpeed += Range.clip((movement_x-xSpeed)/0.2,-1,1) * elapsedTime;
+        ySpeed += Range.clip((movement_y-ySpeed)/0.2,-1,1) * elapsedTime;
+        turnSpeed += Range.clip((movement_turn-turnSpeed)/0.2,-1,1) * elapsedTime;
 
 
-//        SpeedOmeter.yDistTraveled += ySpeed * elapsedTime * 1000;
-//        SpeedOmeter.xDistTraveled += xSpeed * elapsedTime * 1000;
+        SpeedOmeter.yDistTraveled += ySpeed * elapsedTime * 1000;
+        SpeedOmeter.xDistTraveled += xSpeed * elapsedTime * 1000;
 
-//        SpeedOmeter.update();
+        SpeedOmeter.update();
 
 
         xSpeed *= 1.0 - (elapsedTime);
@@ -81,7 +88,9 @@ public class Robot {
         turnSpeed *= 1.0 - (elapsedTime);
 
 
-
+        speeds = new Pose(movement_x, movement_y, movement_turn);
+        currPose = new Pose(worldXPosition, worldYPosition, worldAngle_rad);
+        currVel = new Pose(SpeedOmeter.getSpeedX(), SpeedOmeter.getSpeedY(), SpeedOmeter.getRadPerSecond()); 
     }
 
 
