@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="06f710b7-470c-4d99-91ff-deca9af1f0aa" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/RobotUtilities/MovementVars.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/RobotUtilities/MovementVars.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/com/company/Robot.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/com/company/Robot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/treamcode/CurvePoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/treamcode/CurvePoint.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/treamcode/MathFunctions.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/treamcode/MathFunctions.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/treamcode/MyOpMode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/treamcode/MyOpMode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/treamcode/PathPoint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/treamcode/RobotMovement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/treamcode/RobotMovement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RobotUtilities/MovementVars.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RobotUtilities/MovementVars.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Robot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/treamcode/I removod this stuff so you have to actually follow the tutorial.txt" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/PurePursuitTutorial$Main.coverage" NAME="Main Coverage Results" MODIFIED="1558827337852" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1nvaDmY1JPwzT2F8u8Mi756xQgJ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="full.screen.before.presentation.mode" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Neil\Documents\FTC\simulation\src\treamcode" />
+      <recent name="C:\Users\peter\IdeaProjects\PurePursuitTutorial\src" />
+      <recent name="C:\Users\peter\IdeaProjects\PurePursuitTutorial\src\com\company" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="treamcode" />
+      <recent name="com.company" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="Main.Main" />
+      <module name="PurePursuitTutorial" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="06f710b7-470c-4d99-91ff-deca9af1f0aa" name="Default" comment="" />
+      <created>1557677049189</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1557677049189</updated>
+      <workItem from="1612272902162" duration="12183000" />
+      <workItem from="1612546998094" duration="3273000" />
+      <workItem from="1612576709018" duration="652000" />
+      <workItem from="1612773894067" duration="37000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1085" y="426" key="#com.intellij.ide.util.MemberChooser" timestamp="1612273835712">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="1085" y="426" key="#com.intellij.ide.util.MemberChooser/2560.-290.1200.1920/-1920.141.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1612273835712" />
+    <state x="1060" y="475" key="FileChooserDialogImpl" timestamp="1612283991739">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="1060" y="475" key="FileChooserDialogImpl/2560.-290.1200.1920/-1920.141.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1612283991739" />
+    <state width="2517" height="199" key="GridCell.Tab.0.bottom" timestamp="1612550323089">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2517" height="199" key="GridCell.Tab.0.bottom/2560.-290.1200.1920/-1920.141.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1612550323089" />
+    <state width="2517" height="199" key="GridCell.Tab.0.center" timestamp="1612550323088">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2517" height="199" key="GridCell.Tab.0.center/2560.-290.1200.1920/-1920.141.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1612550323088" />
+    <state width="2517" height="199" key="GridCell.Tab.0.left" timestamp="1612550323088">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2517" height="199" key="GridCell.Tab.0.left/2560.-290.1200.1920/-1920.141.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1612550323088" />
+    <state width="2517" height="199" key="GridCell.Tab.0.right" timestamp="1612550323089">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2517" height="199" key="GridCell.Tab.0.right/2560.-290.1200.1920/-1920.141.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1612550323089" />
+    <state width="2517" height="507" key="GridCell.Tab.1.bottom" timestamp="1612550323065">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2517" height="507" key="GridCell.Tab.1.bottom/2560.-290.1200.1920/-1920.141.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1612550323065" />
+    <state width="2517" height="507" key="GridCell.Tab.1.center" timestamp="1612550323065">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2517" height="507" key="GridCell.Tab.1.center/2560.-290.1200.1920/-1920.141.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1612550323065" />
+    <state width="2517" height="507" key="GridCell.Tab.1.left" timestamp="1612550323065">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2517" height="507" key="GridCell.Tab.1.left/2560.-290.1200.1920/-1920.141.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1612550323065" />
+    <state width="2517" height="507" key="GridCell.Tab.1.right" timestamp="1612550323065">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2517" height="507" key="GridCell.Tab.1.right/2560.-290.1200.1920/-1920.141.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1612550323065" />
+    <state x="871" y="340" key="new project wizard" timestamp="1612773911820">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="871" y="340" key="new project wizard/2560.-290.1200.1920/-1920.141.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1612773911820" />
+    <state x="936" y="340" key="run.anything.popup" timestamp="1612290232309">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="936" y="340" key="run.anything.popup/2560.-290.1200.1920/-1920.141.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1612290232309" />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>PurePursuitTutorial</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
