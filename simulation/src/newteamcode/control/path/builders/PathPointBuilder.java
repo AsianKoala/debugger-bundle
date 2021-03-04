@@ -8,7 +8,7 @@ public class PathPointBuilder {
     public PathPoint p;
 
     public PathPointBuilder(PathPoint point) {
-        p = point.clone();
+        p = new PathPoint(point);
     }
 
     public PathPointBuilder addFunc(Function function) {
@@ -17,6 +17,6 @@ public class PathPointBuilder {
     }
 
     public PathPoint build() {
-        return p.clone();
+        return new PathPoint(p);
     }
 }

@@ -6,7 +6,7 @@ public class Path extends LinkedList<PathPoint> {
     public boolean isPurePursuit;
 
     public Path(Path path) {
-        for (PathPoint pathPoint : path) add(pathPoint.clone());
+        for (PathPoint pathPoint : path) add(new PathPoint(pathPoint));
         isPurePursuit = true;
     }
 

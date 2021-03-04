@@ -6,11 +6,11 @@ public class MathUtil {
     public static final double EPSILON = 1e-6;
 
     public static double angleWrap(double angle) {
-        while (angle < -Math.PI) {
-            angle += 2 * Math.PI;
+        while (angle<-Math.PI){
+            angle += 2*Math.PI;
         }
-        while (angle > Math.PI) {
-            angle -= 2 * Math.PI;
+        while (angle>Math.PI){
+            angle -= 2*Math.PI;
         }
         return angle;
     }

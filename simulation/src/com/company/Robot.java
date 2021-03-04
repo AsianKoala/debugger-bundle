@@ -1,6 +1,7 @@
 package com.company;
 
 import RobotUtilities.SpeedOmeter;
+import newteamcode.util.MathUtil;
 import newteamcode.util.Pose;
 
 import static RobotUtilities.MovementVars.*;
@@ -17,9 +18,13 @@ public class Robot {
      * Creates a robot simulation
      */
     public Robot(){
-        worldXPosition = 147;
-        worldYPosition = 140;
-        worldAngle_rad = Math.toRadians(-45);
+        worldXPosition = 100;
+        worldYPosition = 100;
+        worldAngle_rad = Math.toRadians(45);
+
+        speeds = new Pose(movement_x, movement_y, movement_turn);
+        currPose = new Pose(worldXPosition, worldYPosition, worldAngle_rad);
+        currVel = new Pose(SpeedOmeter.getSpeedX(), SpeedOmeter.getSpeedY(), SpeedOmeter.getRadPerSecond());
     }
 
     //the actual speed the robot is moving
@@ -52,6 +57,11 @@ public class Robot {
      * Calculates the change in position of the robot
      */
     public void update(){
+        worldAngle_rad = MathUtil.angleWrap(worldAngle_rad);
+        movement_x = speeds.x;
+        movement_y = speeds.y;
+        movement_turn = speeds.heading;
+
         //get the current time
         long currentTimeMillis = System.currentTimeMillis();
         //get the elapsed time
@@ -88,8 +98,7 @@ public class Robot {
         turnSpeed *= 1.0 - (elapsedTime);
 
 
-        speeds = new Pose(movement_x, movement_y, movement_turn);
-        currPose = new Pose(worldXPosition, worldYPosition, worldAngle_rad);
+        currPose = new Pose(worldXPosition, worldYPosition, MathUtil.angleWrap(worldAngle_rad));
         currVel = new Pose(SpeedOmeter.getSpeedX(), SpeedOmeter.getSpeedY(), SpeedOmeter.getRadPerSecond()); 
     }
 

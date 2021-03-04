@@ -12,14 +12,9 @@ import treamcode.OpMode;
 
 public class Main {
 
-
+    public static Robot robot = new Robot();
     public static void main(String[] args) {
-//        new Main().run();
-        Pose p1 = new Pose(5, 5, Math.toRadians(90));
-        Pose p3 = new Pose(1,1,0);
-        Pose p2 = new Pose(2,2, Math.toRadians(45));
-        System.out.println(Math.toDegrees(p1.subtract(p3).subtract(p2).atan()));
-        System.out.println(p1.x);
+        new Main().run();
     }
 
     /**
@@ -28,7 +23,7 @@ public class Main {
     public void run(){
         //this is a test of the coding
         ComputerDebugging computerDebugging = new ComputerDebugging();
-        Robot robot = new Robot();
+        robot = new Robot();
         OpMode opMode = new MyOpMode();
         opMode.init();
 

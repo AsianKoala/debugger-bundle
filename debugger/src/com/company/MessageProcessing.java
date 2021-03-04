@@ -118,10 +118,11 @@ public class MessageProcessing {
         lastRobotY = robotY;
         lastRobotAngle = robotAngle;
 
-
-        robotX = Double.parseDouble(splitString[1]);
-        robotY = Double.parseDouble(splitString[2]);
-        robotAngle = Double.parseDouble(splitString[3]);
+        try {
+            robotX = Double.parseDouble(splitString[1]);
+            robotY = Double.parseDouble(splitString[2]);
+            robotAngle = Double.parseDouble(splitString[3]);
+        } catch (Exception ignored) {}
 
         lastElapsedTime = System.currentTimeMillis()-lastTimeUpdate;
 
