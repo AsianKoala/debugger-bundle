@@ -63,7 +63,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         //WINDOW STUFF//
-        primaryStage.setTitle("Gluten Free Debug Receiver v1.1");
+        primaryStage.setTitle("Debugger");
         ////////////////
 
 

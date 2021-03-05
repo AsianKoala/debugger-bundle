@@ -6,26 +6,17 @@
       <change beforePath="$PROJECT_DIR$/../simulation/out/production/PurePursuitTutorial/Main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/out/production/PurePursuitTutorial/Main/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../simulation/out/production/PurePursuitTutorial/com/company/Robot.class" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/out/production/PurePursuitTutorial/com/company/Robot.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../simulation/out/production/PurePursuitTutorial/newteamcode/control/controllers/PurePursuitController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/out/production/PurePursuitTutorial/newteamcode/control/controllers/PurePursuitController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simulation/out/production/PurePursuitTutorial/newteamcode/control/path/Path.class" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/out/production/PurePursuitTutorial/newteamcode/control/path/Path.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simulation/out/production/PurePursuitTutorial/newteamcode/control/path/PathPoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/out/production/PurePursuitTutorial/newteamcode/control/path/PathPoint.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simulation/out/production/PurePursuitTutorial/newteamcode/control/path/builders/PathPointBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/out/production/PurePursuitTutorial/newteamcode/control/path/builders/PathPointBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simulation/out/production/PurePursuitTutorial/newteamcode/util/Point.class" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/out/production/PurePursuitTutorial/newteamcode/util/Point.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../simulation/out/production/PurePursuitTutorial/newteamcode/util/MathUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/out/production/PurePursuitTutorial/newteamcode/util/MathUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../simulation/out/production/PurePursuitTutorial/newteamcode/util/Omodeclock.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../simulation/out/production/PurePursuitTutorial/newteamcode/util/Pose.class" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/out/production/PurePursuitTutorial/newteamcode/util/Pose.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../simulation/out/production/PurePursuitTutorial/treamcode/MyOpMode.class" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/out/production/PurePursuitTutorial/treamcode/MyOpMode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simulation/out/production/PurePursuitTutorial/treamcode/RobotMovement$indexPoint.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simulation/out/production/PurePursuitTutorial/treamcode/RobotMovement$movementResult.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simulation/out/production/PurePursuitTutorial/treamcode/RobotMovement.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../simulation/src/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/src/Main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../simulation/src/com/company/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/src/com/company/Robot.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../simulation/src/newteamcode/control/controllers/PurePursuitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/src/newteamcode/control/controllers/PurePursuitController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simulation/src/newteamcode/control/path/Path.java" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/src/newteamcode/control/path/Path.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simulation/src/newteamcode/control/path/PathPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/src/newteamcode/control/path/PathPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simulation/src/newteamcode/control/path/builders/PathPointBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/src/newteamcode/control/path/builders/PathPointBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../simulation/src/newteamcode/util/MathUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/src/newteamcode/util/MathUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simulation/src/newteamcode/util/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/src/newteamcode/util/Point.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../simulation/src/newteamcode/util/Omodeclock.java" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/src/newteamcode/util/OpModeClock.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../simulation/src/newteamcode/util/Pose.java" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/src/newteamcode/util/Pose.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../simulation/src/treamcode/MyOpMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/src/treamcode/MyOpMode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simulation/src/treamcode/RobotMovement.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,6 +98,8 @@
       <workItem from="1614753667017" duration="951000" />
       <workItem from="1614780992794" duration="4775000" />
       <workItem from="1614817836295" duration="1599000" />
+      <workItem from="1614865708215" duration="6101000" />
+      <workItem from="1614961336127" duration="638000" />
     </task>
     <task id="LOCAL-00001" summary="Udp working">
       <created>1544285862701</created>
@@ -194,31 +187,31 @@
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="1070" y="636" key="FileChooserDialogImpl/2560.-290.1200.1920/-1920.141.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1612546993658" />
-    <state width="2517" height="257" key="GridCell.Tab.0.bottom" timestamp="1614820305233">
+    <state width="2517" height="257" key="GridCell.Tab.0.bottom" timestamp="1614918955147">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2517" height="257" key="GridCell.Tab.0.bottom/2560.-290.1200.1920/-1920.-108.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1614820305233" />
+    <state width="2517" height="257" key="GridCell.Tab.0.bottom/2560.-290.1200.1920/-1920.-108.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1614918955147" />
     <state width="1877" height="207" key="GridCell.Tab.0.bottom/2560.-290.1200.1920/-1920.141.1920.1200/0.0.2560.1440@-1920.141.1920.1200" timestamp="1612297996614" />
     <state width="1156" height="205" key="GridCell.Tab.0.bottom/2560.-290.1200.1920/-1920.141.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1612550325091" />
     <state width="1157" height="207" key="GridCell.Tab.0.bottom/2560.-290.1200.1920/-1920.141.1920.1200/0.0.2560.1440@2560.-290.1200.1920" timestamp="1612297621827" />
-    <state width="2517" height="257" key="GridCell.Tab.0.center" timestamp="1614820305233">
+    <state width="2517" height="257" key="GridCell.Tab.0.center" timestamp="1614918955147">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2517" height="257" key="GridCell.Tab.0.center/2560.-290.1200.1920/-1920.-108.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1614820305233" />
+    <state width="2517" height="257" key="GridCell.Tab.0.center/2560.-290.1200.1920/-1920.-108.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1614918955147" />
     <state width="1877" height="207" key="GridCell.Tab.0.center/2560.-290.1200.1920/-1920.141.1920.1200/0.0.2560.1440@-1920.141.1920.1200" timestamp="1612297996614" />
     <state width="1156" height="205" key="GridCell.Tab.0.center/2560.-290.1200.1920/-1920.141.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1612550325091" />
     <state width="1157" height="207" key="GridCell.Tab.0.center/2560.-290.1200.1920/-1920.141.1920.1200/0.0.2560.1440@2560.-290.1200.1920" timestamp="1612297621826" />
-    <state width="2517" height="257" key="GridCell.Tab.0.left" timestamp="1614820305233">
+    <state width="2517" height="257" key="GridCell.Tab.0.left" timestamp="1614918955147">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2517" height="257" key="GridCell.Tab.0.left/2560.-290.1200.1920/-1920.-108.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1614820305233" />
+    <state width="2517" height="257" key="GridCell.Tab.0.left/2560.-290.1200.1920/-1920.-108.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1614918955147" />
     <state width="1877" height="207" key="GridCell.Tab.0.left/2560.-290.1200.1920/-1920.141.1920.1200/0.0.2560.1440@-1920.141.1920.1200" timestamp="1612297996613" />
     <state width="1156" height="205" key="GridCell.Tab.0.left/2560.-290.1200.1920/-1920.141.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1612550325091" />
     <state width="1157" height="207" key="GridCell.Tab.0.left/2560.-290.1200.1920/-1920.141.1920.1200/0.0.2560.1440@2560.-290.1200.1920" timestamp="1612297621826" />
-    <state width="2517" height="257" key="GridCell.Tab.0.right" timestamp="1614820305233">
+    <state width="2517" height="257" key="GridCell.Tab.0.right" timestamp="1614918955147">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2517" height="257" key="GridCell.Tab.0.right/2560.-290.1200.1920/-1920.-108.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1614820305233" />
+    <state width="2517" height="257" key="GridCell.Tab.0.right/2560.-290.1200.1920/-1920.-108.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1614918955147" />
     <state width="1877" height="207" key="GridCell.Tab.0.right/2560.-290.1200.1920/-1920.141.1920.1200/0.0.2560.1440@-1920.141.1920.1200" timestamp="1612297996614" />
     <state width="1156" height="205" key="GridCell.Tab.0.right/2560.-290.1200.1920/-1920.141.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1612550325091" />
     <state width="1157" height="207" key="GridCell.Tab.0.right/2560.-290.1200.1920/-1920.141.1920.1200/0.0.2560.1440@2560.-290.1200.1920" timestamp="1612297621827" />

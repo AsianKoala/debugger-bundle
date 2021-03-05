@@ -62,10 +62,10 @@ public class Pose extends Point {
 
     public Pose relDistance(Pose target) {
         double distance = target.subtract(this).hypot();
-        double rH = MathUtil.angleWrap(subtract(target).atan() - heading - Math.toRadians(90));
+        double rH = MathUtil.wrapFull(subtract(target).atan() - heading - Math.toRadians(90));
         double rX = distance * Math.cos(rH);
         double rY = distance * Math.sin(rH);
-        return new Pose(rX, rY, MathUtil.angleWrap(rH - Math.toRadians(90))); // this is really stupid lamo
+        return new Pose(rX, rY, rH);
     }
 
     // only setters, return ref
@@ -84,7 +84,7 @@ public class Pose extends Point {
 
     @Override
     public String toString() {
-        return String.format("(%.1f, %.1f, %.1f)", x, y, Math.toDegrees(heading));
+        return String.format("(%.1f, %.1f, %.1f)", x, y, heading);
     }
 
 }

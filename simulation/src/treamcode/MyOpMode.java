@@ -20,8 +20,8 @@ public class MyOpMode extends OpMode {
     @Override
     public void loop() {
         PathPoint pathPoint = new PathPoint(200, 200, Math.toRadians(90), 30, true, true, null);
-        if(goToPosition(Main.robot, pathPoint)) {
+        goToPosition(Main.robot, pathPoint);
 //            Main.robot.speeds.set(new Pose(0));
-        }
+
     }
 }

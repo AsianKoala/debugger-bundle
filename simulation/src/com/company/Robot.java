@@ -2,7 +2,11 @@ package com.company;
 
 import RobotUtilities.SpeedOmeter;
 import newteamcode.util.MathUtil;
+import newteamcode.util.Point;
 import newteamcode.util.Pose;
+import newteamcode.util.SignaturePose;
+
+import java.util.ArrayList;
 
 import static RobotUtilities.MovementVars.*;
 
@@ -13,10 +17,14 @@ public class Robot {
     public Pose currPose;
     public Pose currVel;
 
+    public ArrayList<SignaturePose> prevPos = new ArrayList<>();
+    public Pose relativeMovement;
     
     /**
      * Creates a robot simulation
      */
+
+    public Point startPose = new Pose(100, 100, Math.toRadians(45));
     public Robot(){
         worldXPosition = 100;
         worldYPosition = 100;
@@ -25,6 +33,8 @@ public class Robot {
         speeds = new Pose(movement_x, movement_y, movement_turn);
         currPose = new Pose(worldXPosition, worldYPosition, worldAngle_rad);
         currVel = new Pose(SpeedOmeter.getSpeedX(), SpeedOmeter.getSpeedY(), SpeedOmeter.getRadPerSecond());
+        relativeMovement = new Pose(0,0,0);
+        prevPos.add(new SignaturePose(relativeMovement, System.currentTimeMillis()));
     }
 
     //the actual speed the robot is moving
@@ -76,11 +86,13 @@ public class Robot {
         double totalSpeed = Math.hypot(xSpeed,ySpeed);
         double angle = Math.atan2(ySpeed,xSpeed) - Math.toRadians(90);
         double outputAngle = worldAngle_rad + angle;
-        worldXPosition += totalSpeed * Math.cos(outputAngle) * elapsedTime * 1000 * 0.2;
-        worldYPosition += totalSpeed * Math.sin(outputAngle) * elapsedTime * 1000 * 0.2;
+        double dx = totalSpeed * Math.sin(outputAngle) * elapsedTime * 1000 * 0.2;
+        double dy = totalSpeed * Math.sin(outputAngle) * elapsedTime * 1000 * 0.2;
+        double dh = movement_turn * elapsedTime * 20 / (2 * Math.PI);
 
-        worldAngle_rad += movement_turn * elapsedTime * 20 / (2 * Math.PI);
-
+        worldXPosition += dx;
+        worldYPosition += dy;
+        worldAngle_rad += dh;
 
         xSpeed += Range.clip((movement_x-xSpeed)/0.2,-1,1) * elapsedTime;
         ySpeed += Range.clip((movement_y-ySpeed)/0.2,-1,1) * elapsedTime;
@@ -97,9 +109,26 @@ public class Robot {
         ySpeed *= 1.0 - (elapsedTime);
         turnSpeed *= 1.0 - (elapsedTime);
 
-
+        relativeMovement.set(relativeMovement.add(new Pose(dx, dy, dh)));
         currPose = new Pose(worldXPosition, worldYPosition, MathUtil.angleWrap(worldAngle_rad));
-        currVel = new Pose(SpeedOmeter.getSpeedX(), SpeedOmeter.getSpeedY(), SpeedOmeter.getRadPerSecond()); 
+
+        prevPos.add(new SignaturePose(currPose, System.currentTimeMillis()));
+    }
+
+    // avg vel when xpow == ypow == 0.1 is 23
+    // avg vel is sqrt(xpow^2+ypow^2) so
+    // xpow^2 = avgVel
+    public Pose relVel() {
+        if(prevPos.size() < 2) {
+            return new Pose(0, 0, 0);
+        }
+
+        int oldIndex = Math.max(0, prevPos.size() - 2 - 1);
+        SignaturePose old = prevPos.get(oldIndex);
+        SignaturePose cur = prevPos.get(prevPos.size() - 1);
+
+        double scale = (double) (cur.sign - old.sign) / (1000);
+        return new Pose(cur.subtract(old).multiply(new Pose(1 / scale)));
     }
 
 

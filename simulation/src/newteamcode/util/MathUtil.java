@@ -15,6 +15,15 @@ public class MathUtil {
         return angle;
     }
 
+    public static double wrapFull(double angle) {
+        while(angle<0) {
+            angle+= 2*Math.PI;
+        } while(angle>2*Math.PI) {
+            angle -= 2*Math.PI;
+        }
+        return angle;
+    }
+
     public static boolean epsilonEquals(double d1, double d2) {
         if (Double.isInfinite(d1)) {
             // Infinity - infinity is NaN, so we need a special case
