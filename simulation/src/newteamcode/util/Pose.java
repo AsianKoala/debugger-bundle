@@ -60,7 +60,7 @@ public class Pose extends Point {
         return Math.sin(heading);
     }
 
-    public Pose relDistance(Pose target) {
+    public Pose relDistance(Point target) {
         double distance = target.subtract(this).hypot();
         double rH = MathUtil.wrapFull(subtract(target).atan() - heading - Math.toRadians(90));
         double rX = distance * Math.cos(rH);

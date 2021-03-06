@@ -33,6 +33,10 @@ public class MathUtil {
         }
     }
 
+    public static boolean angleThresh(double a, double b) {
+        return Math.abs(angleWrap(a - b)) < Math.toRadians(2);
+    }
+
     public static double[] lineEquation(Point p1, double slope) {
         double m;
         double intercept;

@@ -4,21 +4,29 @@ package newteamcode.control.controllers;
 // basically have abstract pathpoint class, concrete pathpoint is concrete and empty, yea
 
 import com.company.Robot;
-import newteamcode.control.path.PathPoint;
 
-import newteamcode.util.Point;
+import newteamcode.util.MathUtil;
 import newteamcode.util.Pose;
 
 import static newteamcode.util.MathUtil.*;
+import static newteamcode.control.path.PathPoints.*;
 
 public class PurePursuitController {
     public static double smoothDist = 20;
 
-    public static boolean goToPosition(Robot robot, PathPoint target) {
+    public static boolean goToPosition(Robot robot,  BasePathPoint target) {
         double d = robot.currPose.distance(target);
         Pose relVals = robot.currPose.relDistance(target);
+        boolean done;
 
-        Point startTurn = new Point(150,150);
+        // decide what type of pathpoitn is target
+        target = new LockedPathPoint(0, 0, 0, 0, null);
+
+        int index = 0;
+        while(index > target.typeList.length-1 || target.typeList[index] != null) {
+            index++;
+        }
+        types pathPointType = types.values()[index];
 
         Pose powerPose = new Pose();
         double v = relVals.abs().x + relVals.abs().y;
@@ -30,15 +38,29 @@ public class PurePursuitController {
 
         powerPose.set(move);
 
-        double desiredAngle = !target.locked ? target.subtract(robot.currPose).atan() : target.heading;
-        double angleToTarget = angleWrap(desiredAngle - robot.currPose.heading);
+        double targetAngle = pathPointType.isLocked() ? target.lockedHeading() : target.subtract(robot.currPose).atan();
+        double angleToTarget = angleWrap(targetAngle - robot.currPose.heading);
         powerPose.heading = angleToTarget / Math.toRadians(45);
 
-        if(target.distance(startTurn) < target.distance(robot.currPose)) {
+        if(pathPointType.ordinal() == types.lateTurn.ordinal() &&
+                target.distance(target.lateTurnPoint()) < target.distance(robot.currPose)) {
             powerPose.heading = 0;
+            done = d < 2 && MathUtil.angleThresh(robot.currPose.heading, target.onlyTurnHeading());
+        } else if(pathPointType.ordinal() == types.onlyTurn.ordinal()) {
+            powerPose.x = 0;
+            powerPose.y = 0;
+            done = MathUtil.angleThresh(robot.currPose.heading, target.onlyTurnHeading());
+        } else if(pathPointType.ordinal() == types.onlyFunctions.ordinal()) {
+            powerPose = new Pose(0,0,0);
+            done = target.functions.size() == 0;
+        } else {
+            done = d < 2 && MathUtil.angleThresh(robot.currPose.heading, target.onlyTurnHeading());
         }
 
+        target.functions.removeIf(f -> f.func(f.cond()));
+
         robot.speeds = powerPose;
+
 
         System.out.println("relVel: " + robot.relVel().toString());
         System.out.println("VEL: " + robot.relVel().hypot());
@@ -47,12 +69,8 @@ public class PurePursuitController {
         System.out.println();
         System.out.println();
 
-        return d<2;
-
+        return done;
     }
-
-
-
 
     public static void followPath(Robot robot) {
 

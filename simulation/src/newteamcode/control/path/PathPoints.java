@@ -1,50 +1,91 @@
 package newteamcode.control.path;
 
 import newteamcode.util.Point;
-import newteamcode.util.Pose;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 
 public class PathPoints {
-    abstract class BasePathPoint extends Pose {
-        public double followDistance;
+    public enum types {
+        lateTurn, onlyTurn, stop, locked, onlyFunctions;
 
-        public BasePathPoint(double x, double y, double heading, double followDistance) {
-            super(x, y, heading);
-            this.followDistance = followDistance;
+        public boolean isLocked() {
+            return ordinal() < 4;
         }
-
-        public abstract LinkedList<Function> getFunctions();
-        public abstract boolean isStop();
-        public abstract double isLocked();
-        public abstract Point isWeightPower();
-        public abstract Point isOnlyTurn();
-        public abstract Point isLateTurn();
-
     }
-    
-    static class PathPoint extends Pose implements Cloneable {
+
+    public static class BasePathPoint extends Point {
         public double followDistance;
         public LinkedList<Function> functions;
-        public boolean locked;
-        public boolean stop;
+        public Object[] typeList;
 
-        public PathPoint(double x, double y, double heading, double followDistance, boolean locked, boolean stop, LinkedList<Function> functions) {
-            super(x, y, heading);
+        public BasePathPoint(double x, double y, double followDistance, Function... functions) {
+            super(x, y);
             this.followDistance = followDistance;
-            this.locked = locked;
-            this.stop = stop;
             this.functions = new LinkedList<>();
-            if (functions != null)
-                this.functions.addAll((LinkedList<Function>) functions.clone());
+            this.functions.addAll(Arrays.asList(functions));
+            this.typeList = new Object[]{lateTurnPoint(), onlyTurnHeading(), isStop(), lockedHeading(), isOnlyFuncs()};
         }
 
-        public PathPoint(Pose pose, double followDistance, boolean locked, boolean stop, LinkedList<Function> functions) {
-            this(pose.x, pose.y, pose.heading, followDistance, locked, stop, functions);
+        public BasePathPoint(BasePathPoint b, Object[] typeList) { //cc
+            this(b.x, b.y, b.followDistance, (Function[]) b.functions.toArray());
+            this.typeList = typeList;
         }
 
-        public PathPoint(PathPoint p) {
-            this(p.x, p.y, p.heading, p.followDistance, p.locked, p.stop, p.functions);
+        public Point lateTurnPoint() { return null; }
+        public Double onlyTurnHeading() { return null; }
+        public Double lockedHeading() { return null; }
+        public Boolean isStop() { return null; }
+        public Boolean isOnlyFuncs() { return null; }
+    }
+
+    public static class SimplePathPoint extends BasePathPoint {
+        public SimplePathPoint(double x, double y, double followDistance, Function... functions) {
+            super(x, y, followDistance, functions);
         }
     }
+
+    public static class LockedPathPoint extends SimplePathPoint {
+        double heading;
+        public LockedPathPoint(double x, double y, double heading, double followDistance, Function... functions) {
+            super(x, y, followDistance, functions);
+            this.heading = heading;
+        }
+        @Override
+        public Double lockedHeading() { return heading; }
+    }
+
+    public static class StopPathPoint extends LockedPathPoint {
+        public StopPathPoint(double x, double y, double heading, double followDistance, Function... functions) {
+            super(x, y, heading, followDistance, functions);
+        }
+        @Override
+        public Boolean isStop() { return true; }
+    }
+
+    public static class LateTurnPathPoint extends LockedPathPoint {
+        public Point turnPoint;
+        public LateTurnPathPoint(double x, double y, double heading, double followDistance, Point turnPoint, Function... functions) {
+            super(x, y, heading, followDistance, functions);
+            this.turnPoint = turnPoint;
+        }
+        @Override
+        public Point lateTurnPoint() { return turnPoint; }
+    }
+
+    public static class OnlyTurnPathPoint extends LockedPathPoint {
+        public OnlyTurnPathPoint(double heading, Function... functions) {
+            super(0,0,heading,0,functions);
+        }
+        @Override
+        public Double onlyTurnHeading() { return heading; }
+    }
+
+    public static class OnlyFunctionsPathPoint extends SimplePathPoint {
+        public OnlyFunctionsPathPoint(Function... functions) { super(0,0,0,functions); }
+        @Override
+        public Boolean isOnlyFuncs() { return true; }
+    }
+
+
 }
