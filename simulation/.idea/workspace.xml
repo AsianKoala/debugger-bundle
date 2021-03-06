@@ -41,7 +41,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -90,7 +90,7 @@
       <workItem from="1614817850231" duration="4433000" />
       <workItem from="1614865723229" duration="9346000" />
       <workItem from="1614961284425" duration="5087000" />
-      <workItem from="1614988701250" duration="10578000" />
+      <workItem from="1614988701250" duration="16975000" />
     </task>
     <servers />
   </component>
@@ -119,29 +119,29 @@
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="1060" y="475" key="FileChooserDialogImpl/2560.-290.1200.1920/-1920.141.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1612283991739" />
-    <state width="2517" height="350" key="GridCell.Tab.0.bottom" timestamp="1614981373383">
+    <state width="2517" height="305" key="GridCell.Tab.0.bottom" timestamp="1615013396691">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state width="2517" height="350" key="GridCell.Tab.0.bottom/2560.-290.1200.1920/-1920.-108.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1614918957367" />
-    <state width="2517" height="350" key="GridCell.Tab.0.bottom/2560.-290.1200.1920/-1920.123.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1614981373383" />
+    <state width="2517" height="305" key="GridCell.Tab.0.bottom/2560.-290.1200.1920/-1920.123.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1615013396691" />
     <state width="2517" height="199" key="GridCell.Tab.0.bottom/2560.-290.1200.1920/-1920.141.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1612550323089" />
-    <state width="2517" height="350" key="GridCell.Tab.0.center" timestamp="1614981373383">
+    <state width="2517" height="305" key="GridCell.Tab.0.center" timestamp="1615013396691">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state width="2517" height="350" key="GridCell.Tab.0.center/2560.-290.1200.1920/-1920.-108.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1614918957367" />
-    <state width="2517" height="350" key="GridCell.Tab.0.center/2560.-290.1200.1920/-1920.123.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1614981373383" />
+    <state width="2517" height="305" key="GridCell.Tab.0.center/2560.-290.1200.1920/-1920.123.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1615013396691" />
     <state width="2517" height="199" key="GridCell.Tab.0.center/2560.-290.1200.1920/-1920.141.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1612550323088" />
-    <state width="2517" height="350" key="GridCell.Tab.0.left" timestamp="1614981373383">
+    <state width="2517" height="305" key="GridCell.Tab.0.left" timestamp="1615013396691">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state width="2517" height="350" key="GridCell.Tab.0.left/2560.-290.1200.1920/-1920.-108.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1614918957367" />
-    <state width="2517" height="350" key="GridCell.Tab.0.left/2560.-290.1200.1920/-1920.123.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1614981373383" />
+    <state width="2517" height="305" key="GridCell.Tab.0.left/2560.-290.1200.1920/-1920.123.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1615013396691" />
     <state width="2517" height="199" key="GridCell.Tab.0.left/2560.-290.1200.1920/-1920.141.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1612550323088" />
-    <state width="2517" height="350" key="GridCell.Tab.0.right" timestamp="1614981373383">
+    <state width="2517" height="305" key="GridCell.Tab.0.right" timestamp="1615013396691">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state width="2517" height="350" key="GridCell.Tab.0.right/2560.-290.1200.1920/-1920.-108.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1614918957367" />
-    <state width="2517" height="350" key="GridCell.Tab.0.right/2560.-290.1200.1920/-1920.123.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1614981373383" />
+    <state width="2517" height="305" key="GridCell.Tab.0.right/2560.-290.1200.1920/-1920.123.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1615013396691" />
     <state width="2517" height="199" key="GridCell.Tab.0.right/2560.-290.1200.1920/-1920.141.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1612550323089" />
     <state width="2517" height="507" key="GridCell.Tab.1.bottom" timestamp="1612550323065">
       <screen x="0" y="0" width="2560" height="1440" />
@@ -159,6 +159,10 @@
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state width="2517" height="507" key="GridCell.Tab.1.right/2560.-290.1200.1920/-1920.141.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1612550323065" />
+    <state x="781" y="365" key="SettingsEditor" timestamp="1615009735187">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="781" y="365" key="SettingsEditor/2560.-290.1200.1920/-1920.123.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1615009735187" />
     <state x="1010" y="481" key="extract.method.dialog" timestamp="1614784067506">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
@@ -167,9 +171,10 @@
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="871" y="340" key="new project wizard/2560.-290.1200.1920/-1920.141.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1612773911820" />
-    <state x="936" y="340" key="run.anything.popup" timestamp="1612290232309">
+    <state x="936" y="340" key="run.anything.popup" timestamp="1615013439670">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
+    <state x="936" y="340" key="run.anything.popup/2560.-290.1200.1920/-1920.123.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1615013439670" />
     <state x="936" y="340" key="run.anything.popup/2560.-290.1200.1920/-1920.141.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1612290232309" />
     <state x="943" y="325" width="672" height="678" key="search.everywhere.popup" timestamp="1615001718468">
       <screen x="0" y="0" width="2560" height="1440" />
@@ -180,80 +185,5 @@
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>No facets are configured</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>PurePursuitTutorial</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-                <option value="0.6" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>

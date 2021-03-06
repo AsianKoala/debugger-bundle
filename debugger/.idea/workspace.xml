@@ -3,11 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="dc0f0ec4-7354-4b8d-bb63-314f84595278" name="Default Changelist" comment="added logging">
       <change beforePath="$PROJECT_DIR$/../simulation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../simulation/src/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/src/Main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../simulation/src/newteamcode/control/controllers/PurePursuitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/src/newteamcode/control/controllers/PurePursuitController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../simulation/src/newteamcode/control/path/Function.java" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/src/newteamcode/control/path/Function.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../simulation/src/newteamcode/control/path/Path.java" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/src/newteamcode/control/path/Path.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../simulation/src/newteamcode/control/path/PathPoints.java" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/src/newteamcode/control/path/PathPoints.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simulation/src/newteamcode/util/MathUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/src/newteamcode/util/MathUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simulation/src/newteamcode/util/Pose.java" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/src/newteamcode/util/Pose.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../simulation/src/newteamcode/control/path/builders/PathBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/src/newteamcode/control/path/builders/PathBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../simulation/src/newteamcode/control/path/builders/PathPointBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/src/newteamcode/control/path/builders/PathPointBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../simulation/src/treamcode/MyOpMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/src/treamcode/MyOpMode.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,7 +47,7 @@
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544281631256" />
     <property name="full.screen.before.presentation.mode" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../simulation" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -92,7 +94,7 @@
       <workItem from="1614817836295" duration="1599000" />
       <workItem from="1614865708215" duration="6101000" />
       <workItem from="1614961336127" duration="1233000" />
-      <workItem from="1614988685990" duration="605000" />
+      <workItem from="1614988685990" duration="1930000" />
     </task>
     <task id="LOCAL-00001" summary="Udp working">
       <created>1544285862701</created>
@@ -212,6 +214,10 @@
     <state width="1877" height="207" key="GridCell.Tab.0.right/2560.-290.1200.1920/-1920.141.1920.1200/0.0.2560.1440@-1920.141.1920.1200" timestamp="1612297996614" />
     <state width="1156" height="205" key="GridCell.Tab.0.right/2560.-290.1200.1920/-1920.141.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1612550325091" />
     <state width="1157" height="207" key="GridCell.Tab.0.right/2560.-290.1200.1920/-1920.141.1920.1200/0.0.2560.1440@2560.-290.1200.1920" timestamp="1612297621827" />
+    <state x="781" y="365" key="SettingsEditor" timestamp="1615010057616">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="781" y="365" key="SettingsEditor/2560.-290.1200.1920/-1920.123.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1615010057616" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -265,91 +271,5 @@
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>No facets are configured</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>DebugClient</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-                <option value="0.6" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ScopeChooserConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>

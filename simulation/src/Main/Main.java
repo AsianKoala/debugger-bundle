@@ -5,23 +5,39 @@ import com.company.ComputerDebugging;
 import com.company.FloatPoint;
 import com.company.Robot;
 
-import newteamcode.util.Pose;
+import newteamcode.control.path.Function;
+import newteamcode.control.path.PathPoints;
 import treamcode.MyOpMode;
 import treamcode.OpMode;
 
+import java.util.Arrays;
 
+import static newteamcode.control.path.PathPoints.*;
 public class Main {
 
     public static Robot robot = new Robot();
     public static void main(String[] args) {
-        new Main().run();
-        //        powerPose.set(powerPose.divide(new Pose(v)).multiply(relVals.abs().divide(new Pose(41)))); // someting wrong here prob
+//        new Main().run();
 
-//        Pose p = new Pose(10,10,10);
-//        Pose v = new Pose(p.abs().x + p.abs().y); // 20,20,20
-//        p.set(p.divide(v).multiply(p.abs().divide(new Pose(5))));
-//
-//        System.out.println(p.toString());
+        BasePathPoint pathPoint = new LockedPathPoint(10, 10, 30, 30, new Function() {
+            @Override
+            public boolean cond() {
+                return true;
+            }
+
+            @Override
+            public boolean func() {
+                System.out.println("niggas in paris");
+                return true;
+            }
+        });
+
+        BasePathPoint copyPoint = new BasePathPoint(pathPoint);
+
+        System.out.println("x,y: " + copyPoint.toString());
+        System.out.println("func size: " + copyPoint.functions.size());
+        System.out.println("type arr: " + Arrays.toString(copyPoint.getTypeList()));
+        System.out.println("locked val: " + copyPoint.lockedHeading());
     }
 
     /**

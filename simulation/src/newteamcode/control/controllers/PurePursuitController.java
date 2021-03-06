@@ -5,8 +5,13 @@ package newteamcode.control.controllers;
 
 import com.company.Robot;
 
+import newteamcode.control.path.Function;
+import newteamcode.control.path.Path;
 import newteamcode.util.MathUtil;
 import newteamcode.util.Pose;
+
+import java.util.Arrays;
+import java.util.Iterator;
 
 import static newteamcode.util.MathUtil.*;
 import static newteamcode.control.path.PathPoints.*;
@@ -19,11 +24,9 @@ public class PurePursuitController {
         Pose relVals = robot.currPose.relDistance(target);
         boolean done;
 
-        // decide what type of pathpoitn is target
-        target = new LockedPathPoint(0, 0, 0, 0, null);
-
         int index = 0;
-        while(index > target.typeList.length-1 || target.typeList[index] != null) {
+        System.out.println(Arrays.toString(target.getTypeList()));
+        while(index < target.getTypeList().length-1 && target.getTypeList()[index] == null) {
             index++;
         }
         types pathPointType = types.values()[index];
@@ -42,6 +45,9 @@ public class PurePursuitController {
         double angleToTarget = angleWrap(targetAngle - robot.currPose.heading);
         powerPose.heading = angleToTarget / Math.toRadians(45);
 
+        System.out.println("index: " + index);
+        System.out.println("type: " + pathPointType.toString());
+
         if(pathPointType.ordinal() == types.lateTurn.ordinal() &&
                 target.distance(target.lateTurnPoint()) < target.distance(robot.currPose)) {
             powerPose.heading = 0;
@@ -57,10 +63,12 @@ public class PurePursuitController {
             done = d < 2 && MathUtil.angleThresh(robot.currPose.heading, target.onlyTurnHeading());
         }
 
-        target.functions.removeIf(f -> f.func(f.cond()));
+        target.functions.removeIf(f -> f.cond() && f.func());
+
+        done = done && target.functions.size() == 0;
+
 
         robot.speeds = powerPose;
-
 
         System.out.println("relVel: " + robot.relVel().toString());
         System.out.println("VEL: " + robot.relVel().hypot());

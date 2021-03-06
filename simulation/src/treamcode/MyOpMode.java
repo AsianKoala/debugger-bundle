@@ -27,7 +27,7 @@ public class MyOpMode extends OpMode {
                     }
 
                     @Override
-                    public boolean func(boolean cond) {
+                    public boolean func() {
                         return OpModeClock.isOk();
                     }
                 });

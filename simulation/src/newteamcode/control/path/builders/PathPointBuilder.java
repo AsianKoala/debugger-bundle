@@ -2,13 +2,13 @@ package newteamcode.control.path.builders;
 
 
 import newteamcode.control.path.Function;
-import newteamcode.control.path.PathPoint;
+import static newteamcode.control.path.PathPoints.*;
 
 public class PathPointBuilder {
-    public PathPoint p;
+    public BasePathPoint p;
 
-    public PathPointBuilder(PathPoint point) {
-        p = new PathPoint(point);
+    public PathPointBuilder(BasePathPoint point) {
+        p = new BasePathPoint(point);
     }
 
     public PathPointBuilder addFunc(Function function) {
@@ -16,7 +16,7 @@ public class PathPointBuilder {
         return this;
     }
 
-    public PathPoint build() {
-        return new PathPoint(p);
+    public BasePathPoint build() {
+        return new BasePathPoint(p);
     }
 }
