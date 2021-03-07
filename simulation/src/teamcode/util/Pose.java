@@ -60,12 +60,13 @@ public class Pose extends Point {
         return Math.sin(heading);
     }
 
-    public Pose relDistance(Point target) {
-        double distance = target.subtract(this).hypot();
-        double rH = MathUtil.wrapFull(subtract(target).atan() - heading - Math.toRadians(90));
-        double rX = distance * Math.cos(rH);
-        double rY = distance * Math.sin(rH);
-        return new Pose(rX, rY, rH);
+    public Pose relVals(Point target, Pose current) {
+        double r_d = target.distance(current);
+        double angleToPoint = Math.atan2(target.y - current.y, target.x - current.x);
+        double deltaAngleToPoint = angleWrap(angleToPoint - (current.heading - Math.toRadians(90)));
+        double r_x = Math.cos(deltaAngleToPoint) * r_d;
+        double r_y = Math.sin(deltaAngleToPoint) * r_d;
+        return new Pose(r_x, r_y, 0); // return 0 just to kmake sure neer to use it
     }
 
     // only setters, return ref

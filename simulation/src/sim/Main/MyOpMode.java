@@ -19,7 +19,7 @@ public class MyOpMode extends OpMode {
 
     @Override
     public void loop() {
-        PathPoints.BasePathPoint pathPoint = new PathPoints.LateTurnPathPoint(200, 200, Math.toRadians(225), 30, new Point(150, 150));
+        PathPoints.BasePathPoint pathPoint = new PathPoints.OnlyTurnPathPoint( Math.toRadians(225));
         if(goToPosition(Main.robot, pathPoint))
             Main.robot.speeds.set(new Pose(0.000001));
 

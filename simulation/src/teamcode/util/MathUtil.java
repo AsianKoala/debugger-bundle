@@ -15,7 +15,7 @@ public class MathUtil {
         return angle;
     }
 
-    public static double wrapFull(double angle) {
+    public static double unwrap(double angle) {
         while(angle<0) {
             angle+= 2*Math.PI;
         } while(angle>2*Math.PI) {
@@ -34,7 +34,7 @@ public class MathUtil {
     }
 
     public static boolean angleThresh(double a, double b) {
-        return angleWrap(Math.abs(angleWrap(a) - angleWrap(b))) < Math.toRadians(2);
+        return Math.abs(MathUtil.angleWrap(a-b)) < Math.toRadians(0.5);
     }
     public static double[] lineEquation(Point p1, double slope) {
         double m;

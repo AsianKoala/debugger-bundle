@@ -3,12 +3,16 @@ package teamcode.control.controllers;
 
 // basically have abstract pathpoint class, concrete pathpoint is concrete and empty, yea
 
+import sim.company.ComputerDebugging;
+import sim.company.FloatPoint;
 import sim.company.Robot;
 
+import teamcode.control.path.PathPoints;
 import teamcode.util.MathUtil;
+import teamcode.util.Point;
 import teamcode.util.Pose;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 
 import static teamcode.util.MathUtil.*;
 import static teamcode.control.path.PathPoints.*;
@@ -18,7 +22,7 @@ public class PurePursuitController {
 
     public static boolean goToPosition(Robot robot,  BasePathPoint target) {
         double d = robot.currPose.distance(target);
-        Pose relVals = robot.currPose.relDistance(target);
+        Pose relVals = robot.currPose.relVals(target, robot.currPose);
         boolean done;
 
         int index = 0;
@@ -27,54 +31,78 @@ public class PurePursuitController {
         }
         types pathPointType = types.values()[index];
 
-        Pose powerPose = new Pose();
-        double v = relVals.abs().x + relVals.abs().y;
-        Pose move = new Pose();
-        move.x = relVals.abs().x / 45;
-        move.y = relVals.abs().y / 45;
-        move.x *= relVals.x / v;
-        move.y *= relVals.y / v;
+        if(d>45 || !target.isStop) {
+            Pose powerPose = new Pose();
+            double v = relVals.abs().x + relVals.abs().y;
+            Pose move = new Pose();
+            move.x = relVals.abs().x / 45;
+            move.y = relVals.abs().y / 45;
+            move.x *= relVals.x / v;
+            move.y *= relVals.y / v;
 
-        powerPose.set(move);
+            powerPose.set(move);
 
-        double targetAngle = pathPointType.isLocked() ? target.lockedHeading : target.subtract(robot.currPose).atan();
-        double angleToTarget = angleWrap(targetAngle - robot.currPose.heading);
-        powerPose.heading = angleToTarget / Math.toRadians(45);
+            double targetAngle = pathPointType.isLocked() ? target.lockedHeading : target.subtract(robot.currPose).atan();
+            double angleToTarget = angleWrap(targetAngle - robot.currPose.heading);
+            powerPose.heading = angleToTarget / Math.toRadians(60);
 
-        if(pathPointType.ordinal() == types.lateTurn.ordinal() &&
-                target.distance(target.lateTurnPoint) < target.distance(robot.currPose)) {
-            powerPose.heading = 0;
-            done = d < 2 && MathUtil.angleThresh(robot.currPose.heading, target.lockedHeading);
-        } else if(pathPointType.ordinal() == types.onlyTurn.ordinal()) {
-            powerPose.x = 0;
-            powerPose.y = 0;
-            done = MathUtil.angleThresh(robot.currPose.heading, target.lockedHeading);
-        } else if(pathPointType.ordinal() == types.onlyFunctions.ordinal()) {
-            powerPose = new Pose(0,0,0);
-            done = target.functions.size() == 0;
+            if (pathPointType.ordinal() == types.lateTurn.ordinal() &&
+                    target.distance(target.lateTurnPoint) < target.distance(robot.currPose)) {
+                powerPose.heading = 0;
+                done = d < 2 && MathUtil.angleThresh(robot.currPose.heading, target.lockedHeading);
+            } else if (pathPointType.ordinal() == types.onlyTurn.ordinal()) {
+                powerPose.x = 0;
+                powerPose.y = 0;
+                done = MathUtil.angleThresh(robot.currPose.heading, target.lockedHeading);
+            } else if (pathPointType.ordinal() == types.onlyFunctions.ordinal()) {
+                powerPose = new Pose(0, 0, 0);
+                done = target.functions.size() == 0;
+            } else {
+                done = d < 2 && MathUtil.angleThresh(robot.currPose.heading, target.lockedHeading);
+            }
+
+            System.out.println("deltaAngle: " + Math.toDegrees(MathUtil.angleWrap(target.lockedHeading - robot.currPose.heading)));
+            System.out.println("angleThresh: " + MathUtil.angleThresh(target.lockedHeading, robot.currPose.heading));
+
+            target.functions.removeIf(f -> f.cond() && f.func());
+            done = done && target.functions.size() == 0;
+
+            robot.speeds = powerPose;
+
+            System.out.println("relVel: " + robot.relVel().toString());
+            System.out.println("vel radius: " + robot.relVel().hypot());
+            System.out.println("powerPose: " + powerPose);
+            System.out.println("nonRelVel: " + new Pose(Robot.xSpeed, Robot.ySpeed, Robot.turnSpeed).toString());
+            System.out.println("nonRelVel radius: " + Math.hypot(Robot.xSpeed, Robot.ySpeed));
+            System.out.print("D: " + d);
         } else {
-            done = d < 2 && MathUtil.angleThresh(robot.currPose.heading, target.lockedHeading);
+            done = true;
         }
 
-        target.functions.removeIf(f -> f.cond() && f.func());
-
-        done = done && target.functions.size() == 0;
-
-
-        robot.speeds = powerPose;
-
-        //            System.out.println("relVel: " + robot.relVel().toString());
-        //            System.out.println("VEL: " + robot.relVel().hypot());
-        //            System.out.println("powerPose: " + powerPose);
-        //            System.out.print("D: " + d);
-        //            System.out.println();
-        //            System.out.println();
         return done;
     }
 
-    public static void followPath(Robot robot) {
+    public static void followPath(Robot robot, BasePathPoint start, BasePathPoint end) {
+//        for(int i=0; i<allPoints.size()-1; i++) {
+//            ComputerDebugging.sendLine(new FloatPoint(allPoints.get(i).x, allPoints.get(i).y), new FloatPoint(allPoints.get(i+1).x, allPoints.get(i+1).y));
+//        }
 
+        double slope;
+        if(end.x == start.x)
+            slope = Double.NEGATIVE_INFINITY;
+        else
+            slope = (end.y - start.y) / (end.x - start.x);
 
+        Point clipPoint = MathUtil.perpPointIntersection(start, slope, robot.currPose);
+        Point intersectPoint = MathUtil.circleLineIntersection(clipPoint, start, end, end.followDistance);
+
+        BasePathPoint followPoint = new BasePathPoint(end);
+        followPoint.x = intersectPoint.x;
+        followPoint.y = intersectPoint.y;
+
+        ComputerDebugging.sendKeyPoint(new FloatPoint(followPoint.x, followPoint.y));
+
+        goToPosition(robot, followPoint);
     }
 }
 

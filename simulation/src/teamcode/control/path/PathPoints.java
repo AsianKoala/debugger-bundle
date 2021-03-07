@@ -1,5 +1,6 @@
 package teamcode.control.path;
 
+import teamcode.util.MathUtil;
 import teamcode.util.Point;
 
 import java.util.Arrays;
@@ -19,7 +20,7 @@ public class PathPoints {
         public LinkedList<Function> functions;
 
         public Point lateTurnPoint;
-        public Boolean onlyTurnHeading;
+        public Boolean isOnlyTurn;
         public Boolean isStop;
         public Double lockedHeading;
         public Boolean isOnlyFuncs;
@@ -37,7 +38,7 @@ public class PathPoints {
             functions = b.functions;
 
             lateTurnPoint = b.lateTurnPoint;
-            onlyTurnHeading = b.onlyTurnHeading;
+            isOnlyTurn = b.isOnlyTurn;
             isStop = b.isStop;
             lockedHeading = b.lockedHeading;
             isOnlyFuncs = b.isOnlyFuncs;
@@ -53,7 +54,7 @@ public class PathPoints {
         }
 
         public Object[] getTypeList() {
-            return new Object[] {lateTurnPoint, onlyTurnHeading, isStop,  lockedHeading, isOnlyFuncs};
+            return new Object[] {lateTurnPoint, isOnlyTurn, isStop,  lockedHeading, isOnlyFuncs};
         }
 
 
@@ -69,7 +70,7 @@ public class PathPoints {
     public static class OnlyTurnPathPoint extends LockedPathPoint {
         public OnlyTurnPathPoint(double heading, Function... functions) {
             super(0,0,heading,0,functions);
-            onlyTurnHeading = true;
+            isOnlyTurn = true;
         }
     }
 
@@ -83,7 +84,7 @@ public class PathPoints {
     public static class LockedPathPoint extends SimplePathPoint {
         public LockedPathPoint(double x, double y, double heading, double followDistance, Function... functions) {
             super(x, y, followDistance, functions);
-            lockedHeading = heading;
+            lockedHeading = MathUtil.unwrap(heading);
         }
     }
 

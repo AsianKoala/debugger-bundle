@@ -130,12 +130,7 @@ public class Robot {
         prevPos.add(new SignaturePose(currPose, System.currentTimeMillis()));
 
 
-        System.out.println("movementX: " + movement_x);
-        System.out.println("movementY: " + movement_y);
-        System.out.println("movementTurn: " + movement_turn);
-        System.out.println("xSpeed: " + xSpeed);
-        System.out.println("ySpeed: " + ySpeed);
-        System.out.println("turnSpeed: " + turnSpeed);
+        System.out.println("movementPose: " + new Pose(movement_x, movement_y, movement_turn));
         System.out.println();
         System.out.println();
         System.out.println();
