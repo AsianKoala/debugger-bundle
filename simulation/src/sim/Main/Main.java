@@ -5,51 +5,46 @@ import sim.company.ComputerDebugging;
 import sim.company.FloatPoint;
 import sim.company.Robot;
 
-import teamcode.control.path.Function;
-import sim.treamcode.MyOpMode;
 import sim.treamcode.OpMode;
 
-import java.util.Arrays;
-
-import static teamcode.control.path.PathPoints.*;
 public class Main {
 
     public static Robot robot = new Robot();
 
     public static void main(String[] args) {
-//        new sim.Main().run();
+        new Main().run();
 
-        BasePathPoint pathPoint = new LockedPathPoint(10, 10, 30, 30, new Function() {
-            @Override
-            public boolean cond() {
-                return true;
-            }
-
-            @Override
-            public boolean func() {
-                System.out.println("function 1 xd");
-                return true;
-            }
-        }, new Function() {
-            @Override
-            public boolean cond() {
-                return true;
-            }
-
-            @Override
-            public boolean func() {
-                System.out.println("function 2 flushed emoji");
-                return true;
-            }
-        });
-
-        BasePathPoint copyPoint = new BasePathPoint(pathPoint);
-
-        System.out.println("orig func size: " + pathPoint.functions.size());
-        System.out.println("orig typelist: " + Arrays.toString(pathPoint.getTypeList()));
-        System.out.println("new typelist: " + Arrays.toString(copyPoint.getTypeList()));
-        System.out.println("locked val: " + copyPoint.lockedHeading);
-        System.out.println("new func size: " + copyPoint.functions.size());
+//        BasePathPoint pathPoint = new LockedPathPoint(10, 10, 30, 30, new Function() {
+//            @Override
+//            public boolean cond() {
+//                return true;
+//            }
+//
+//            @Override
+//            public boolean func() {
+//                System.out.println("function 1 xd");
+//                return true;
+//            }
+//        }, new Function() {
+//            @Override
+//            public boolean cond() {
+//                return true;
+//            }
+//
+//            @Override
+//            public boolean func() {
+//                System.out.println("function 2 flushed emoji");
+//                return true;
+//            }
+//        });
+//
+//        BasePathPoint copyPoint = new BasePathPoint(pathPoint);
+//
+//        System.out.println("orig func size: " + pathPoint.functions.size());
+//        System.out.println("orig typelist: " + Arrays.toString(pathPoint.getTypeList()));
+//        System.out.println("new typelist: " + Arrays.toString(copyPoint.getTypeList()));
+//        System.out.println("locked val: " + copyPoint.lockedHeading);
+//        System.out.println("new func size: " + copyPoint.functions.size());
     }
 
     /**

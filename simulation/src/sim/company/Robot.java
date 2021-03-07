@@ -67,10 +67,25 @@ public class Robot {
      * Calculates the change in position of the robot
      */
     public void update(){
+
+
         worldAngle_rad = MathUtil.angleWrap(worldAngle_rad);
         movement_x = speeds.x;
         movement_y = speeds.y;
         movement_turn = speeds.heading;
+
+        // scale down to highest
+        double max = movement_x;
+        if(movement_y > max)
+            max = movement_y;
+        if(movement_turn > max)
+            max = movement_turn;
+
+        if(Math.abs(max) > 1) {
+            movement_x /= max;
+            movement_y /= max;
+            movement_turn /= max;
+        }
 
         //get the current time
         long currentTimeMillis = System.currentTimeMillis();
@@ -113,6 +128,17 @@ public class Robot {
         currPose = new Pose(worldXPosition, worldYPosition, MathUtil.angleWrap(worldAngle_rad));
 
         prevPos.add(new SignaturePose(currPose, System.currentTimeMillis()));
+
+
+        System.out.println("movementX: " + movement_x);
+        System.out.println("movementY: " + movement_y);
+        System.out.println("movementTurn: " + movement_turn);
+        System.out.println("xSpeed: " + xSpeed);
+        System.out.println("ySpeed: " + ySpeed);
+        System.out.println("turnSpeed: " + turnSpeed);
+        System.out.println();
+        System.out.println();
+        System.out.println();
     }
 
     // avg vel when xpow == ypow == 0.1 is 23

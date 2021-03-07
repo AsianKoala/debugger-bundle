@@ -22,7 +22,6 @@ public class PurePursuitController {
         boolean done;
 
         int index = 0;
-        System.out.println(Arrays.toString(target.getTypeList()));
         while(index < target.getTypeList().length-1 && target.getTypeList()[index] == null) {
             index++;
         }
@@ -31,8 +30,8 @@ public class PurePursuitController {
         Pose powerPose = new Pose();
         double v = relVals.abs().x + relVals.abs().y;
         Pose move = new Pose();
-        move.x = relVals.abs().x / 60;
-        move.y = relVals.abs().y / 60;
+        move.x = relVals.abs().x / 45;
+        move.y = relVals.abs().y / 45;
         move.x *= relVals.x / v;
         move.y *= relVals.y / v;
 
@@ -41,9 +40,6 @@ public class PurePursuitController {
         double targetAngle = pathPointType.isLocked() ? target.lockedHeading : target.subtract(robot.currPose).atan();
         double angleToTarget = angleWrap(targetAngle - robot.currPose.heading);
         powerPose.heading = angleToTarget / Math.toRadians(45);
-
-        System.out.println("index: " + index);
-        System.out.println("type: " + pathPointType.toString());
 
         if(pathPointType.ordinal() == types.lateTurn.ordinal() &&
                 target.distance(target.lateTurnPoint) < target.distance(robot.currPose)) {
@@ -67,13 +63,12 @@ public class PurePursuitController {
 
         robot.speeds = powerPose;
 
-        System.out.println("relVel: " + robot.relVel().toString());
-        System.out.println("VEL: " + robot.relVel().hypot());
-        System.out.println("powePose: " + powerPose);
-        System.out.print("D: " + d);
-        System.out.println();
-        System.out.println();
-
+        //            System.out.println("relVel: " + robot.relVel().toString());
+        //            System.out.println("VEL: " + robot.relVel().hypot());
+        //            System.out.println("powerPose: " + powerPose);
+        //            System.out.print("D: " + d);
+        //            System.out.println();
+        //            System.out.println();
         return done;
     }
 
