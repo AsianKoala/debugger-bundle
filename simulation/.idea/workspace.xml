@@ -3,68 +3,21 @@
   <component name="ChangeListManager">
     <list default="true" id="06f710b7-470c-4d99-91ff-deca9af1f0aa" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/../debugger/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../debugger/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/Main/Main$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/Main/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/RobotUtilities/MovementVars.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/RobotUtilities/SpeedOmeter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/com/company/ComputerDebugging.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/com/company/FloatPoint.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/com/company/Range.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/com/company/Robot.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/com/company/UdpServer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/newteamcode/control/controllers/PurePursuitController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/newteamcode/control/path/Function.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/newteamcode/control/path/Path.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/newteamcode/control/path/PathPoints$BasePathPoint.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/newteamcode/control/path/PathPoints$LateTurnPathPoint.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/newteamcode/control/path/PathPoints$LockedPathPoint.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/newteamcode/control/path/PathPoints$OnlyFunctionsPathPoint.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/newteamcode/control/path/PathPoints$OnlyTurnPathPoint.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/newteamcode/control/path/PathPoints$SimplePathPoint.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/newteamcode/control/path/PathPoints$StopPathPoint.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/newteamcode/control/path/PathPoints$types.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/newteamcode/control/path/PathPoints.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/newteamcode/control/path/builders/PathBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/newteamcode/control/path/builders/PathPointBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/newteamcode/util/MathUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/newteamcode/util/OpModeClock.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/newteamcode/util/Point.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/newteamcode/util/Pose.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/newteamcode/util/SignaturePose.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/org/opencv/core/Point.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/treamcode/CurvePoint.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/treamcode/MathFunctions.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/treamcode/MyOpMode$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/treamcode/MyOpMode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/treamcode/OpMode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/treamcode/Point.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/Main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RobotUtilities/MovementVars.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/RobotUtilities/MovementVars.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RobotUtilities/SpeedOmeter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/RobotUtilities/SpeedOmeter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/ComputerDebugging.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/company/ComputerDebugging.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/FloatPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/company/FloatPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Range.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/company/Range.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/company/Robot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/UdpServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/company/UdpServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/newteamcode/control/controllers/PurePursuitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamcode/control/controllers/PurePursuitController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/newteamcode/control/path/Function.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamcode/control/path/Function.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/newteamcode/control/path/Path.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamcode/control/path/Path.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/newteamcode/control/path/PathPoints.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamcode/control/path/PathPoints.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/newteamcode/control/path/builders/PathBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamcode/control/path/builders/PathBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/newteamcode/control/path/builders/PathPointBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamcode/control/path/builders/PathPointBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/newteamcode/util/MathUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamcode/util/MathUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/newteamcode/util/OpModeClock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamcode/util/OpModeClock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/newteamcode/util/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamcode/util/Point.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/newteamcode/util/Pose.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamcode/util/Pose.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/newteamcode/util/SignaturePose.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamcode/util/SignaturePose.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/opencv/core/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/core/Point.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/treamcode/CurvePoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/treamcode/CurvePoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/treamcode/MathFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/treamcode/MathFunctions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/treamcode/MyOpMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/treamcode/MyOpMode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/treamcode/OpMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/treamcode/OpMode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/treamcode/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/treamcode/Point.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/sim/Main/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/sim/Main/Main$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/sim/Main/Main$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/sim/Main/Main$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/sim/Main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/sim/Main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/teamcode/control/controllers/PurePursuitController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/teamcode/control/controllers/PurePursuitController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/teamcode/control/path/PathPoints$BasePathPoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/teamcode/control/path/PathPoints$BasePathPoint.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/teamcode/control/path/PathPoints$LateTurnPathPoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/teamcode/control/path/PathPoints$LateTurnPathPoint.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/teamcode/control/path/PathPoints$LockedPathPoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/teamcode/control/path/PathPoints$LockedPathPoint.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/teamcode/control/path/PathPoints$OnlyFunctionsPathPoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/teamcode/control/path/PathPoints$OnlyFunctionsPathPoint.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/teamcode/control/path/PathPoints$OnlyTurnPathPoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/teamcode/control/path/PathPoints$OnlyTurnPathPoint.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/teamcode/control/path/PathPoints$SimplePathPoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/teamcode/control/path/PathPoints$SimplePathPoint.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/teamcode/control/path/PathPoints$StopPathPoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/teamcode/control/path/PathPoints$StopPathPoint.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sim/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/Main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/teamcode/control/controllers/PurePursuitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamcode/control/controllers/PurePursuitController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/teamcode/control/path/PathPoints.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamcode/control/path/PathPoints.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,7 +106,7 @@
       <workItem from="1614865723229" duration="9346000" />
       <workItem from="1614961284425" duration="5087000" />
       <workItem from="1614988701250" duration="20039000" />
-      <workItem from="1615078315059" duration="63000" />
+      <workItem from="1615078315059" duration="3055000" />
     </task>
     <servers />
   </component>
@@ -187,29 +140,29 @@
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="1060" y="475" key="FileChooserDialogImpl/2560.-290.1200.1920/-1920.141.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1612283991739" />
-    <state width="2517" height="285" key="GridCell.Tab.0.bottom" timestamp="1615014496228">
+    <state width="2517" height="285" key="GridCell.Tab.0.bottom" timestamp="1615083191420">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state width="2517" height="350" key="GridCell.Tab.0.bottom/2560.-290.1200.1920/-1920.-108.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1614918957367" />
-    <state width="2517" height="285" key="GridCell.Tab.0.bottom/2560.-290.1200.1920/-1920.123.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1615014496228" />
+    <state width="2517" height="285" key="GridCell.Tab.0.bottom/2560.-290.1200.1920/-1920.123.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1615083191420" />
     <state width="2517" height="199" key="GridCell.Tab.0.bottom/2560.-290.1200.1920/-1920.141.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1612550323089" />
-    <state width="2517" height="285" key="GridCell.Tab.0.center" timestamp="1615014496228">
+    <state width="2517" height="285" key="GridCell.Tab.0.center" timestamp="1615083191420">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state width="2517" height="350" key="GridCell.Tab.0.center/2560.-290.1200.1920/-1920.-108.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1614918957367" />
-    <state width="2517" height="285" key="GridCell.Tab.0.center/2560.-290.1200.1920/-1920.123.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1615014496228" />
+    <state width="2517" height="285" key="GridCell.Tab.0.center/2560.-290.1200.1920/-1920.123.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1615083191420" />
     <state width="2517" height="199" key="GridCell.Tab.0.center/2560.-290.1200.1920/-1920.141.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1612550323088" />
-    <state width="2517" height="285" key="GridCell.Tab.0.left" timestamp="1615014496228">
+    <state width="2517" height="285" key="GridCell.Tab.0.left" timestamp="1615083191420">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state width="2517" height="350" key="GridCell.Tab.0.left/2560.-290.1200.1920/-1920.-108.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1614918957367" />
-    <state width="2517" height="285" key="GridCell.Tab.0.left/2560.-290.1200.1920/-1920.123.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1615014496228" />
+    <state width="2517" height="285" key="GridCell.Tab.0.left/2560.-290.1200.1920/-1920.123.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1615083191420" />
     <state width="2517" height="199" key="GridCell.Tab.0.left/2560.-290.1200.1920/-1920.141.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1612550323088" />
-    <state width="2517" height="285" key="GridCell.Tab.0.right" timestamp="1615014496228">
+    <state width="2517" height="285" key="GridCell.Tab.0.right" timestamp="1615083191420">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state width="2517" height="350" key="GridCell.Tab.0.right/2560.-290.1200.1920/-1920.-108.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1614918957367" />
-    <state width="2517" height="285" key="GridCell.Tab.0.right/2560.-290.1200.1920/-1920.123.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1615014496228" />
+    <state width="2517" height="285" key="GridCell.Tab.0.right/2560.-290.1200.1920/-1920.123.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1615083191420" />
     <state width="2517" height="199" key="GridCell.Tab.0.right/2560.-290.1200.1920/-1920.141.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1612550323089" />
     <state width="2517" height="507" key="GridCell.Tab.1.bottom" timestamp="1612550323065">
       <screen x="0" y="0" width="2560" height="1440" />

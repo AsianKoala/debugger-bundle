@@ -18,11 +18,12 @@ public class PathPoints {
         public double followDistance;
         public LinkedList<Function> functions;
 
-        protected Point ltp;
-        protected Double oth;
-        protected Boolean iS;
-        protected Double lh;
-        protected Boolean isf;
+        public Point lateTurnPoint;
+        public Boolean onlyTurnHeading;
+        public Boolean isStop;
+        public Double lockedHeading;
+        public Boolean isOnlyFuncs;
+
 
         public BasePathPoint(double x, double y, double followDistance, Function... functions) {
             super(x, y);
@@ -32,15 +33,16 @@ public class PathPoints {
         }
 
         public BasePathPoint(BasePathPoint b) { // copys metadata with list
-            this(b.x, b.y, b.followDistance, linkedToPrim(b.functions));
-            ltp = (Point) b.getTypeList()[0];
-            oth = (Double) b.getTypeList()[1];
-            iS = (Boolean) b.getTypeList()[2];
-            lh = (Double) b.getTypeList()[3];
-            isf = (Boolean) b.getTypeList()[4];
+            this(b.x, b.y, b.followDistance);
+            functions = b.functions;
+
+            lateTurnPoint = b.lateTurnPoint;
+            onlyTurnHeading = b.onlyTurnHeading;
+            isStop = b.isStop;
+            lockedHeading = b.lockedHeading;
+            isOnlyFuncs = b.isOnlyFuncs;
         }
 
-        // static cause cant call instance b4 supertype cnstrctr
         private static Function[] linkedToPrim(LinkedList<Function> funcs) {
             Object[] oArr = funcs.toArray();
             Function[] fArr = new Function[oArr.length];
@@ -50,17 +52,46 @@ public class PathPoints {
             return fArr;
         }
 
-        // need to refresh
         public Object[] getTypeList() {
-            return new Object[]{lateTurnPoint(), onlyTurnHeading(), isStop(), lockedHeading(), isOnlyFuncs()};
+            return new Object[] {lateTurnPoint, onlyTurnHeading, isStop,  lockedHeading, isOnlyFuncs};
         }
 
-        // override these
-        public Point lateTurnPoint() { return ltp; }
-        public Double onlyTurnHeading() { return oth; }
-        public Boolean isStop() { return iS; }
-        public Double lockedHeading() { return lh; }
-        public Boolean isOnlyFuncs() { return isf; }
+
+    }
+
+    public static class LateTurnPathPoint extends LockedPathPoint {
+        public LateTurnPathPoint(double x, double y, double heading, double followDistance, Point turnPoint, Function... functions) {
+            super(x, y, heading, followDistance, functions);
+            lateTurnPoint = turnPoint;
+        }
+    }
+
+    public static class OnlyTurnPathPoint extends LockedPathPoint {
+        public OnlyTurnPathPoint(double heading, Function... functions) {
+            super(0,0,heading,0,functions);
+            onlyTurnHeading = true;
+        }
+    }
+
+    public static class StopPathPoint extends LockedPathPoint {
+        public StopPathPoint(double x, double y, double heading, double followDistance, Function... functions) {
+            super(x, y, heading, followDistance, functions);
+            isStop = true;
+        }
+    }
+
+    public static class LockedPathPoint extends SimplePathPoint {
+        public LockedPathPoint(double x, double y, double heading, double followDistance, Function... functions) {
+            super(x, y, followDistance, functions);
+            lockedHeading = heading;
+        }
+    }
+
+    public static class OnlyFunctionsPathPoint extends SimplePathPoint {
+        public OnlyFunctionsPathPoint(Function... functions) {
+            super(0,0,0,functions);
+            isOnlyFuncs = true;
+        }
     }
 
     public static class SimplePathPoint extends BasePathPoint {
@@ -68,48 +99,4 @@ public class PathPoints {
             super(x, y, followDistance, functions);
         }
     }
-
-    public static class LockedPathPoint extends SimplePathPoint {
-        protected double heading;
-        public LockedPathPoint(double x, double y, double heading, double followDistance, Function... functions) {
-            super(x, y, followDistance, functions);
-            this.heading = heading;
-        }
-        @Override
-        public Double lockedHeading() { return heading; }
-    }
-
-    public static class StopPathPoint extends LockedPathPoint {
-        public StopPathPoint(double x, double y, double heading, double followDistance, Function... functions) {
-            super(x, y, heading, followDistance, functions);
-        }
-        @Override
-        public Boolean isStop() { return true; }
-    }
-
-    public static class LateTurnPathPoint extends LockedPathPoint {
-        private final Point turnPoint;
-        public LateTurnPathPoint(double x, double y, double heading, double followDistance, Point turnPoint, Function... functions) {
-            super(x, y, heading, followDistance, functions);
-            this.turnPoint = turnPoint;
-        }
-        @Override
-        public Point lateTurnPoint() { return turnPoint; }
-    }
-
-    public static class OnlyTurnPathPoint extends LockedPathPoint {
-        public OnlyTurnPathPoint(double heading, Function... functions) {
-            super(0,0,heading,0,functions);
-        }
-        @Override
-        public Double onlyTurnHeading() { return heading; }
-    }
-
-    public static class OnlyFunctionsPathPoint extends SimplePathPoint {
-        public OnlyFunctionsPathPoint(Function... functions) { super(0,0,0,functions); }
-        @Override
-        public Boolean isOnlyFuncs() { return true; }
-    }
-
-
 }

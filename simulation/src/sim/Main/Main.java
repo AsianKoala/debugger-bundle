@@ -45,12 +45,11 @@ public class Main {
 
         BasePathPoint copyPoint = new BasePathPoint(pathPoint);
 
-        System.out.println("x,y: " + copyPoint.toString());
-        System.out.println("func size: " + copyPoint.functions.size());
-        System.out.println("type arr: " + Arrays.toString(copyPoint.getTypeList()));
-        System.out.println("locked val: " + copyPoint.lockedHeading());
-        boolean removed = copyPoint.functions.removeIf(f -> f.cond() && f.func());
-        if(removed) System.out.println("new arr size: " + copyPoint.functions.size());
+        System.out.println("orig func size: " + pathPoint.functions.size());
+        System.out.println("orig typelist: " + Arrays.toString(pathPoint.getTypeList()));
+        System.out.println("new typelist: " + Arrays.toString(copyPoint.getTypeList()));
+        System.out.println("locked val: " + copyPoint.lockedHeading);
+        System.out.println("new func size: " + copyPoint.functions.size());
     }
 
     /**

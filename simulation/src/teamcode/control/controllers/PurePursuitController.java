@@ -38,7 +38,7 @@ public class PurePursuitController {
 
         powerPose.set(move);
 
-        double targetAngle = pathPointType.isLocked() ? target.lockedHeading() : target.subtract(robot.currPose).atan();
+        double targetAngle = pathPointType.isLocked() ? target.lockedHeading : target.subtract(robot.currPose).atan();
         double angleToTarget = angleWrap(targetAngle - robot.currPose.heading);
         powerPose.heading = angleToTarget / Math.toRadians(45);
 
@@ -46,18 +46,18 @@ public class PurePursuitController {
         System.out.println("type: " + pathPointType.toString());
 
         if(pathPointType.ordinal() == types.lateTurn.ordinal() &&
-                target.distance(target.lateTurnPoint()) < target.distance(robot.currPose)) {
+                target.distance(target.lateTurnPoint) < target.distance(robot.currPose)) {
             powerPose.heading = 0;
-            done = d < 2 && MathUtil.angleThresh(robot.currPose.heading, target.onlyTurnHeading());
+            done = d < 2 && MathUtil.angleThresh(robot.currPose.heading, target.lockedHeading);
         } else if(pathPointType.ordinal() == types.onlyTurn.ordinal()) {
             powerPose.x = 0;
             powerPose.y = 0;
-            done = MathUtil.angleThresh(robot.currPose.heading, target.onlyTurnHeading());
+            done = MathUtil.angleThresh(robot.currPose.heading, target.lockedHeading);
         } else if(pathPointType.ordinal() == types.onlyFunctions.ordinal()) {
             powerPose = new Pose(0,0,0);
             done = target.functions.size() == 0;
         } else {
-            done = d < 2 && MathUtil.angleThresh(robot.currPose.heading, target.onlyTurnHeading());
+            done = d < 2 && MathUtil.angleThresh(robot.currPose.heading, target.lockedHeading);
         }
 
         target.functions.removeIf(f -> f.cond() && f.func());
