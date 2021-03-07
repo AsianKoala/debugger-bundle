@@ -82,10 +82,10 @@ public class PurePursuitController {
         return done;
     }
 
-    public static void followPath(Robot robot, BasePathPoint start, BasePathPoint end) {
-//        for(int i=0; i<allPoints.size()-1; i++) {
-//            ComputerDebugging.sendLine(new FloatPoint(allPoints.get(i).x, allPoints.get(i).y), new FloatPoint(allPoints.get(i+1).x, allPoints.get(i+1).y));
-//        }
+    public static void followPath(Robot robot, BasePathPoint start, BasePathPoint end, ArrayList<BasePathPoint> allPoints) {
+        for(int i=0; i<allPoints.size()-1; i++) {
+            ComputerDebugging.sendLine(new FloatPoint(allPoints.get(i).x, allPoints.get(i).y), new FloatPoint(allPoints.get(i+1).x, allPoints.get(i+1).y));
+        }
 
         double slope;
         if(end.x == start.x)

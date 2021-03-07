@@ -3,33 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="06f710b7-470c-4d99-91ff-deca9af1f0aa" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/../debugger/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../debugger/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../debugger/out/production/DebugClient/com/company/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../debugger/out/production/DebugClient/com/company/Main$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../debugger/out/production/DebugClient/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../debugger/out/production/DebugClient/com/company/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../debugger/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../debugger/src/com/company/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/sim/Main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/sim/Main/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/sim/Main/MyOpMode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/sim/Main/MyOpMode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/sim/company/Robot.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/sim/company/Robot.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/teamcode/control/controllers/PurePursuitController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/teamcode/control/controllers/PurePursuitController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/teamcode/control/path/PathPoints$BasePathPoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/teamcode/control/path/PathPoints$BasePathPoint.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/teamcode/control/path/PathPoints$LateTurnPathPoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/teamcode/control/path/PathPoints$LateTurnPathPoint.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/teamcode/control/path/PathPoints$LockedPathPoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/teamcode/control/path/PathPoints$LockedPathPoint.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/teamcode/control/path/PathPoints$OnlyFunctionsPathPoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/teamcode/control/path/PathPoints$OnlyFunctionsPathPoint.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/teamcode/control/path/PathPoints$OnlyTurnPathPoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/teamcode/control/path/PathPoints$OnlyTurnPathPoint.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/teamcode/control/path/PathPoints$SimplePathPoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/teamcode/control/path/PathPoints$SimplePathPoint.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/teamcode/control/path/PathPoints$StopPathPoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/teamcode/control/path/PathPoints$StopPathPoint.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/teamcode/control/path/PathPoints$types.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/teamcode/control/path/PathPoints$types.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/teamcode/control/path/PathPoints.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/teamcode/control/path/PathPoints.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/teamcode/util/MathUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/teamcode/util/MathUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/teamcode/util/Pose.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/teamcode/util/Pose.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sim/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/Main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sim/Main/MyOpMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/Main/MyOpMode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sim/company/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/company/Robot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/teamcode/control/controllers/PurePursuitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamcode/control/controllers/PurePursuitController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/teamcode/control/path/Path.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamcode/control/path/Path.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/teamcode/control/path/PathPoints.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamcode/control/path/PathPoints.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/teamcode/util/MathUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamcode/util/MathUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/teamcode/util/Pose.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamcode/util/Pose.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,12 +94,23 @@
       <workItem from="1614865723229" duration="9346000" />
       <workItem from="1614961284425" duration="5087000" />
       <workItem from="1614988701250" duration="20039000" />
-      <workItem from="1615078315059" duration="18409000" />
+      <workItem from="1615078315059" duration="18719000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
