@@ -8,6 +8,7 @@ import teamcode.control.controllers.PurePursuitController;
 import teamcode.control.path.PathPoints.*;
 import teamcode.control.path.builders.PathBuilder;
 import teamcode.util.MathUtil;
+import teamcode.util.Pose;
 
 public class Path extends LinkedList<PathPoints.BasePathPoint> {
     // target is always getFirst(), curr is copied
@@ -40,43 +41,61 @@ public class Path extends LinkedList<PathPoints.BasePathPoint> {
     }
 
     public boolean follow(Robot robot) {
-        if(size() == 0)
-            return true;
+        Pose robotPose = robot.currPose;
 
-        if(!isPurePursuit) {
-            boolean done = PurePursuitController.goToPosition(robot, getFirst());
-            if(done)
-                removeFirst();
-        } else {
-            boolean skip;
+//        if(!isPurePursuit) {
+//            boolean done = PurePursuitController.goToPosition(robot, getFirst());
+//            if(done)
+//                removeFirst();
+//        } else {
+        boolean skip;
 
-            if (getFirst().isOnlyTurn != null) {
-                skip = MathUtil.angleThresh(robot.currPose.heading, getFirst().lockedHeading);
-            } else if(getFirst().isStop != null){
-                skip = robot.currPose.distance(getFirst()) < 2; // test?
-            } else {
-                skip = robot.currPose.distance(getFirst()) < getFirst().followDistance;
+        skip = false;
+        BasePathPoint target = getFirst();
+
+//        if (target.isOnlyTurn != null) {
+//            if(MathUtil.angleThresh(robotPose.heading, target.lockedHeading))
+//                skip = true;
+//        } else if (target.isStop != null) {
+//            if(robotPose.distance(target) < 2)
+//                skip = true;
+//        } else {
+            if(robotPose.distance(target) < target.followDistance) {
+                skip = true;
+                System.out.println("skip cause of D");
             }
-            skip = skip && PurePursuitController.runFuncList(getFirst());
+//        }
 
-            if (skip) {
-                System.out.println("removed: " + curr.toString());
-                curr = new BasePathPoint(getFirst()); // swap old target to curr start
-                System.out.println("new curr: " + curr.toString());
-                removeFirst();
-                if(getFirst() != null)
-                    System.out.println("new target: " + getFirst().toString());
-                follow(robot);
-            }
+//            if(PurePursuitController.runFuncList(target)) {
+//                skip = true;
+//                System.out.println("func passed");
+//            }
 
-            if (getFirst().isStop != null && robot.currPose.distance(getFirst()) < getFirst().followDistance)
-                PurePursuitController.goToPosition(robot, getFirst());
-            else {
-                PurePursuitController.followPath(robot, curr, getFirst(), initialPoints);
-                System.out.println("following curve");
-            }
+        if (skip) {
+        System.out.println("removed: " + curr);
+        curr = new BasePathPoint(getFirst()); // swap old target to curr start
+        System.out.println("new curr: " + curr);
+        removeFirst();
+        if (getFirst() != null)
+            System.out.println("new target: " + getFirst());
         }
 
+        if(size()==0)
+            return true;
+
+        target = getFirst();
+        System.out.println("pathTarget: " + target);
+
+        if (target.isStop != null && robot.currPose.distance(target) < target.followDistance) {
+            PurePursuitController.goToPosition(robot, target);
+            System.out.println("target is stop, in slow mode");
+        }
+        else {
+            PurePursuitController.followPath(robot, curr, target, initialPoints);
+            System.out.println("following curve");
+        }
+
+//        }
         return false;
     }
 
@@ -93,7 +112,7 @@ public class Path extends LinkedList<PathPoints.BasePathPoint> {
             else
                 s.append("\t");
             s.append("\t");
-            s.append(p.toString());
+            s.append(p);
         }
         s.append(newLine);
         return s.toString();

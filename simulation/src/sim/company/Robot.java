@@ -120,12 +120,6 @@ public class Robot {
         turnSpeed += Range.clip((movement_turn-turnSpeed)/0.2,-1,1) * elapsedTime;
 
 
-        SpeedOmeter.yDistTraveled += ySpeed * elapsedTime * 1000;
-        SpeedOmeter.xDistTraveled += xSpeed * elapsedTime * 1000;
-
-        SpeedOmeter.update();
-
-
         xSpeed *= 1.0 - (elapsedTime);
         ySpeed *= 1.0 - (elapsedTime);
         turnSpeed *= 1.0 - (elapsedTime);
@@ -136,8 +130,10 @@ public class Robot {
         prevPos.add(new SignaturePose(currPose, System.currentTimeMillis()));
 
         if(pathCache.size() != 0) {
-            if(pathCache.getFirst().follow(this))
+            if(pathCache.getFirst().follow(this)) {
                 pathCache.removeFirst();
+                System.out.println("PATH REMOVED FROM CACHE");
+            }
         }
 
         System.out.println("movementPose: " + new Pose(movement_x, movement_y, movement_turn));

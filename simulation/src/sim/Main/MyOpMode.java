@@ -19,9 +19,9 @@ public class MyOpMode extends OpMode {
         LinkedList<Path> returnList = new LinkedList<>();
 
         returnList.add(new PathBuilder("Test One")
-                .addPoint(new LockedPathPoint("start", 100,100, 0, 0))
-                .addPoint(new LockedPathPoint("turnPoint", 200, 200, Math.toRadians(45), 25))
-                .addPoint(new LockedPathPoint("end", 100, 300, Math.toRadians(135), 25))
+                .addPoint(new BasePathPoint("start", 100,100, 0))
+                .addPoint(new BasePathPoint("turnPoint", 200, 200, 25))
+                .addPoint(new BasePathPoint("end", 100, 300, 25))
                 .build());
 
 
@@ -33,6 +33,7 @@ public class MyOpMode extends OpMode {
 
     @Override
     public void loop() {
+        System.out.println("curr path size: " + robot.pathCache.getFirst().size());
         if(robot.pathCache.size() == 0) {
             robot.speeds.set(new Pose(0.000000001));
             System.out.println("all paths done");
