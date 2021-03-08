@@ -6,14 +6,44 @@ import sim.company.FloatPoint;
 import sim.company.Robot;
 
 import sim.treamcode.OpMode;
-import teamcode.util.Pose;
+import teamcode.control.path.Path;
+import teamcode.control.path.PathPoints;
+import teamcode.control.path.builders.PathBuilder;
+import static teamcode.control.path.PathPoints.*;
+
+import java.util.LinkedList;
 
 public class Main {
 
     public static Robot robot = new Robot();
 
     public static void main(String[] args) {
-        new Main().run();
+//        new Main().run();
+
+        LinkedList<Path> returnList = new LinkedList<>();
+
+        // to rings
+        PathBuilder builder = new PathBuilder("First")
+                .addPoint(new BasePathPoint(10,15,20))
+                .addPoint(new BasePathPoint(200, 200, 15))
+                .addPoint(new BasePathPoint(100, 150, 15))
+                .addPoint(new BasePathPoint(0,0,0));
+
+        if(Math.random() < 0.5)
+            builder.addPoint(new BasePathPoint(150, 150, 15));
+        else
+            builder.addPoint(new BasePathPoint(200, 100, 15));
+        returnList.add(builder.build());
+
+        builder = new PathBuilder("Second")
+                .addPoint(new BasePathPoint(50,50,15))
+                .addPoint(new BasePathPoint(0,0,155));
+        returnList.add(builder.build());
+
+        Main.robot.pathCache.addAll(returnList);
+
+        for(Path p : Main.robot.pathCache)
+            System.out.println(p.toString());
     }
 
     /**

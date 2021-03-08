@@ -1,12 +1,14 @@
 package sim.company;
 
 import sim.RobotUtilities.SpeedOmeter;
+import teamcode.control.path.Path;
 import teamcode.util.MathUtil;
 import teamcode.util.Point;
 import teamcode.util.Pose;
 import teamcode.util.SignaturePose;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 import static sim.RobotUtilities.MovementVars.*;
 
@@ -19,6 +21,8 @@ public class Robot {
 
     public ArrayList<SignaturePose> prevPos = new ArrayList<>();
     public Pose relativeMovement;
+
+    public LinkedList<Path> pathCache;
     
     /**
      * Creates a robot simulation
@@ -35,6 +39,8 @@ public class Robot {
         currVel = new Pose(SpeedOmeter.getSpeedX(), SpeedOmeter.getSpeedY(), SpeedOmeter.getRadPerSecond());
         relativeMovement = new Pose(0,0,0);
         prevPos.add(new SignaturePose(relativeMovement, System.currentTimeMillis()));
+
+        pathCache = new LinkedList<>();
     }
 
     //the actual speed the robot is moving
@@ -129,6 +135,10 @@ public class Robot {
 
         prevPos.add(new SignaturePose(currPose, System.currentTimeMillis()));
 
+        if(pathCache.size() != 0) {
+            if(pathCache.getFirst().follow(this))
+                pathCache.removeFirst();
+        }
 
         System.out.println("movementPose: " + new Pose(movement_x, movement_y, movement_turn));
         System.out.println();

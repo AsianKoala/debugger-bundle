@@ -6,12 +6,15 @@ import java.util.LinkedList;
 import sim.company.Robot;
 import teamcode.control.controllers.PurePursuitController;
 import teamcode.control.path.PathPoints.*;
+import teamcode.control.path.builders.PathBuilder;
 
 public class Path extends LinkedList<PathPoints.BasePathPoint> {
     // target is always getFirst(), curr is copied
-    public BasePathPoint start;
+    public BasePathPoint curr;
     public boolean isPurePursuit;
     public ArrayList<BasePathPoint> initialPoints;
+
+    public String name;
 
     public Path(Path path) {
         for (BasePathPoint pathPoint : path) add(new BasePathPoint(pathPoint));
@@ -20,16 +23,18 @@ public class Path extends LinkedList<PathPoints.BasePathPoint> {
         for(BasePathPoint pathPoint : this) initialPoints.add(new BasePathPoint(pathPoint));
 
         isPurePursuit = true;
-        start = new BasePathPoint(getFirst());
+        curr = new BasePathPoint(getFirst());
         removeFirst();
+
+        name = path.name;
     }
 
-    public Path() {
-        isPurePursuit = true;
+    public Path(String name) {
+        this.name = name;
     }
 
-    public Path(BasePathPoint target) {
-        add(target);
+    public Path(BasePathPoint target, String name) {
+        this(new Path(new PathBuilder(name).addPoint(target).build())); // todo stop being retarded
         isPurePursuit = false;
     }
 
@@ -37,34 +42,50 @@ public class Path extends LinkedList<PathPoints.BasePathPoint> {
         if(size() == 0)
             return true;
 
+        boolean done;
         if(!isPurePursuit) {
-            boolean done = PurePursuitController.goToPosition(robot, getFirst());
+            done = PurePursuitController.goToPosition(robot, getFirst());
             if(done)
                 removeFirst();
-        }
-
-        boolean skip;
-
-        if(getFirst().isOnlyTurn || getFirst().isOnlyFuncs) {
-            skip = PurePursuitController.goToPosition(robot, getFirst()); // bruh
         } else {
-            skip = robot.currPose.distance(getFirst()) < getFirst().followDistance;
+            boolean skip;
+
+            if (getFirst().isOnlyTurn || getFirst().isOnlyFuncs) {
+                skip = PurePursuitController.goToPosition(robot, getFirst()); // bruh
+            } else {
+                skip = robot.currPose.distance(getFirst()) < getFirst().followDistance;
+            }
+
+            if (skip) {
+                curr = new BasePathPoint(getFirst());
+                removeFirst();
+            }
+
+            if (size() == 0)
+                return true;
+
+            if (getFirst().isStop && robot.currPose.distance(getFirst()) < getFirst().followDistance)
+                PurePursuitController.goToPosition(robot, getFirst());
+            else
+                PurePursuitController.followPath(robot, curr, getFirst(), initialPoints);
         }
 
-        if(skip) {
-            start = new BasePathPoint(getFirst());
-            removeFirst();
+        return false;
+    }
+
+
+    @Override
+    public String toString() {
+        StringBuilder s = new StringBuilder("Path Name: " + name);
+        String newLine = System.getProperty("line.separator");
+        for(BasePathPoint p : initialPoints) {
+            s.append(newLine);
+            s.append("\t");
+            if(curr.equals(p))
+                s.append("curr: ");
+            s.append(p.toString());
         }
-
-        if(size() == 0)
-            return true;
-
-        boolean done = false;
-        if(getFirst().isStop && robot.currPose.distance(getFirst()) < getFirst().followDistance)
-            done = PurePursuitController.goToPosition(robot, getFirst());
-        else
-            PurePursuitController.followPath(robot, start, getFirst(), initialPoints);
-
-        return done;
+        s.append(newLine);
+        return s.toString();
     }
 }
