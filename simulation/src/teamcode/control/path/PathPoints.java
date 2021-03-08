@@ -61,7 +61,7 @@ public class PathPoints {
 
         @Override
         public String toString() {
-            return String.format("(%.1f, %.1f, %.1f)", x, y, followDistance);
+            return String.format("%s, %.1f, %.1f, %.1f", signature, x, y, followDistance);
         }
 
         public boolean equals(BasePathPoint b) {

@@ -7,6 +7,7 @@ import sim.company.Robot;
 import teamcode.control.controllers.PurePursuitController;
 import teamcode.control.path.PathPoints.*;
 import teamcode.control.path.builders.PathBuilder;
+import teamcode.util.MathUtil;
 
 public class Path extends LinkedList<PathPoints.BasePathPoint> {
     // target is always getFirst(), curr is copied
@@ -50,10 +51,16 @@ public class Path extends LinkedList<PathPoints.BasePathPoint> {
         } else {
             boolean skip;
 
-            if (getFirst().isOnlyTurn || getFirst().isOnlyFuncs) {
-                skip = PurePursuitController.goToPosition(robot, getFirst()); // bruh
+            if (getFirst().isOnlyTurn) {
+                skip = MathUtil.angleThresh(robot.currPose.heading, getFirst().lockedHeading);
+            } else if(getFirst().isStop){
+                skip = robot.currPose.distance(getFirst()) < 2; // test?
             } else {
                 skip = robot.currPose.distance(getFirst()) < getFirst().followDistance;
+            }
+
+            if(getFirst().functions.size() != 0) {
+                skip = false;
             }
 
             if (skip) {
@@ -79,10 +86,13 @@ public class Path extends LinkedList<PathPoints.BasePathPoint> {
         StringBuilder s = new StringBuilder("Path Name: " + name);
         String newLine = System.getProperty("line.separator");
         for(BasePathPoint p : initialPoints) {
-            s.append(newLine);
-            s.append("\t");
+            s.append(newLine).append("\t");
+
             if(curr.equals(p))
-                s.append("curr: ");
+                s.append("curr:");
+            else
+                s.append("\t");
+            s.append("\t");
             s.append(p.toString());
         }
         s.append(newLine);

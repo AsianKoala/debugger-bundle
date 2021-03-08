@@ -6,11 +6,12 @@ import sim.company.FloatPoint;
 import sim.company.Robot;
 
 import sim.treamcode.OpMode;
+import sim.treamcode.Point;
 import teamcode.control.path.Path;
-import teamcode.control.path.PathPoints;
 import teamcode.control.path.builders.PathBuilder;
 import static teamcode.control.path.PathPoints.*;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class Main {
@@ -19,31 +20,44 @@ public class Main {
 
     public static void main(String[] args) {
 //        new Main().run();
+//
+//        LinkedList<Path> returnList = new LinkedList<>();
+//
+//        // to rings
+//        PathBuilder builder = new PathBuilder("First")
+//                .addPoint(new BasePathPoint("a", 10,15,20))
+//                .addPoint(new BasePathPoint("b", 200, 200, 15))
+//                .addPoint(new BasePathPoint("c", 100, 150, 15))
+//                .addPoint(new BasePathPoint("d", 0,0,0));
+//
+//        if(Math.random() < 0.5)
+//            builder.addPoint(new BasePathPoint("e1", 150, 150, 15));
+//        else
+//            builder.addPoint(new BasePathPoint("e2", 200, 100, 15));
+//        returnList.add(builder.build());
+//
+//        builder = new PathBuilder("Second")
+//                .addPoint(new BasePathPoint("f", 50,50,15))
+//                .addPoint(new BasePathPoint("g",0,0,155));
+//        returnList.add(builder.build());
+//
+//        robot.pathCache.addAll(returnList);
+//
+//        for(Path p : robot.pathCache)
+//            System.out.println(p.toString());
 
-        LinkedList<Path> returnList = new LinkedList<>();
-
-        // to rings
-        PathBuilder builder = new PathBuilder("First")
-                .addPoint(new BasePathPoint(10,15,20))
-                .addPoint(new BasePathPoint(200, 200, 15))
-                .addPoint(new BasePathPoint(100, 150, 15))
-                .addPoint(new BasePathPoint(0,0,0));
-
-        if(Math.random() < 0.5)
-            builder.addPoint(new BasePathPoint(150, 150, 15));
-        else
-            builder.addPoint(new BasePathPoint(200, 100, 15));
-        returnList.add(builder.build());
-
-        builder = new PathBuilder("Second")
-                .addPoint(new BasePathPoint(50,50,15))
-                .addPoint(new BasePathPoint(0,0,155));
-        returnList.add(builder.build());
-
-        Main.robot.pathCache.addAll(returnList);
-
-        for(Path p : Main.robot.pathCache)
+        LinkedList<Point> list = new LinkedList<>();
+        list.add(new Point(1,2));
+        list.add(new Point(2,3));
+        list.add(new Point(3,4));
+        rem(list);
+        for(Point p : list)
             System.out.println(p.toString());
+
+    }
+
+    static void rem(LinkedList<Point> list) {
+        list.removeLast();
     }
 
     /**
