@@ -7,7 +7,6 @@ import sim.company.ComputerDebugging;
 import sim.company.FloatPoint;
 import sim.company.Robot;
 
-import teamcode.control.path.PathPoints;
 import teamcode.util.MathUtil;
 import teamcode.util.Point;
 import teamcode.util.Pose;
@@ -35,8 +34,8 @@ public class PurePursuitController {
         Pose powerPose = new Pose();
         double v = relVals.abs().x + relVals.abs().y;
         Pose move = new Pose();
-        move.x = relVals.abs().x / 45;
-        move.y = relVals.abs().y / 45;
+        move.x = relVals.abs().x / 30;
+        move.y = relVals.abs().y / 30;
         move.x *= relVals.x / v;
         move.y *= relVals.y / v;
 
@@ -44,7 +43,7 @@ public class PurePursuitController {
 
         double targetAngle = pathPointType.isLocked() ? target.lockedHeading : target.subtract(robot.currPose).atan();
         double angleToTarget = angleWrap(targetAngle - robot.currPose.heading);
-        powerPose.heading = angleToTarget / Math.toRadians(60);
+        powerPose.heading = angleToTarget / Math.toRadians(40);
 
         if (pathPointType.ordinal() == types.lateTurn.ordinal() &&
                 target.distance(target.lateTurnPoint) < target.distance(robot.currPose)) {
@@ -61,20 +60,18 @@ public class PurePursuitController {
             done = d < 2 && MathUtil.angleThresh(robot.currPose.heading, target.lockedHeading);
         }
 
-        System.out.println("deltaAngle: " + Math.toDegrees(MathUtil.angleWrap(target.lockedHeading - robot.currPose.heading)));
-        System.out.println("angleThresh: " + MathUtil.angleThresh(target.lockedHeading, robot.currPose.heading));
-
-        target.functions.removeIf(f -> f.cond() && f.func());
-        done = done && target.functions.size() == 0;
+        done = done && runFuncList(target);
 
         robot.speeds = powerPose;
 
-        System.out.println("relVel: " + robot.relVel().toString());
-        System.out.println("vel radius: " + robot.relVel().hypot());
+//        System.out.println("relVel: " + robot.relVel().toString());
+//        System.out.println("vel radius: " + robot.relVel().hypot());
+        System.out.println("target: " + target.toString());
         System.out.println("powerPose: " + powerPose);
-        System.out.println("nonRelVel: " + new Pose(Robot.xSpeed, Robot.ySpeed, Robot.turnSpeed).toString());
-        System.out.println("nonRelVel radius: " + Math.hypot(Robot.xSpeed, Robot.ySpeed));
-        System.out.print("D: " + d);
+//        System.out.println("curr followPoint: " + target.toString());
+//        System.out.println("nonRelVel: " + new Pose(Robot.xSpeed, Robot.ySpeed, Robot.turnSpeed).toString());
+//        System.out.println("nonRelVel radius: " + Math.hypot(Robot.xSpeed, Robot.ySpeed));
+//        System.out.print("D: " + d);
 //        } else {
 //            done = true;
 //        }
@@ -82,23 +79,26 @@ public class PurePursuitController {
         return done;
     }
 
+    public static boolean runFuncList(BasePathPoint target) {
+        target.functions.removeIf(f -> f.cond() && f.func());
+        return target.functions.size() == 0;
+    }
+
     public static void followPath(Robot robot, BasePathPoint start, BasePathPoint end, ArrayList<BasePathPoint> allPoints) {
         for(int i=0; i<allPoints.size()-1; i++) {
+            ComputerDebugging.sendKeyPoint(new FloatPoint(allPoints.get(i).x, allPoints.get(i).y));
             ComputerDebugging.sendLine(new FloatPoint(allPoints.get(i).x, allPoints.get(i).y), new FloatPoint(allPoints.get(i+1).x, allPoints.get(i+1).y));
         }
+        ComputerDebugging.sendKeyPoint(new FloatPoint(allPoints.get(allPoints.size()-1).x, allPoints.get(allPoints.size()-1).y));
 
-        double slope;
-        if(end.x == start.x)
-            slope = Double.NEGATIVE_INFINITY;
-        else
-            slope = (end.y - start.y) / (end.x - start.x);
-
-        Point clipPoint = MathUtil.perpPointIntersection(start, slope, robot.currPose);
-        Point intersectPoint = MathUtil.circleLineIntersection(clipPoint, start, end, end.followDistance);
+        Point clip = MathUtil.clipIntersection2(start, end, robot.currPose);
+        Point intersectPoint = MathUtil.circleLineIntersection(clip, start, end, end.followDistance);
 
         BasePathPoint followPoint = new BasePathPoint(end);
         followPoint.x = intersectPoint.x;
         followPoint.y = intersectPoint.y;
+
+        System.out.println("clip: " + clip.toString());
 
         ComputerDebugging.sendKeyPoint(new FloatPoint(followPoint.x, followPoint.y));
 

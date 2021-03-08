@@ -35,7 +35,7 @@ public class Path extends LinkedList<PathPoints.BasePathPoint> {
     }
 
     public Path(BasePathPoint target, String name) {
-        this(new Path(new PathBuilder(name).addPoint(target).build())); // todo stop being retarded
+        this(new PathBuilder(name).addPoint(target).build());
         isPurePursuit = false;
     }
 
@@ -43,38 +43,38 @@ public class Path extends LinkedList<PathPoints.BasePathPoint> {
         if(size() == 0)
             return true;
 
-        boolean done;
         if(!isPurePursuit) {
-            done = PurePursuitController.goToPosition(robot, getFirst());
+            boolean done = PurePursuitController.goToPosition(robot, getFirst());
             if(done)
                 removeFirst();
         } else {
             boolean skip;
 
-            if (getFirst().isOnlyTurn) {
+            if (getFirst().isOnlyTurn != null) {
                 skip = MathUtil.angleThresh(robot.currPose.heading, getFirst().lockedHeading);
-            } else if(getFirst().isStop){
+            } else if(getFirst().isStop != null){
                 skip = robot.currPose.distance(getFirst()) < 2; // test?
             } else {
                 skip = robot.currPose.distance(getFirst()) < getFirst().followDistance;
             }
-
-            if(getFirst().functions.size() != 0) {
-                skip = false;
-            }
+            skip = skip && PurePursuitController.runFuncList(getFirst());
 
             if (skip) {
-                curr = new BasePathPoint(getFirst());
+                System.out.println("removed: " + curr.toString());
+                curr = new BasePathPoint(getFirst()); // swap old target to curr start
+                System.out.println("new curr: " + curr.toString());
                 removeFirst();
+                if(getFirst() != null)
+                    System.out.println("new target: " + getFirst().toString());
+                follow(robot);
             }
 
-            if (size() == 0)
-                return true;
-
-            if (getFirst().isStop && robot.currPose.distance(getFirst()) < getFirst().followDistance)
+            if (getFirst().isStop != null && robot.currPose.distance(getFirst()) < getFirst().followDistance)
                 PurePursuitController.goToPosition(robot, getFirst());
-            else
+            else {
                 PurePursuitController.followPath(robot, curr, getFirst(), initialPoints);
+                System.out.println("following curve");
+            }
         }
 
         return false;

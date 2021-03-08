@@ -50,22 +50,38 @@ public class MathUtil {
         return new double[] {m, intercept};
     }
 
-    public static Point perpPointIntersection(Point start, double slope, Point p) {
+    public static Point clipIntersection1(Point start, double slope, Point p) {
         double[] equation = lineEquation(start, slope);
         double[] newEquation = lineEquation(p, -1/slope);
 
         Point intersect;
         if(Double.isInfinite(equation[0]))
             intersect = new Point(equation[1], equation[1] * newEquation[0] + newEquation[1]);
-         else if(Double.isInfinite(newEquation[0]))
+        else if(Double.isInfinite(newEquation[0]))
             intersect = new Point(newEquation[1], equation[1] * equation[0] + equation[1]);
-         else
-             intersect = new Point(
-                     (newEquation[1] - equation[1]) / (equation[0] - newEquation[0]),
-                     ((newEquation[1] - equation[1]) / (equation[0] - newEquation[0])) * equation[0] + equation[1]
-             );
+        else
+            intersect = new Point(
+                    (newEquation[1] - equation[1]) / (equation[0] - newEquation[0]),
+                    ((newEquation[1] - equation[1]) / (equation[0] - newEquation[0])) * equation[0] + equation[1]
+            );
 
         return intersect;
+    }
+
+    public static double slop(Point p1, Point p2) {
+        return (p2.y-p1.y)/(p2.x-p1.x);
+    }
+    public static Point clipIntersection2(Point start, Point end, Point robot) {
+        if(start.y == end.y)
+            start.y = end.y + 0.01;
+        if(start.x == end.x)
+            end.x = end.x + 0.01;
+
+        double m1 = slop(start,end);
+        double m2 = -1.0/m1;
+        double xClip = ((-m2*robot.x) + robot.y + (m1 * start.x) - start.y) / (m1 - m2);
+        double yClip = (m1 * (xClip - start.x)) + start.y;
+        return new Point(xClip, yClip);
     }
 
     public static int sgn(double a) {
