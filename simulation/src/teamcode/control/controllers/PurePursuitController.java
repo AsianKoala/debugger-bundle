@@ -19,9 +19,9 @@ import static teamcode.control.path.PathPoints.*;
 public class PurePursuitController {
     public static double smoothDist = 20;
 
-    public static void goToPosition(Robot robot,  BasePathPoint target) {
-        double d = robot.currPose.distance(target);
-        Pose relVals = robot.currPose.relVals(target, robot.currPose);
+    public static Pose goToPosition(Pose robotPose,  BasePathPoint target) {
+        double d = robotPose.distance(target);
+        Pose relVals = robotPose.relVals(target, robotPose);
 
         int index = 0;
         while(index < target.getTypeList().length-1 && target.getTypeList()[index] == null) {
@@ -39,16 +39,16 @@ public class PurePursuitController {
 
         powerPose.set(move);
 
-        double targetAngle = pathPointType.isLocked() ? target.lockedHeading : target.subtract(robot.currPose).atan();
-        double angleToTarget = angleWrap(targetAngle - robot.currPose.heading);
+        double targetAngle = pathPointType.isLocked() ? target.lockedHeading : target.subtract(robotPose).atan();
+        double angleToTarget = angleWrap(targetAngle - robotPose.heading);
         powerPose.heading = angleToTarget / Math.toRadians(40);
 
-
-        robot.speeds = powerPose;
 
         System.out.println("target: " + target);
         System.out.println("powerPose: " + powerPose);
         System.out.println("D: " + d);
+
+        return powerPose;
     }
 
 
@@ -76,7 +76,7 @@ public class PurePursuitController {
 
         ComputerDebugging.sendKeyPoint(new FloatPoint(followPoint.x, followPoint.y));
 
-        goToPosition(robot, followPoint);
+        robot.speeds.set(goToPosition(robot.currPose, followPoint));
     }
 }
 

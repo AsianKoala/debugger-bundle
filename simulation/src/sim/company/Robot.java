@@ -130,9 +130,10 @@ public class Robot {
         prevPos.add(new SignaturePose(currPose, System.currentTimeMillis()));
 
         if(pathCache.size() != 0) {
-            if(pathCache.getFirst().follow(this)) {
+            pathCache.getFirst().follow(this);
+            if(pathCache.getFirst().finished()) {
                 pathCache.removeFirst();
-                System.out.println("PATH REMOVED FROM CACHE");
+                System.out.println("RETEARDSAFNLAKSJNJKLSF");
             }
         }
 
