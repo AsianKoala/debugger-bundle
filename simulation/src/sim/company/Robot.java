@@ -99,15 +99,18 @@ public class Robot {
         double elapsedTime = (currentTimeMillis - lastUpdateTime)/1000.0;
         //remember the lastUpdateTime
         lastUpdateTime = currentTimeMillis;
-        if(elapsedTime > 1){return;}
+        if(elapsedTime > 1){
+            System.out.println("returning");
+            return;
+        }
 
-
+        // lets just say max robot vels are 100cm/s, and 2pi/s
 
         //increment the positions
         double totalSpeed = Math.hypot(xSpeed,ySpeed);
         double angle = Math.atan2(ySpeed,xSpeed) - Math.toRadians(90);
         double outputAngle = worldAngle_rad + angle;
-        double dx = totalSpeed * Math.sin(outputAngle) * elapsedTime * 1000 * 0.2;
+        double dx = totalSpeed * Math.cos(outputAngle) * elapsedTime * 1000 * 0.2;
         double dy = totalSpeed * Math.sin(outputAngle) * elapsedTime * 1000 * 0.2;
         double dh = movement_turn * elapsedTime * 20 / (2 * Math.PI);
 
@@ -134,11 +137,12 @@ public class Robot {
             if(pathCache.getFirst().finished()) {
                 pathCache.removeFirst();
                 System.out.println("RETEARDSAFNLAKSJNJKLSF");
+                speeds.set(new Pose(0));
             }
         }
 
         System.out.println("movementPose: " + new Pose(movement_x, movement_y, movement_turn));
-        System.out.println();
+        System.out.println("deltas: " + new Pose(dx, dy, dh));
         System.out.println();
         System.out.println();
     }

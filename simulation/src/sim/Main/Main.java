@@ -9,6 +9,8 @@ import sim.treamcode.OpMode;
 import sim.treamcode.Point;
 import teamcode.control.path.Path;
 import teamcode.control.path.builders.PathBuilder;
+import teamcode.util.Pose;
+
 import static teamcode.control.path.PathPoints.*;
 
 import java.util.ArrayList;
@@ -20,6 +22,10 @@ public class Main {
 
     public static void main(String[] args) {
         new Main().run();
+
+        Pose curr = new Pose(5,5,Math.toRadians(45));
+        Pose tar = new Pose(10);
+        System.out.println(curr.relVals(tar));
     }
 
     static void rem(LinkedList<Point> list) {

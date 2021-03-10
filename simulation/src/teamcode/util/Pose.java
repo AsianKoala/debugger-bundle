@@ -60,14 +60,15 @@ public class Pose extends Point {
         return Math.sin(heading);
     }
 
-    public Pose relVals(Point target, Pose current) {
-        double r_d = target.distance(current);
-        double angleToPoint = Math.atan2(target.y - current.y, target.x - current.x);
-        double deltaAngleToPoint = angleWrap(angleToPoint - (current.heading - Math.toRadians(90)));
+    public Pose relVals(Point target) {
+        double r_d = distance(target);
+        double angleToPoint = target.subtract(this).atan();
+        double deltaAngleToPoint = angleWrap(angleToPoint - (heading - Math.toRadians(90)));
         double r_x = Math.cos(deltaAngleToPoint) * r_d;
         double r_y = Math.sin(deltaAngleToPoint) * r_d;
         return new Pose(r_x, r_y, 0); // return 0 just to kmake sure neer to use it
     }
+
 
     // only setters, return ref
     public Pose wrap() {
