@@ -43,7 +43,7 @@ public class Path extends LinkedList<PathPoints.BasePathPoint> {
     public void follow(Robot robot) {
 
         if(!isPurePursuit) {
-            PurePursuitController.goToPosition(robot, getFirst());
+//            PurePursuitController.goToPosition(robot, getFirst());
         } else {
             boolean skip;
 
@@ -51,6 +51,7 @@ public class Path extends LinkedList<PathPoints.BasePathPoint> {
                 skip = MathUtil.angleThresh(robot.currPose.heading, getFirst().lockedHeading);
             } else if(getFirst().isStop != null){
                 skip = robot.currPose.distance(getFirst()) < 2; // test?
+                System.out.println("SKIP CUZZA STOP");
             } else {
                 skip = robot.currPose.distance(getFirst()) < getFirst().followDistance;
             }

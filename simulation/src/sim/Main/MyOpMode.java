@@ -18,11 +18,12 @@ public class MyOpMode extends OpMode {
 
         returnList.add(new PathBuilder("Test One")
                 .addPoint(new BasePathPoint("start", 100,100, 0))
-                .addPoint(new BasePathPoint("2", 200, 200, 40))
+                .addPoint(new BasePathPoint("2", 200, 200, 35))
                 .addPoint(new BasePathPoint("3", 100, 300, 35))
-                .addPoint(new BasePathPoint("4", 300, 250, 20))
-                .addPoint(new BasePathPoint("5", 250, 150, 40))
-                .addPoint(new BasePathPoint("end", 100,100,40))
+                .addPoint(new BasePathPoint("4", 300, 310, 35))
+                .addPoint(new BasePathPoint("5", 370, 200, 35))
+                .addPoint(new BasePathPoint("6", 225,100,35))
+                .addPoint(new StopPathPoint("7", 100, 100, Math.toRadians(180), 35))
                 .build());
 
 

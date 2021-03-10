@@ -7,8 +7,7 @@ import teamcode.util.Point;
 import teamcode.util.Pose;
 import teamcode.util.SignaturePose;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
+import java.util.*;
 
 import static sim.RobotUtilities.MovementVars.*;
 
@@ -80,17 +79,14 @@ public class Robot {
         movement_y = speeds.y;
         movement_turn = speeds.heading;
 
+        List<Double> powers = Arrays.asList(movement_x, movement_y, movement_turn);
         // scale down to highest
-        double max = movement_x;
-        if(movement_y > max)
-            max = movement_y;
-        if(movement_turn > max)
-            max = movement_turn;
-
-        if(Math.abs(max) > 1) {
-            movement_x /= max;
-            movement_y /= max;
-            movement_turn /= max;
+        double absMax = Math.max(Collections.max(powers), -Collections.min(powers));
+        for(int i=0; i<powers.size();i++) {
+            if(absMax>0.6) {
+                powers.set(i, powers.get(i) / 0.6);
+                powers.set(i, powers.get(i) * 0.6);
+            }
         }
 
         //get the current time
@@ -135,8 +131,8 @@ public class Robot {
         if(pathCache.size() != 0) {
             pathCache.getFirst().follow(this);
             if(pathCache.getFirst().finished()) {
+                System.out.println("finished");
                 pathCache.removeFirst();
-                System.out.println("RETEARDSAFNLAKSJNJKLSF");
                 speeds.set(new Pose(0));
             }
         }
@@ -155,7 +151,7 @@ public class Robot {
             return new Pose(0, 0, 0);
         }
 
-        int oldIndex = Math.max(0, prevPos.size() - 2 - 1);
+        int oldIndex = Math.max(0, prevPos.size() - 10 - 1);
         SignaturePose old = prevPos.get(oldIndex);
         SignaturePose cur = prevPos.get(prevPos.size() - 1);
 

@@ -17,12 +17,12 @@ import static teamcode.util.MathUtil.*;
 import static teamcode.control.path.PathPoints.*;
 
 public class PurePursuitController {
-    public static double smoothDist = 20;
+    public static double smoothDist = 15;
 
     public static void goToPosition(Robot robot, BasePathPoint target) {
         double d = robot.currPose.distance(target);
-        Pose relVals = robot.currPose.relVals(target);
-        boolean done;
+        Pose relativeVelocity = robot.relVel();
+        Pose powerPose = new Pose();
 
         int index = 0;
         while(index < target.getTypeList().length-1 && target.getTypeList()[index] == null) {
@@ -30,44 +30,59 @@ public class PurePursuitController {
         }
         types pathPointType = types.values()[index];
 
-//        if(d>45 || !target.isStop) {
-        Pose powerPose = new Pose();
-        double v = relVals.abs().x + relVals.abs().y;
-        Pose move = new Pose();
-        move.x = relVals.abs().x / 30;
-        move.y = relVals.abs().y / 30;
-        move.x *= relVals.x / v;
-        move.y *= relVals.y / v;
 
-        powerPose.set(move);
+        if(d>45 || target.isStop == null) {
+            Pose relVals = robot.currPose.relVals(target);
 
-        double targetAngle = pathPointType.isLocked() ? target.lockedHeading : target.subtract(robot.currPose).atan();
-        double angleToTarget = angleWrap(targetAngle - robot.currPose.heading);
-        powerPose.heading = angleToTarget / Math.toRadians(40);
-//
-//        if (pathPointType.ordinal() == types.lateTurn.ordinal() &&
-//                target.distance(target.lateTurnPoint) < target.distance(robot.currPose)) {
-//            powerPose.heading = 0;
-//            done = d < 2 && MathUtil.angleThresh(robot.currPose.heading, target.lockedHeading);
-//        } else if (pathPointType.ordinal() == types.onlyTurn.ordinal()) {
-//            powerPose.x = 0;
-//            powerPose.y = 0;
-//            done = MathUtil.angleThresh(robot.currPose.heading, target.lockedHeading);
-//        } else if (pathPointType.ordinal() == types.onlyFunctions.ordinal()) {
-//            powerPose = new Pose(0, 0, 0);
-//            done = target.functions.size() == 0;
-//        } else {
-//            done = d < 2 && MathUtil.angleThresh(robot.currPose.heading, target.lockedHeading);
-//        }
-//
-//        done = done && runFuncList(target);
+            double v = relVals.abs().x + relVals.abs().y;
+            powerPose.x = relVals.abs().x / 30;
+            powerPose.y = relVals.abs().y / 30;
+            powerPose.x *= relVals.x / v;
+            powerPose.y *= relVals.y / v;
 
-        robot.speeds = powerPose;
+            powerPose.set(powerPose);
 
-        System.out.println("relvals: " + relVals);
-        System.out.println("target: " + target.toString());
-        System.out.println("powerPose: " + powerPose);
-        System.out.println("d: " + d);
+            double targetAngle = pathPointType.isLocked() ? target.lockedHeading : target.subtract(robot.currPose).atan();
+            double angleToTarget = angleWrap(targetAngle - robot.currPose.heading);
+            powerPose.heading = angleToTarget / Math.toRadians(40);
+
+            System.out.println("relvals: " + relVals);
+            System.out.println("target: " + target.toString());
+            System.out.println("d: " + d);
+        } else if(relativeVelocity.hypot() > smoothDist && d > smoothDist) {
+            Point t = MathUtil.circleLineIntersection(target, robot.currPose, target, smoothDist);
+
+            Pose relIntersectTarget = robot.currPose.relVals(t);
+
+            double v = relIntersectTarget.abs().x + relIntersectTarget.abs().y;
+            powerPose.x = relIntersectTarget.abs().x / 30;
+            powerPose.y = relIntersectTarget.abs().y / 30;
+            powerPose.x *= relIntersectTarget.x / v;
+            powerPose.y *= relIntersectTarget.y / v;
+
+            powerPose.heading = angleWrap(target.lockedHeading - robot.currPose.heading);
+        } else {
+            Pose relVals = robot.currPose.relVals(target);
+            double angleToTarget = angleWrap(target.lockedHeading - robot.currPose.heading);
+            double exp = 1.0/6.0;
+            powerPose = new Pose(
+                    powRetainingSign(relVals.x, exp),
+                    powRetainingSign(relVals.y, exp),
+                    powRetainingSign(angleToTarget, exp)
+            );
+            powerPose.set(powerPose.multiply(new Pose(0.08, 0.11, 0.1)));
+            powerPose.set(new Pose(0, -1, 0));
+            System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+        }
+
+        System.out.println("currpose: " + robot.currPose);
+        System.out.println("powerpose: " + powerPose);
+        robot.speeds.set(powerPose);
+
+    }
+
+    static double powRetainingSign(double a, double b) {
+        return sgn(a) * Math.pow(Math.abs(a), b);
     }
 
 
@@ -98,25 +113,6 @@ public class PurePursuitController {
         goToPosition(robot, followPoint);
     }
 }
-
-// old gotoposition
-//        if (pathPointType.ordinal() == types.lateTurn.ordinal() &&
-//                target.distance(target.lateTurnPoint) < target.distance(robot.currPose)) {
-//            powerPose.heading = 0;
-//            done = d < 2 && MathUtil.angleThresh(robot.currPose.heading, target.lockedHeading);
-//        } else if (pathPointType.ordinal() == types.onlyTurn.ordinal()) {
-//            powerPose.x = 0;
-//            powerPose.y = 0;
-//            done = MathUtil.angleThresh(robot.currPose.heading, target.lockedHeading);
-//        } else if (pathPointType.ordinal() == types.onlyFunctions.ordinal()) {
-//            powerPose = new Pose(0, 0, 0);
-//            done = target.functions.size() == 0;
-//        } else {
-//            done = d < 2 && MathUtil.angleThresh(robot.currPose.heading, target.lockedHeading);
-//        }
-//
-//        done = done && runFuncList(target);
-
 
 
 // smoothing gotoposiotn
@@ -186,3 +182,22 @@ public class PurePursuitController {
 //                System.out.println();
 //            }
 //        }
+
+
+
+//        if (pathPointType.ordinal() == types.lateTurn.ordinal() &&
+//                target.distance(target.lateTurnPoint) < target.distance(robot.currPose)) {
+//            powerPose.heading = 0;
+//            done = d < 2 && MathUtil.angleThresh(robot.currPose.heading, target.lockedHeading);
+//        } else if (pathPointType.ordinal() == types.onlyTurn.ordinal()) {
+//            powerPose.x = 0;
+//            powerPose.y = 0;
+//            done = MathUtil.angleThresh(robot.currPose.heading, target.lockedHeading);
+//        } else if (pathPointType.ordinal() == types.onlyFunctions.ordinal()) {
+//            powerPose = new Pose(0, 0, 0);
+//            done = target.functions.size() == 0;
+//        } else {
+//            done = d < 2 && MathUtil.angleThresh(robot.currPose.heading, target.lockedHeading);
+//        }
+//
+//        done = done && runFuncList(target);
