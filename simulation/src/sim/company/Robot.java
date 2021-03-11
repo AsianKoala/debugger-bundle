@@ -16,7 +16,6 @@ public class Robot {
     
     public Pose speeds;
     public Pose currPose;
-    public Pose currVel;
 
     public ArrayList<SignaturePose> prevPos = new ArrayList<>();
     public Pose relativeMovement;
@@ -35,11 +34,14 @@ public class Robot {
 
         speeds = new Pose(movement_x, movement_y, movement_turn);
         currPose = new Pose(worldXPosition, worldYPosition, worldAngle_rad);
-        currVel = new Pose(SpeedOmeter.getSpeedX(), SpeedOmeter.getSpeedY(), SpeedOmeter.getRadPerSecond());
         relativeMovement = new Pose(0,0,0);
         prevPos.add(new SignaturePose(relativeMovement, System.currentTimeMillis()));
 
         pathCache = new LinkedList<>();
+
+        lastWorldXPosition = worldXPosition;
+        lastWorldYPosition = worldYPosition;
+        lastWorldAngle_rad = worldAngle_rad;
     }
 
     //the actual speed the robot is moving
@@ -50,6 +52,10 @@ public class Robot {
     public static double worldXPosition;
     public static double worldYPosition;
     public static double worldAngle_rad;
+
+    public static double lastWorldXPosition;
+    public static double lastWorldYPosition;
+    public static double lastWorldAngle_rad;
 
     public double getXPos(){
         return worldXPosition;
@@ -73,22 +79,10 @@ public class Robot {
      */
     public void update(){
 
-
         worldAngle_rad = MathUtil.angleWrap(worldAngle_rad);
         movement_x = speeds.x;
         movement_y = speeds.y;
         movement_turn = speeds.heading;
-
-        List<Double> powers = Arrays.asList(movement_x, movement_y, movement_turn);
-        // scale down to highest
-        double absMax = Math.max(Collections.max(powers), -Collections.min(powers));
-        for(int i=0; i<powers.size();i++) {
-            if(absMax>0.6) {
-                powers.set(i, powers.get(i) / 0.6);
-                powers.set(i, powers.get(i) * 0.6);
-            }
-        }
-
         //get the current time
         long currentTimeMillis = System.currentTimeMillis();
         //get the elapsed time
@@ -123,10 +117,22 @@ public class Robot {
         ySpeed *= 1.0 - (elapsedTime);
         turnSpeed *= 1.0 - (elapsedTime);
 
-        relativeMovement.set(relativeMovement.add(new Pose(dx, dy, dh)));
+
+
+
+        double deltaX = worldXPosition - lastWorldXPosition;
+        double deltaY = worldYPosition - lastWorldYPosition;
+        double deltaAngle = MathUtil.angleWrap(worldAngle_rad - lastWorldAngle_rad);
+
+        relativeMovement.set(relativeMovement.add(new Pose(deltaX, deltaY, deltaAngle)));
         currPose = new Pose(worldXPosition, worldYPosition, MathUtil.angleWrap(worldAngle_rad));
 
-        prevPos.add(new SignaturePose(currPose, System.currentTimeMillis()));
+        lastWorldXPosition = worldXPosition;
+        lastWorldYPosition = worldYPosition;
+        lastWorldAngle_rad = worldAngle_rad;
+
+
+        prevPos.add(new SignaturePose(relativeMovement, System.currentTimeMillis()));
 
         if(pathCache.size() != 0) {
             pathCache.getFirst().follow(this);
@@ -137,8 +143,6 @@ public class Robot {
             }
         }
 
-        System.out.println("movementPose: " + new Pose(movement_x, movement_y, movement_turn));
-        System.out.println("deltas: " + new Pose(dx, dy, dh));
         System.out.println();
         System.out.println();
     }

@@ -126,16 +126,14 @@ public class Main extends Application {
 
         Group logGroup = new Group();
 
-        Image logImage = new Image(new FileInputStream(System.getProperty("user.dir") + "/log background.png"));
-        ImageView logImageView = new ImageView();
-        logImageView.setImage(logImage);//set the image
-
-        logImageView.setFitHeight(logImage.getHeight()/2.5);
-        logImageView.setFitWidth(logImage.getWidth()/2.5);
+//        Image logImage = new Image(new FileInputStream(System.getProperty("user.dir") + "/log background.png"));
+//        logImageView.setImage(logImage);//set the image
+//
+//        logImageView.setFitHeight(logImage.getHeight()/2.5);
+//        logImageView.setFitWidth(logImage.getWidth()/2.5);
 
         logGroup.setTranslateY(10);
         //add the background image
-        logGroup.getChildren().add(logImageView);
 
 
 
@@ -145,10 +143,11 @@ public class Main extends Application {
         Label debuggingLabel = new Label();
         debuggingLabel.setFont(new Font("Courier New",20));
         debuggingLabel.textFillProperty().setValue(new Color(0,1.0,1.0,1));
-        debuggingLabel.setPrefWidth(logImageView.getFitWidth()-25);
+        debuggingLabel.setPrefWidth(300);
         debuggingLabel.setLayoutX(16);
-        debuggingLabel.setLayoutY(logImageView.getFitHeight()/4.7);
+        debuggingLabel.setLayoutY(400);
         debuggingLabel.setWrapText(true);
+
 
 
         logGroup.getChildren().add(debuggingLabel);
@@ -203,7 +202,6 @@ public class Main extends Application {
                     debuggingHSpacer.setPrefWidth(scene.getWidth() * 0.01);
 
                     debuggingLabel.setMaxWidth(scene.getWidth() * 0.2);
-
 
                     debuggingLabel.setText("Robot Coordinates: \n" +"X: " + MessageProcessing.getRobotX()
                     + " , Y: " + MessageProcessing.getRobotY() + "\nAngle: "

@@ -1,5 +1,7 @@
 package teamcode.util;
 
+import teamcode.control.path.PathPoints;
+
 import java.util.ArrayList;
 
 public class MathUtil {
@@ -88,22 +90,34 @@ public class MathUtil {
         return a > 0 ? 1 : -1;
     }
 
+    public static Point extendLine(Point firstPoint, Point secondPoint, double distance) {
+        double lineAngle = Math.atan2(secondPoint.y - firstPoint.y, secondPoint.x - firstPoint.x);
+
+        double lineLength = Math.hypot(secondPoint.y - firstPoint.y, secondPoint.x - firstPoint.x);
+        double extendedLineLength = lineLength + distance;
+
+        Point extended = new Point(secondPoint);
+        extended.x = Math.cos(lineAngle) * extendedLineLength + firstPoint.x;
+        extended.y = Math.sin(lineAngle) * extendedLineLength + firstPoint.y;
+        return extended;
+    }
+
     /**
      * Returns the closest intersection point to the end of a line segment created through the intersection of a line and circle.
      * The main purpose of this is for pure pursuit but I'll prob implement it into our goToPosition algorithm.
      * For pure pursuit use, c would be the clipped robot point, startPoint would be the current segment start point,
      * endPoint would be the current segment end point, and radius would be our follow distance
      *
-     * @param c          center point of circle
+     * @param center          center point of circle
      * @param startPoint start point of the line segment
      * @param endPoint   end point of the line segment
      * @param radius     radius of the circle
      * @return intersection point closest to endPoint
      * @see <a href="https://mathworld.wolfram.com/Circle-LineIntersection.html">https://mathworld.wolfram.com/Circle-LineIntersection.html</a>
      */
-    public static Point circleLineIntersection(Point c, Point startPoint, Point endPoint, double radius) {
-        Point start = new Point(startPoint.x - c.x, startPoint.y - c.y);
-        Point end = new Point(endPoint.x - c.x, endPoint.y - c.y);
+    public static Point circleLineIntersection(Point center, Point startPoint, Point endPoint, double radius) {
+        Point start = new Point(startPoint.x - center.x, startPoint.y - center.y);
+        Point end = new Point(endPoint.x - center.x, endPoint.y - center.y);
 
         double dx = end.x - start.x;
         double dy = end.y - start.y;
@@ -136,8 +150,8 @@ public class MathUtil {
 
         Point closest = new Point(-10000, -10000);
         for (Point p : intersections) { // add circle center offsets
-            p.x += c.x;
-            p.y += c.y;
+            p.x += center.x;
+            p.y += center.y;
             if (p.distance(endPoint) < closest.distance(endPoint))
                 closest = p;
         }

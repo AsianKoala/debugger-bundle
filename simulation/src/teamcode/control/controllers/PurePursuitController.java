@@ -17,11 +17,9 @@ import static teamcode.util.MathUtil.*;
 import static teamcode.control.path.PathPoints.*;
 
 public class PurePursuitController {
-    public static double smoothDist = 15;
+    public static double smoothDist = 20;
 
-    public static void goToPosition(Robot robot, BasePathPoint target) {
-        double d = robot.currPose.distance(target);
-        Pose relativeVelocity = robot.relVel();
+    public static void goToPosition(Robot robot, BasePathPoint target, BasePathPoint finalTarget, BasePathPoint start) {
         Pose powerPose = new Pose();
 
         int index = 0;
@@ -31,7 +29,7 @@ public class PurePursuitController {
         types pathPointType = types.values()[index];
 
 
-        if(d>45 || target.isStop == null) {
+        if(finalTarget == null) {
             Pose relVals = robot.currPose.relVals(target);
 
             double v = relVals.abs().x + relVals.abs().y;
@@ -42,50 +40,58 @@ public class PurePursuitController {
 
             powerPose.set(powerPose);
 
-            double targetAngle = pathPointType.isLocked() ? target.lockedHeading : target.subtract(robot.currPose).atan();
-            double angleToTarget = angleWrap(targetAngle - robot.currPose.heading);
-            powerPose.heading = angleToTarget / Math.toRadians(40);
+            powerPose.heading = getDesiredAngle(robot.currPose, target, pathPointType.isLocked());
 
-            System.out.println("relvals: " + relVals);
-            System.out.println("target: " + target.toString());
-            System.out.println("d: " + d);
-        } else if(relativeVelocity.hypot() > smoothDist && d > smoothDist) {
-            Point t = MathUtil.circleLineIntersection(target, robot.currPose, target, smoothDist);
-
-            Pose relIntersectTarget = robot.currPose.relVals(t);
-
-            double v = relIntersectTarget.abs().x + relIntersectTarget.abs().y;
-            powerPose.x = relIntersectTarget.abs().x / 30;
-            powerPose.y = relIntersectTarget.abs().y / 30;
-            powerPose.x *= relIntersectTarget.x / v;
-            powerPose.y *= relIntersectTarget.y / v;
-
-            powerPose.heading = angleWrap(target.lockedHeading - robot.currPose.heading);
+            System.out.println("AS FAST AS POSSIBLE");
         } else {
-            Pose relVals = robot.currPose.relVals(target);
-            double angleToTarget = angleWrap(target.lockedHeading - robot.currPose.heading);
-            double exp = 1.0/6.0;
-            powerPose = new Pose(
-                    powRetainingSign(relVals.x, exp),
-                    powRetainingSign(relVals.y, exp),
-                    powRetainingSign(angleToTarget, exp)
-            );
-            powerPose.set(powerPose.multiply(new Pose(0.08, 0.11, 0.1)));
-            powerPose.set(new Pose(0, -1, 0));
-            System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+            Point t = finalTarget;
+
+            Pose relVals = robot.currPose.relVals(t);
+            Pose relLineVals = new Pose(start, start.subtract(finalTarget).atan()).relVals(new Pose(finalTarget, 0));
+            relLineVals.set(relLineVals.abs());
+
+            double smoothinx = relLineVals.x * 0.8 > 30 ? relLineVals.x * 0.8 : 30;
+            double smoothiny = relLineVals.y * 0.8 > 30 ? relLineVals.y * 0.8 : 30;
+
+            double v = relVals.abs().x + relVals.abs().y;
+            powerPose.x = relVals.abs().x / smoothinx;
+            powerPose.y = relVals.abs().y / smoothiny;
+            powerPose.x *= relVals.x / v;
+            powerPose.y *= relVals.y / v;
+
+            powerPose.set(powerPose);
+
+            ComputerDebugging.sendKeyPoint(new FloatPoint(t.x, t.y));
+
+            powerPose.heading = getDesiredAngle(robot.currPose, finalTarget, true);
+
+            System.out.println("SMOOTHING POWERPOSE: " + powerPose);
+            System.out.println("SMOOTHING FINALTARGET RELVELS: " + relVals);
         }
 
+
         System.out.println("currpose: " + robot.currPose);
-        System.out.println("powerpose: " + powerPose);
+        System.out.println("target: " + target.toString());
+        System.out.println("finalTarget: " + (finalTarget == null ? "" : finalTarget));
+        System.out.println("curr vel: " + robot.relVel());
+        System.out.println("vel hypot: " + robot.relVel().hypot());
         robot.speeds.set(powerPose);
 
+    }
+
+    private static double getDesiredAngle(Pose curr, BasePathPoint target, boolean locked) {
+        double forward = target.subtract(curr).atan();
+        double back = forward + Math.PI;
+        double angleToForward = MathUtil.angleWrap(forward - curr.heading);
+        double angleToBack = MathUtil.angleWrap(back - curr.heading);
+        double autoAngle = Math.abs(angleToForward) < Math.abs(angleToBack) ? forward : back;
+        double desired =  locked ? target.lockedHeading : autoAngle;
+        return angleWrap(desired - curr.heading) / Math.toRadians(40);
     }
 
     static double powRetainingSign(double a, double b) {
         return sgn(a) * Math.pow(Math.abs(a), b);
     }
-
-
 
     public static boolean runFuncList(BasePathPoint target) {
         target.functions.removeIf(f -> f.cond() && f.func());
@@ -99,8 +105,6 @@ public class PurePursuitController {
         }
         ComputerDebugging.sendKeyPoint(new FloatPoint(allPoints.get(allPoints.size()-1).x, allPoints.get(allPoints.size()-1).y));
 
-        System.out.println("startseg: " + start);
-        System.out.println("endseg: " + end);
         Point clip = MathUtil.clipIntersection2(start, end, robot.currPose);
         Point intersectPoint = MathUtil.circleLineIntersection(clip, start, end, end.followDistance);
 
@@ -110,94 +114,20 @@ public class PurePursuitController {
 
         ComputerDebugging.sendKeyPoint(new FloatPoint(followPoint.x, followPoint.y));
 
-        goToPosition(robot, followPoint);
+        goToPosition(robot, followPoint, end.isStop != null ? end : null, start);
     }
 }
 
 
-// smoothing gotoposiotn
-//        if(!target.stop || d > 45) {
-//        powerPose.set(powerPose.divide(new Pose(v)).multiply(relVals.abs().divide(new Pose(41)))); // someting wrong here prob
-//        relVals.set(relVals.divide(new Pose(v)));
-
-//        if (OpModeClock.isOk()) {
-//                System.out.println("speed");
-//                System.out.println("currVel: " + robot.currVel.toString());
-//                System.out.println("currVelHypot: " + robot.currVel.hypot());
-////                System.out.println("relVals: " + relVals.toString());
-////                System.out.println("angle to target: " + Math.toDegrees(angleToTarget));
-////                System.out.println("powerPose: " + powerPose);
-//                System.out.println();
-//                System.out.println();
-//            }
-//        } else if(robot.currVel.hypot() > 20 && d > smoothDist) {
-////            double x1 = target.x + (d / smoothDist) * (robot.currPose.x - target.x);
-////            double y1 = target.y + (d / smoothDist) * (robot.currPose.y - target.y);
-////            target.x = x1;
-////            target.y = y1;
-////
-////            relVals = robot.currPose.relDistance(target);
-////            double v = relVals.abs().x + relVals.abs().y;
-////            Pose powerPose = new Pose(relVals.x, relVals.y, 69420); // heading doesnt matter for now so ya
-////            powerPose.set(powerPose.divide(new Pose(v)).multiply(relVals.abs().divide(new Pose(45))));
-////
-////            double desiredAngle = !target.locked ? target.subtract(robot.currPose).atan() : target.heading;
-////            double angleToTarget = angleWrap(desiredAngle - robot.currPose.heading);
-////            powerPose.heading = angleToTarget / Math.toRadians(45);
-////
-////            powerPose.x *= Range.clip(1.0-(angleToTarget/Math.toRadians(45)), 0.5, 1);
-////            powerPose.y *= Range.clip(1.0-(angleToTarget/Math.toRadians(45)), 0.5, 1);
-////
-////            robot.speeds = powerPose;
-////
-////            if (Omodeclock.isOk()) {
-////                System.out.println("adjusted  speed");
-////                System.out.println("relVals: " + relVals.toString());
-////                System.out.println("angle to target: " + Math.toDegrees(angleToTarget));
-////                System.out.println("powerPose: " + powerPose);
-////                System.out.println();
-////                System.out.println();
-////            }
-//        } else { // rel vals in total will be 6, clip to max and divide and maintain shape
-//            relVals = robot.currPose.relDistance(target);
-//
-//            double startPower = 1;
-//            double endPower = 0.15;
-//            double slope = (startPower - endPower) / (smoothDist - 1);
-//            double intercept = startPower - smoothDist * slope;
-//
-//            powerPose.set(powerPose.multiply(new Pose(slope)).add(new Pose(intercept)));
-//
-//            powerPose.heading = angleToTarget / Math.toRadians(60);
-//            powerPose.heading = Range.clip(powerPose.heading, -0.3, 0.3);
-//
-//            robot.speeds = powerPose;
-//
-//            if (OpModeClock.isOk()) {
-//                System.out.println("super slow");
-//                System.out.println("relVals: " + relVals.toString());
-//                System.out.println("angle to target: " + Math.toDegrees(angleToTarget));
-//                System.out.println("powerPose: " + powerPose);
-//                System.out.println();
-//                System.out.println();
-//            }
-//        }
-
-
-
-//        if (pathPointType.ordinal() == types.lateTurn.ordinal() &&
-//                target.distance(target.lateTurnPoint) < target.distance(robot.currPose)) {
-//            powerPose.heading = 0;
-//            done = d < 2 && MathUtil.angleThresh(robot.currPose.heading, target.lockedHeading);
-//        } else if (pathPointType.ordinal() == types.onlyTurn.ordinal()) {
-//            powerPose.x = 0;
-//            powerPose.y = 0;
-//            done = MathUtil.angleThresh(robot.currPose.heading, target.lockedHeading);
-//        } else if (pathPointType.ordinal() == types.onlyFunctions.ordinal()) {
-//            powerPose = new Pose(0, 0, 0);
-//            done = target.functions.size() == 0;
 //        } else {
-//            done = d < 2 && MathUtil.angleThresh(robot.currPose.heading, target.lockedHeading);
+//            Pose relVals = robot.currPose.relVals(finalTarget);
+//            double angleToTarget = angleWrap(finalTarget.lockedHeading - robot.currPose.heading);
+//            double exp = 1.0/8.0;
+//            powerPose = new Pose(
+//                    powRetainingSign(relVals.x, exp),
+//                    powRetainingSign(relVals.y, exp),
+//                    powRetainingSign(angleToTarget, exp)
+//            );
+//            powerPose.set(powerPose.multiply(new Pose(0.08, 0.8, 0.1)));
+//            System.out.println("FUCK POWERPOSE: " + powerPose);
 //        }
-//
-//        done = done && runFuncList(target);

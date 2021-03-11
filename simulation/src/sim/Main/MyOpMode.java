@@ -23,7 +23,7 @@ public class MyOpMode extends OpMode {
                 .addPoint(new BasePathPoint("4", 300, 310, 35))
                 .addPoint(new BasePathPoint("5", 370, 200, 35))
                 .addPoint(new BasePathPoint("6", 225,100,35))
-                .addPoint(new StopPathPoint("7", 100, 100, Math.toRadians(180), 35))
+                .addPoint(new StopPathPoint("7", 100, 100, Math.toRadians(0), 35))
                 .build());
 
 
@@ -31,7 +31,5 @@ public class MyOpMode extends OpMode {
     }
     @Override
     public void loop() {
-        for(Path p : robot.pathCache)
-            System.out.println(p.toString());
     }
 }
