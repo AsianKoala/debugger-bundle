@@ -28,9 +28,9 @@ public class Robot {
 
     public Point startPose = new Pose(100, 100, Math.toRadians(45));
     public Robot(){
-        worldXPosition = 100;
-        worldYPosition = 100;
-        worldAngle_rad = Math.toRadians(45);
+        worldXPosition = 90;
+        worldYPosition = 150;
+        worldAngle_rad = Math.toRadians(225);
 
         speeds = new Pose(movement_x, movement_y, movement_turn);
         currPose = new Pose(worldXPosition, worldYPosition, worldAngle_rad);
