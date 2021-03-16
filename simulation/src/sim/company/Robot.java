@@ -26,11 +26,12 @@ public class Robot {
      * Creates a robot simulation
      */
 
-    public Point startPose = new Pose(100, 100, Math.toRadians(45));
+    public Pose startPose;
     public Robot(){
-        worldXPosition = 90;
-        worldYPosition = 150;
-        worldAngle_rad = Math.toRadians(225);
+        worldXPosition = 320;
+        worldYPosition = 20;
+        worldAngle_rad = Math.toRadians(90);
+        startPose = new Pose(worldXPosition, worldYPosition, worldAngle_rad);
 
         speeds = new Pose(movement_x, movement_y, movement_turn);
         currPose = new Pose(worldXPosition, worldYPosition, worldAngle_rad);

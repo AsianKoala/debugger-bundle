@@ -73,6 +73,11 @@ public class Path extends LinkedList<PathPoints.BasePathPoint> {
                 }
             }
 
+            if(target.functions.size() != 0) {
+                target.functions.removeIf(f -> f.cond() && f.func());
+                skip = skip && target.functions.size() == 0;
+            }
+
             if (skip) {
                 curr = new BasePathPoint(target); // swap old target to curr start
                 removeFirst();

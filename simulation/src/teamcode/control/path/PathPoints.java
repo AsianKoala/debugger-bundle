@@ -28,7 +28,7 @@ public class PathPoints {
 
 
         public BasePathPoint(String signature, double x, double y, double followDistance, Function... functions) {
-            super(x*2.54, y*2.54);
+            super(x, y);
             this.followDistance = followDistance;
             this.functions = new LinkedList<>();
             this.functions.addAll(Arrays.asList(functions));
@@ -69,29 +69,29 @@ public class PathPoints {
         }
     }
 
-    public static class LateTurnPathPoint extends LockedPathPoint {
+    public static class LateTurnPathPoint extends ControlledPathPoint {
         public LateTurnPathPoint(String signature, double x, double y, double heading, double followDistance, Point turnPoint, Function... functions) {
             super(signature, x, y, heading, followDistance, functions);
             lateTurnPoint = turnPoint;
         }
     }
 
-    public static class OnlyTurnPathPoint extends LockedPathPoint {
+    public static class OnlyTurnPathPoint extends ControlledPathPoint {
         public OnlyTurnPathPoint(String signature, double heading, Function... functions) {
             super(signature,0,0,heading,0,functions);
             isOnlyTurn = true;
         }
     }
 
-    public static class StopPathPoint extends LockedPathPoint {
+    public static class StopPathPoint extends ControlledPathPoint {
         public StopPathPoint(String signature, double x, double y, double heading, double followDistance, Function... functions) {
             super(signature, x, y, heading, followDistance, functions);
             isStop = true;
         }
     }
 
-    public static class LockedPathPoint extends SimplePathPoint {
-        public LockedPathPoint(String signature, double x, double y, double heading, double followDistance, Function... functions) {
+    public static class ControlledPathPoint extends SimplePathPoint {
+        public ControlledPathPoint(String signature, double x, double y, double heading, double followDistance, Function... functions) {
             super(signature, x, y, followDistance, functions);
             lockedHeading = MathUtil.unwrap(heading);
         }

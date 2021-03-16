@@ -1,7 +1,6 @@
 package teamcode.control.controllers;
 
 
-// basically have abstract pathpoint class, concrete pathpoint is concrete and empty, yea
 
 import sim.company.ComputerDebugging;
 import sim.company.FloatPoint;
@@ -17,7 +16,6 @@ import static teamcode.util.MathUtil.*;
 import static teamcode.control.path.PathPoints.*;
 
 public class PurePursuitController {
-    public static double smoothDist = 20;
 
     public static void goToPosition(Robot robot, BasePathPoint target, BasePathPoint finalTarget, BasePathPoint start) {
         Pose powerPose = new Pose();
@@ -40,13 +38,20 @@ public class PurePursuitController {
 
             powerPose.set(powerPose);
 
-            powerPose.heading = getDesiredAngle(robot.currPose, target, pathPointType.isLocked());
+            if(target.lateTurnPoint == null) {
+                powerPose.heading = getDesiredAngle(robot.currPose, target, pathPointType.isLocked());
+            } else {
+                if(start.distance(robot.currPose) > start.distance(target.lateTurnPoint)) {
+                    powerPose.heading = getDesiredAngle(robot.currPose, target, true);
+                } else {
+                    powerPose.heading = getDesiredAngle(robot.currPose, target, false);
+                }
+            }
 
             System.out.println("AS FAST AS POSSIBLE");
         } else {
-            Point t = finalTarget;
 
-            Pose relVals = robot.currPose.relVals(t);
+            Pose relVals = robot.currPose.relVals(finalTarget);
             Pose relLineVals = new Pose(start, start.subtract(finalTarget).atan()).relVals(new Pose(finalTarget, 0));
             relLineVals.set(relLineVals.abs());
 
@@ -61,9 +66,19 @@ public class PurePursuitController {
 
             powerPose.set(powerPose);
 
-            ComputerDebugging.sendKeyPoint(new FloatPoint(t.x, t.y));
+            ComputerDebugging.sendKeyPoint(new FloatPoint(finalTarget.x, finalTarget.y));
 
             powerPose.heading = getDesiredAngle(robot.currPose, finalTarget, true);
+
+            if(finalTarget.lateTurnPoint == null) {
+                powerPose.heading = getDesiredAngle(robot.currPose, finalTarget, pathPointType.isLocked());
+            } else {
+                if(start.distance(robot.currPose) > start.distance(finalTarget.lateTurnPoint)) {
+                    powerPose.heading = getDesiredAngle(robot.currPose, finalTarget, true);
+                } else {
+                    powerPose.heading = getDesiredAngle(robot.currPose, finalTarget, false);
+                }
+            }
 
             System.out.println("SMOOTHING POWERPOSE: " + powerPose);
             System.out.println("SMOOTHING FINALTARGET RELVELS: " + relVals);
