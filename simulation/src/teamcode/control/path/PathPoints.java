@@ -28,7 +28,7 @@ public class PathPoints {
 
 
         public BasePathPoint(String signature, double x, double y, double followDistance, Function... functions) {
-            super(x, y);
+            super(x*2.54, y*2.54);
             this.followDistance = followDistance;
             this.functions = new LinkedList<>();
             this.functions.addAll(Arrays.asList(functions));

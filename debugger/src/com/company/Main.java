@@ -203,8 +203,8 @@ public class Main extends Application {
 
                     debuggingLabel.setMaxWidth(scene.getWidth() * 0.2);
 
-                    debuggingLabel.setText("Robot Coordinates: \n" +"X: " + MessageProcessing.getRobotX()
-                    + " , Y: " + MessageProcessing.getRobotY() + "\nAngle: "
+                    debuggingLabel.setText("Robot Pose \n" + "----------" + "\nX: " + MessageProcessing.getRobotX()
+                    + "\nY: " + MessageProcessing.getRobotY() + "\nAngle: "
                             + String.format("%.2f", Math.toDegrees(MessageProcessing.getRobotAngle())) + "°");
                     System.out.println(primaryStage.getWidth());
 //                    gc.setLineWidth(10);
