@@ -3,12 +3,9 @@ package main;
 
 import sim.company.ComputerDebugging;
 import sim.company.FloatPoint;
-import sim.company.Robot;
 
 import sim.robotUtil.OpMode;
 import teamcode.util.Pose;
-
-import java.util.LinkedList;
 
 public class Main {
 
@@ -21,7 +18,7 @@ public class Main {
         Pose tar = new Pose(10);
         System.out.println(curr.relVals(tar));
     }
-    
+
 
     /**
      * The program runs here

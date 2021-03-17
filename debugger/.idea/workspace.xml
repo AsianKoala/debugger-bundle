@@ -4,16 +4,13 @@
     <list default="true" id="dc0f0ec4-7354-4b8d-bb63-314f84595278" name="Default Changelist" comment="added logging">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../simulation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simulation/src/sim/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/src/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simulation/src/sim/Main/MyOpMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/src/main/MyOpMode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simulation/src/sim/RobotUtilities/MovementVars.java" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/src/sim/robotUtil/MovementVars.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simulation/src/sim/RobotUtilities/SpeedOmeter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/src/sim/robotUtil/SpeedOmeter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simulation/src/sim/company/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/src/sim/company/Robot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simulation/src/sim/core/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/src/sim/company/Point.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simulation/src/sim/treamcode/CurvePoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/src/sim/robotUtil/CurvePoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simulation/src/sim/treamcode/MathFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/src/sim/robotUtil/MathFunctions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simulation/src/sim/treamcode/OpMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/src/sim/robotUtil/OpMode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simulation/src/sim/treamcode/Point.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../simulation/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/src/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../simulation/src/sim/company/ComputerDebugging.java" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/src/sim/company/ComputerDebugging.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../simulation/src/sim/company/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/src/sim/robotUtil/Point.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../simulation/src/sim/company/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/src/main/Robot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../simulation/src/sim/robotUtil/SpeedOmeter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/src/sim/robotUtil/SpeedOmeter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../simulation/src/teamcode/control/controllers/PurePursuitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/src/teamcode/control/controllers/PurePursuitController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../simulation/src/teamcode/control/path/Path.java" beforeDir="false" afterPath="$PROJECT_DIR$/../simulation/src/teamcode/control/path/Path.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

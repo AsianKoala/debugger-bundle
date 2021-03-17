@@ -22,16 +22,13 @@
     <list default="true" id="06f710b7-470c-4d99-91ff-deca9af1f0aa" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/../debugger/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../debugger/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sim/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sim/Main/MyOpMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/MyOpMode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sim/RobotUtilities/MovementVars.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/robotUtil/MovementVars.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sim/RobotUtilities/SpeedOmeter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/robotUtil/SpeedOmeter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sim/company/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/company/Robot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sim/core/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/company/Point.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sim/treamcode/CurvePoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/robotUtil/CurvePoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sim/treamcode/MathFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/robotUtil/MathFunctions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sim/treamcode/OpMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/robotUtil/OpMode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sim/treamcode/Point.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sim/company/ComputerDebugging.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/company/ComputerDebugging.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sim/company/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/robotUtil/Point.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sim/company/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Robot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sim/robotUtil/SpeedOmeter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/robotUtil/SpeedOmeter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/teamcode/control/controllers/PurePursuitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamcode/control/controllers/PurePursuitController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/teamcode/control/path/Path.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamcode/control/path/Path.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +134,7 @@
       <workItem from="1615504006406" duration="1068000" />
       <workItem from="1615563431293" duration="63000" />
       <workItem from="1615897909096" duration="5037000" />
-      <workItem from="1615997171921" duration="1627000" />
+      <workItem from="1615997171921" duration="7293000" />
     </task>
     <servers />
   </component>
@@ -171,14 +168,20 @@
     </state>
     <state x="1085" y="426" key="#com.intellij.ide.util.MemberChooser/2560.-290.1200.1920/-1920.123.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1615901776027" />
     <state x="1085" y="426" key="#com.intellij.ide.util.MemberChooser/2560.-290.1200.1920/-1920.141.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1612273835712" />
-    <state x="825" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1614759257468">
+    <state x="984" y="507" key="#com.intellij.refactoring.encapsulateFields.EncalpsulateFieldsDialog" timestamp="1616005876852">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="984" y="507" key="#com.intellij.refactoring.encapsulateFields.EncalpsulateFieldsDialog/2560.-290.1200.1920/-1920.123.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1616005876852" />
+    <state x="825" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1616006313626">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="825" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/2560.-290.1200.1920/-1920.-108.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1614759257468" />
-    <state x="1010" y="467" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1614759213063">
+    <state x="825" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/2560.-290.1200.1920/-1920.123.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1616006313626" />
+    <state x="1010" y="467" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1616001318230">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="1010" y="467" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/2560.-290.1200.1920/-1920.-108.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1614759213063" />
+    <state x="1010" y="467" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/2560.-290.1200.1920/-1920.123.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1616001318230" />
     <state x="1060" y="475" key="FileChooserDialogImpl" timestamp="1615504473315">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
@@ -232,10 +235,10 @@
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="781" y="365" key="SettingsEditor/2560.-290.1200.1920/-1920.123.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1615158543783" />
-    <state x="-722" y="123" width="578" height="891" maximized="true" key="dock-window-1" timestamp="1615188255686">
-      <screen x="-1920" y="123" width="1920" height="1200" />
+    <state x="100" y="0" width="1127" height="1426" key="dock-window-1" timestamp="1616007139019">
+      <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="-722" y="123" width="578" height="891" maximized="true" key="dock-window-1/2560.-290.1200.1920/-1920.123.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1615188255686" />
+    <state x="100" y="0" width="1127" height="1426" key="dock-window-1/2560.-290.1200.1920/-1920.123.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1616007139019" />
     <state x="1010" y="481" key="extract.method.dialog" timestamp="1614784067506">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>

@@ -3,15 +3,11 @@ package teamcode.control.path;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
-import sim.company.ComputerDebugging;
-import sim.company.FloatPoint;
-import sim.company.Robot;
+import main.Robot;
 import teamcode.control.controllers.PurePursuitController;
 import teamcode.control.path.PathPoints.*;
 import teamcode.control.path.builders.PathBuilder;
 import teamcode.util.MathUtil;
-import teamcode.util.Point;
-import teamcode.util.Pose;
 
 public class Path extends LinkedList<PathPoints.BasePathPoint> {
     // target is always getFirst(), curr is copied

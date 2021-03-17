@@ -1,5 +1,6 @@
-package sim.company;
+package main;
 
+import sim.company.Range;
 import teamcode.control.path.Path;
 import teamcode.util.MathUtil;
 import teamcode.util.Pose;

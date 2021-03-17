@@ -1,6 +1,6 @@
 package sim.robotUtil;
 
-import static sim.company.Robot.worldAngle_rad;
+import static main.Robot.worldAngle_rad;
 import static sim.robotUtil.MathFunctions.AngleWrap;
 
 public class SpeedOmeter {

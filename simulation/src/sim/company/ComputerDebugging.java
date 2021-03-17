@@ -1,5 +1,7 @@
 package sim.company;
 
+import main.Robot;
+
 import java.text.DecimalFormat;
 
 public class ComputerDebugging {

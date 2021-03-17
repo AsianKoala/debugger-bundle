@@ -4,7 +4,7 @@ package teamcode.control.controllers;
 
 import sim.company.ComputerDebugging;
 import sim.company.FloatPoint;
-import sim.company.Robot;
+import main.Robot;
 
 import teamcode.util.MathUtil;
 import teamcode.util.Point;
