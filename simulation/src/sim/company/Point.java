@@ -1,4 +1,4 @@
-package sim.core;
+package sim.company;
 
 //javadoc:Point_
 public class Point {

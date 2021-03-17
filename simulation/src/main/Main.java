@@ -1,19 +1,13 @@
-package sim.Main;
+package main;
 
 
 import sim.company.ComputerDebugging;
 import sim.company.FloatPoint;
 import sim.company.Robot;
 
-import sim.treamcode.OpMode;
-import sim.treamcode.Point;
-import teamcode.control.path.Path;
-import teamcode.control.path.builders.PathBuilder;
+import sim.robotUtil.OpMode;
 import teamcode.util.Pose;
 
-import static teamcode.control.path.PathPoints.*;
-
-import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class Main {
@@ -27,10 +21,7 @@ public class Main {
         Pose tar = new Pose(10);
         System.out.println(curr.relVals(tar));
     }
-
-    static void rem(LinkedList<Point> list) {
-        list.removeLast();
-    }
+    
 
     /**
      * The program runs here

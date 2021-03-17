@@ -1,15 +1,13 @@
 package sim.company;
 
-import sim.RobotUtilities.SpeedOmeter;
 import teamcode.control.path.Path;
 import teamcode.util.MathUtil;
-import teamcode.util.Point;
 import teamcode.util.Pose;
 import teamcode.util.SignaturePose;
 
 import java.util.*;
 
-import static sim.RobotUtilities.MovementVars.*;
+import static sim.robotUtil.MovementVars.*;
 
 public class Robot {
     public static boolean usingComputer = true;

@@ -1,4 +1,4 @@
-package sim.RobotUtilities;
+package sim.robotUtil;
 
 public class MovementVars {
     public static double movement_x = 0;

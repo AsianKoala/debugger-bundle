@@ -1,7 +1,7 @@
-package sim.Main;
+package main;
 
 
-import sim.treamcode.OpMode;
+import sim.robotUtil.OpMode;
 import teamcode.control.path.Function;
 import teamcode.control.path.Path;
 import teamcode.control.path.builders.PathBuilder;
@@ -10,7 +10,7 @@ import teamcode.util.Pose;
 
 import java.util.LinkedList;
 
-import static sim.Main.Main.robot;
+import static main.Main.robot;
 import static teamcode.control.path.PathPoints.*;
 
 public class MyOpMode extends OpMode {

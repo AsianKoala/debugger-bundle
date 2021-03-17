@@ -22,12 +22,16 @@
     <list default="true" id="06f710b7-470c-4d99-91ff-deca9af1f0aa" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/../debugger/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../debugger/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/sim/Main/MyOpMode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/sim/Main/MyOpMode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sim/Main/MyOpMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/Main/MyOpMode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sim/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sim/Main/MyOpMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/MyOpMode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sim/RobotUtilities/MovementVars.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/robotUtil/MovementVars.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sim/RobotUtilities/SpeedOmeter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/robotUtil/SpeedOmeter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sim/company/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/company/Robot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/teamcode/control/controllers/PurePursuitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamcode/control/controllers/PurePursuitController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/teamcode/control/path/Path.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamcode/control/path/Path.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/teamcode/control/path/PathPoints.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamcode/control/path/PathPoints.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sim/core/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/company/Point.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sim/treamcode/CurvePoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/robotUtil/CurvePoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sim/treamcode/MathFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/robotUtil/MathFunctions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sim/treamcode/OpMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/robotUtil/OpMode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sim/treamcode/Point.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +44,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -85,7 +90,7 @@
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="sim.Main.Main" />
+      <option name="MAIN_CLASS_NAME" value="main.Main" />
       <module name="PurePursuitTutorial" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <RunnerSettings RunnerId="Run" />
@@ -132,6 +137,7 @@
       <workItem from="1615504006406" duration="1068000" />
       <workItem from="1615563431293" duration="63000" />
       <workItem from="1615897909096" duration="5037000" />
+      <workItem from="1615997171921" duration="1627000" />
     </task>
     <servers />
   </component>
