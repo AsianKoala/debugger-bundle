@@ -21,26 +21,53 @@ public class MyOpMode extends OpMode {
     public void init() {
         LinkedList<Path> returnList = new LinkedList<>();
 
-        returnList.add(new PathBuilder("INITIAL_RINGS")
-                .addPoint(new BasePathPoint("start", robot.startPose.x, robot.startPose.y, 0))
-                .addPoint(new LateTurnPathPoint("forward", 330, 330, Math.toRadians(75), 25, new Point(325, 210)))
-                .addPoint(new LateTurnPathPoint("to initial shots", shootingPose.x, shootingPose.y, shootingPose.heading, 20, new Point(305, 270), new Function() {
-                    @Override
-                    public boolean cond() {
-                        return robot.currPose.distance(shootingPose) < 2;
-                    }
+        PathBuilder cock = new PathBuilder("cock");
 
-                    @Override
-                    public boolean func() {
-                        for(int i=0; i<3; i++) System.out.println("SHOOTING");
-                        return true;
-                    }
-                }))
-                .addPoint(new BasePathPoint("collect rings", 270, 130, 15))
-                .build());
+        PathBuilder leftBall = new PathBuilder("left ball")
+                .addPoint(new BasePathPoint("start", 88, 150, 0))
+                .addPoint(new BasePathPoint("intermed 1", 45, 135, 35))
+                .addPoint(new BasePathPoint("left-left", 30, 90, 35))
+                .addPoint(new BasePathPoint("intermed 2", 45, 45, 35))
+                .addPoint(new BasePathPoint("left-bottom", 88, 30, 35))
+                .addPoint(new BasePathPoint("intermed 3", 130, 43, 35))
+                .addPoint(new BasePathPoint("left-right", 150, 90, 35))
+                .addPoint(new BasePathPoint("intermed 4", 130, 135, 35))
+                .addPoint(new BasePathPoint("start2", 88, 150, 35));
 
-        robot.pathCache.addAll(returnList);
-    }
+        for(BasePathPoint p : leftBall.path) p.x += 25;
+        cock.path.addAll(leftBall.path);
+
+
+        PathBuilder rightBall = new PathBuilder("right ball");
+        for(BasePathPoint point : leftBall.path) {
+            BasePathPoint cPoint = new BasePathPoint(point);
+            cPoint.followDistance = 35;
+            cPoint.x += 125;
+            rightBall.addPoint(cPoint);
+        }
+        rightBall.path.get(1).followDistance = 20;
+        rightBall.path.get(2).followDistance = 20;
+        cock.path.addAll(rightBall.path);
+
+
+        PathBuilder shaft = new PathBuilder("shaft")
+                .addPoint(new BasePathPoint("left base", 130, 135, 35))
+                .addPoint(new BasePathPoint("top left", 130, 290,  35))
+                .addPoint(new BasePathPoint("left out", 90, 290, 25))
+                .addPoint(new BasePathPoint("left curve first", 120, 315, 25))
+                .addPoint(new BasePathPoint("tip left", 145, 330, 25))
+                .addPoint(new BasePathPoint("tip right", 185, 330, 25))
+                .addPoint(new BasePathPoint("right curve first", 205, 315, 25))
+                .addPoint(new BasePathPoint("right out", 240, 290, 20))
+                .addPoint(new ControlledPathPoint("top right", 200, 290, Math.toRadians(180), 23))
+                .addPoint(new BasePathPoint("right base", 200, 135, 35));
+
+        for(BasePathPoint p : shaft.path) p.x += 8;
+        cock.path.addAll(shaft.path);
+
+
+        returnList.add(cock.build());
+        robot.pathCache.addAll(returnList);    }
     @Override
     public void loop() {
     }

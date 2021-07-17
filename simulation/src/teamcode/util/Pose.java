@@ -61,32 +61,29 @@ public class Pose extends Point {
     }
 
     public Pose relVals(Point target) {
-        double r_d = distance(target);
-        double angleToPoint = target.subtract(this).atan();
-        double deltaAngleToPoint = angleWrap(angleToPoint - (heading - Math.toRadians(90)));
-        double r_x = Math.cos(deltaAngleToPoint) * r_d;
-        double r_y = Math.sin(deltaAngleToPoint) * r_d;
+        double dist = distance(target);
+        double abs_angle = target.subtract(this).atan();
+        double rel_angle = angleWrap(abs_angle - heading + Math.toRadians(90));
+        double r_x = Math.cos(rel_angle) * dist;
+        double r_y = Math.sin(rel_angle) * dist;
         return new Pose(r_x, r_y, 0); // return 0 just to kmake sure neer to use it
     }
 
 
-    // only setters, return ref
     public Pose wrap() {
-        heading = MathUtil.angleWrap(heading);
-        return this;
+        return new Pose(x, y, MathUtil.angleWrap(heading));
     }
 
-    public Pose set(Pose p) {
+    public void set(Pose p) {
         x = p.x;
         y = p.y;
         heading = p.heading;
-        return this;
     }
 
 
     @Override
     public String toString() {
-        return String.format("(%.1f, %.1f, %.1f)", x, y, heading);
+        return String.format("(%.1f, %.6f, %.1f)", x, y, heading);
     }
 
 }
