@@ -1,4 +1,6 @@
 import main.Azusa
+import sim.ComputerDebugging
+import sim.FloatPoint
 import teamcode.control.waypoints.LockedWaypoint
 import teamcode.control.waypoints.Waypoint
 import sim.MovementVars
@@ -20,6 +22,7 @@ object PurePursuitController {
     }
 
     fun goToPosition(currPose: Pose, target: Waypoint) {
+        ComputerDebugging.sendKeyPoint(FloatPoint(target.x, target.y))
 
         var movementPoint = Point.ORIGIN
 

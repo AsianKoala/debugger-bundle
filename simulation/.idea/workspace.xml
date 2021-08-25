@@ -23,18 +23,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06f710b7-470c-4d99-91ff-deca9af1f0aa" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/Azusa.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Azusa.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/MyOpMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/MyOpMode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sim/company/ComputerDebugging.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/ComputerDebugging.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sim/company/FloatPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/FloatPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sim/company/Range.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/Range.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sim/company/UdpServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/UdpServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sim/robotUtil/MathFunctions.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sim/robotUtil/MovementVars.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/MovementVars.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sim/robotUtil/OpMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/OpMode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sim/robotUtil/Point.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/teamcode/control/PPController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamcode/control/PPController.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/OpMode.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/OpMode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/teamcode/control/PPController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamcode/control/PurePursuitController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/teamcode/control/builders/PathBuilder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamcode/control/builders/PathBuilder.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
