@@ -1,8 +1,6 @@
 package main;
 
 
-import sim.robotUtil.OpMode;
-
 public class MyOpMode extends OpMode {
 
     @Override

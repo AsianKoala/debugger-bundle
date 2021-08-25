@@ -1,7 +1,7 @@
 import main.Azusa
 import teamcode.control.waypoints.LockedWaypoint
 import teamcode.control.waypoints.Waypoint
-import sim.robotUtil.MovementVars
+import sim.MovementVars
 import teamcode.util.*
 import teamcode.util.MathUtil.circleLineIntersection
 import teamcode.util.MathUtil.clip

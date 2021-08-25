@@ -23,78 +23,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06f710b7-470c-4d99-91ff-deca9af1f0aa" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/ktlint.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/KotlinJavaRuntime.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/kotlin-reflect-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/kotlin-reflect.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/kotlin-stdlib-jdk7-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/kotlin-stdlib-jdk7.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/kotlin-stdlib-jdk8-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/kotlin-stdlib-jdk8.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/kotlin-stdlib-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/kotlin-stdlib.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/kotlin-test-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/kotlin-test.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/test/Point.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/test/t.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Azusa.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/teamcode/control/PPController.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/teamcode/control/Path.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/teamcode/control/builders/PathBuilder.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/teamcode/control/path/funcs/Functions.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/teamcode/control/path/funcs/SysFunc.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/teamcode/control/path/funcs/SysPoseFunc.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/teamcode/control/path/funcs/SysTimeFunc.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/teamcode/control/waypoints/LockedWaypoint.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/teamcode/control/waypoints/PointTurnWaypoint.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/teamcode/control/waypoints/StopWaypoint.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/teamcode/control/waypoints/Waypoint.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/teamcode/util/Angle.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/teamcode/util/AngleUnit.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/teamcode/util/MathUtil.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/teamcode/util/Point.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/teamcode/util/Pose.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/teamcode/util/Range.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../debugger/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../debugger/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../debugger/src/com/company/Robot.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PurePursuitTutorial.iml" beforeDir="false" afterPath="$PROJECT_DIR$/PurePursuitTutorial.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/lib/math/geometry/Line.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/lib/math/geometry/Line.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/lib/math/geometry/Point.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/lib/math/geometry/Point.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/lib/math/geometry/Pose.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/lib/math/geometry/Pose.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/main/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/main/MyOpMode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/main/MyOpMode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/main/Robot.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/main/Robot.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/sim/company/UdpServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/sim/company/UdpServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/sim/robotUtil/Point.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/sim/robotUtil/Point.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/teamcode/control/controllers/PurePursuitController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/teamcode/control/controllers/PurePursuitController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/teamcode/control/path/Path.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/teamcode/control/path/Path.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/teamcode/util/MathUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/teamcode/util/MathUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/math/MathUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/math/geometry/Line.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/math/geometry/Point.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/math/geometry/Pose.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/math/geometry/Segment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Azusa.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Azusa.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/MyOpMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/MyOpMode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Robot.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sim/company/ComputerDebugging.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/company/ComputerDebugging.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sim/robotUtil/SpeedOmeter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/robotUtil/SpeedOmeter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/teamcode/control/controllers/PurePursuitController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/teamcode/control/path/Function.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/teamcode/control/path/Path.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/teamcode/control/path/PathPoints.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/teamcode/control/path/builders/PathBuilder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/teamcode/control/path/builders/PathPointBuilder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/teamcode/util/MathUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/teamcode/util/OpModeClock.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/teamcode/util/Point.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/teamcode/util/Pose.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/teamcode/util/SignaturePose.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/LineTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/PoseTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/TestUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sim/company/ComputerDebugging.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/ComputerDebugging.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sim/company/FloatPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/FloatPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sim/company/Range.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/Range.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sim/company/UdpServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/UdpServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sim/robotUtil/MathFunctions.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sim/robotUtil/MovementVars.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/MovementVars.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sim/robotUtil/OpMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/OpMode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sim/robotUtil/Point.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/teamcode/control/PPController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamcode/control/PPController.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

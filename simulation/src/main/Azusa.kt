@@ -1,7 +1,7 @@
 package main
 
-import sim.company.Range
-import sim.robotUtil.MovementVars
+import sim.Range
+import sim.MovementVars
 import teamcode.util.MathUtil.toRadians
 import kotlin.math.*
 

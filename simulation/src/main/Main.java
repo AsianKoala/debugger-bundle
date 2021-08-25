@@ -1,10 +1,8 @@
 package main;
 
 
-import sim.company.ComputerDebugging;
-import sim.company.FloatPoint;
-
-import sim.robotUtil.OpMode;
+import sim.ComputerDebugging;
+import sim.FloatPoint;
 
 public class Main {
 

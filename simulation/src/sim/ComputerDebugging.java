@@ -1,4 +1,4 @@
-package sim.company;
+package sim;
 
 import java.text.DecimalFormat;
 

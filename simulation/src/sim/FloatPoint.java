@@ -1,4 +1,4 @@
-package sim.company;
+package sim;
 
 public class FloatPoint {
     public double x;
