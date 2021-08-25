@@ -27,23 +27,18 @@
  * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF
  * THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
+package sim
 
-package sim;
+import java.lang.IllegalArgumentException
+import kotlin.Throws
 
 /**
  * Utility class for performing range operations
  */
-public class Range {
-
-    /*
-     * This class contains only static utility methods
-     */
-    private Range() {}
-
+object Range {
     //------------------------------------------------------------------------------------------------
     // Scaling
     //------------------------------------------------------------------------------------------------
-
     /**
      * Scale a number in the range of x1 to x2, to the range of y1 to y2
      * @param n number to scale
@@ -53,26 +48,23 @@ public class Range {
      * @param y2 upper bound of scale
      * @return a double scaled to a value between y1 and y2, inclusive
      */
-    public static double scale(double n, double x1, double x2, double y1, double y2) {
-        double a = (y1-y2)/(x1-x2);
-        double b = y1 - x1*(y1-y2)/(x1-x2);
-        return a*n+b;
+    fun scale(n: Double, x1: Double, x2: Double, y1: Double, y2: Double): Double {
+        val a = (y1 - y2) / (x1 - x2)
+        val b = y1 - x1 * (y1 - y2) / (x1 - x2)
+        return a * n + b
     }
-
     //------------------------------------------------------------------------------------------------
     // Clipping
     //------------------------------------------------------------------------------------------------
-
     /**
      * clip 'number' if 'number' is less than 'min' or greater than 'max'
      * @param number number to test
      * @param min minimum value allowed
      * @param max maximum value allowed
      */
-    public static double clip(double number, double min, double max) {
-        if (number < min) return min;
-        if (number > max) return max;
-        return number;
+    fun clip(number: Double, min: Double, max: Double): Double {
+        if (number < min) return min
+        return if (number > max) max else number
     }
 
     /**
@@ -81,10 +73,9 @@ public class Range {
      * @param min minimum value allowed
      * @param max maximum value allowed
      */
-    public static float clip(float number, float min, float max) {
-        if (number < min) return min;
-        if (number > max) return max;
-        return number;
+    fun clip(number: Float, min: Float, max: Float): Float {
+        if (number < min) return min
+        return if (number > max) max else number
     }
 
     /**
@@ -93,10 +84,9 @@ public class Range {
      * @param min minimum value allowed
      * @param max maximum value allowed
      */
-    public static int clip(int number, int min, int max) {
-        if (number < min) return min;
-        if (number > max) return max;
-        return number;
+    fun clip(number: Int, min: Int, max: Int): Int {
+        if (number < min) return min
+        return if (number > max) max else number
     }
 
     /**
@@ -105,10 +95,9 @@ public class Range {
      * @param min minimum value allowed
      * @param max maximum value allowed
      */
-    public static short clip(short number, short min, short max) {
-        if (number < min) return min;
-        if (number > max) return max;
-        return number;
+    fun clip(number: Short, min: Short, max: Short): Short {
+        if (number < min) return min
+        return if (number > max) max else number
     }
 
     /**
@@ -117,16 +106,13 @@ public class Range {
      * @param min minimum value allowed
      * @param max maximum value allowed
      */
-    public static byte clip(byte number, byte min, byte max) {
-        if (number < min) return min;
-        if (number > max) return max;
-        return number;
+    fun clip(number: Byte, min: Byte, max: Byte): Byte {
+        if (number < min) return min
+        return if (number > max) max else number
     }
-
     //------------------------------------------------------------------------------------------------
     // Validation
     //------------------------------------------------------------------------------------------------
-
     /**
      * Throw an IllegalArgumentException if 'number' is less than 'min' or greater than 'max'
      * @param number number to test
@@ -134,11 +120,9 @@ public class Range {
      * @param max maximum value allowed
      * @throws IllegalArgumentException if number is outside of range
      */
-    public static void throwIfRangeIsInvalid(double number, double min, double max) throws IllegalArgumentException {
-        if (number < min || number > max) {
-            throw new IllegalArgumentException(
-                    String.format("number %f is invalid; valid ranges are %f..%f", number, min, max));
-        }
+    @Throws(IllegalArgumentException::class)
+    fun throwIfRangeIsInvalid(number: Double, min: Double, max: Double) {
+        require(!(number < min || number > max)) { String.format("number %f is invalid; valid ranges are %f..%f", number, min, max) }
     }
 
     /**
@@ -148,10 +132,8 @@ public class Range {
      * @param max maximum value allowed
      * @throws IllegalArgumentException if number is outside of range
      */
-    public static void throwIfRangeIsInvalid(int number, int min, int max) throws IllegalArgumentException {
-        if (number < min || number > max) {
-            throw new IllegalArgumentException(
-                    String.format("number %d is invalid; valid ranges are %d..%d", number, min, max));
-        }
+    @Throws(IllegalArgumentException::class)
+    fun throwIfRangeIsInvalid(number: Int, min: Int, max: Int) {
+        require(!(number < min || number > max)) { String.format("number %d is invalid; valid ranges are %d..%d", number, min, max) }
     }
 }

@@ -23,11 +23,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06f710b7-470c-4d99-91ff-deca9af1f0aa" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/OpMode.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Main.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/MyOpMode.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sim/ComputerDebugging.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sim/FloatPoint.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sim/MovementVars.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../debugger/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../debugger/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../debugger/out/production/DebugClient/com/company/Auto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../debugger/out/production/DebugClient/com/company/BaseAuto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../debugger/out/production/DebugClient/com/company/Robot.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/OpMode.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/teamcode/control/PPController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamcode/control/PurePursuitController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/PurePursuitController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/PurePursuitController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/main/Azusa.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/main/Azusa.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/main/MyOpMode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/main/MyOpMode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/sim/company/ComputerDebugging.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/sim/company/FloatPoint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/sim/company/Range.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/sim/company/UdpServer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/sim/robotUtil/MathFunctions.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/sim/robotUtil/MovementVars.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/sim/robotUtil/OpMode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/sim/robotUtil/Point.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/teamcode/control/builders/PathBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/teamcode/control/builders/PathBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Azusa.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Azusa.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/MyOpMode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/OpMode.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/OpMode.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sim/ComputerDebugging.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sim/FloatPoint.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sim/MovementVars.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sim/Range.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/Range.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sim/UdpServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/UdpServer.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/teamcode/control/PurePursuitController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamcode/control/PurePursuitController.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/teamcode/control/builders/PathBuilder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamcode/control/builders/PathBuilder.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/teamcode/control/waypoints/Waypoint.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamcode/control/waypoints/Waypoint.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,8 +176,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.t" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.t" />
         <item itemvalue="Application.PoseTest" />
         <item itemvalue="Application.LineTest" />
       </list>

@@ -1,58 +1,51 @@
-package sim;
+package sim
 
+import java.lang.Runnable
+import java.util.concurrent.Semaphore
+import sim.UdpServer
+import java.lang.InterruptedException
+import java.net.DatagramSocket
+import java.net.DatagramPacket
+import java.io.IOException
+import java.net.InetAddress
 
-
-import java.io.IOException;
-import java.net.DatagramPacket;
-import java.net.DatagramSocket;
-import java.net.InetAddress;
-import java.util.concurrent.Semaphore;
-
-public class UdpServer implements Runnable{
-    //the port of the client
-    private final int clientPort;
-    public static boolean kill = false;
-
-    public UdpServer(int clientPort) {
-        this.clientPort = clientPort;
-    }
-
+class UdpServer(  //the port of the client
+        private val clientPort: Int) : Runnable {
     //guards thread collisions
-    private Semaphore sendLock = new Semaphore(1);
-
-
+    private val sendLock = Semaphore(1)
 
     //this is the time of the last update in milliseconds
-    private long lastSendMillis = 0;
+    private var lastSendMillis: Long = 0
 
     /**
      * This runs repeatedly (it's own thread). It looks to see if there are any messages to send
      * and if so which to send.
      */
-    @Override
-    public void run() {
-        while(true){
-            if(kill){break;}
+    override fun run() {
+        while (true) {
+            if (kill) {
+                break
+            }
             try {
                 //never send data too fast
-                if(System.currentTimeMillis()-lastSendMillis < 50) {
-                    continue;
+                if (System.currentTimeMillis() - lastSendMillis < 50) {
+                    continue
                 }
                 //set the last send time
-                lastSendMillis = System.currentTimeMillis();
+                lastSendMillis = System.currentTimeMillis()
 
                 //wait for semaphore to be available
-                sendLock.acquire();
+                sendLock.acquire()
 
 
                 //We will send either the current update or the last update depending on
                 //if we are using the currentUpdate String or not
-                if(currentUpdate.length() > 0){
+                if (currentUpdate.length > 0) {
                     //send the current update
-                    splitAndSend(currentUpdate);
+                    splitAndSend(currentUpdate)
                     //now we scrap everything in currentUpdate to flag it is empty
-                    currentUpdate = "";
-                }else{
+                    currentUpdate = ""
+                } else {
 //                    //if we are here, the currentUpdate is empty
 //                    if(lastUpdate.length() > 0){
 //                        splitAndSend(lastUpdate);
@@ -62,83 +55,83 @@ public class UdpServer implements Runnable{
                 }
 
                 //release the semaphore
-                sendLock.release();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+                sendLock.release()
+            } catch (e: InterruptedException) {
+                e.printStackTrace()
             }
         }
-
     }
 
     /**
      * This method uses sendUdpRAW but will split up the message if it is too long
      * @param message the message you wish to send
      */
-    public void splitAndSend(String message) {
+    fun splitAndSend(message: String) {
 //        System.out.println("sending: " + message);
         //these are the ranges we are sending over
-        int startIndex = 0;
-        int endIndex;
-
+        var startIndex = 0
+        var endIndex: Int
         do {
             //We will start the end index approximately 600 away. But can't be greater
             //than the message length
-            endIndex = Range.clip(startIndex + 600, 0, message.length() - 1);
+            endIndex = Range.clip(startIndex + 600, 0, message.length - 1)
 
 
             //Now we will move backwards scanning for the end of this message
             //if this character is a separator, we can mark the end index
-            while (message.charAt(endIndex) != '%') {
-                endIndex--;//move backwards searching for the separator
+            while (message[endIndex] != '%') {
+                endIndex-- //move backwards searching for the separator
             }
 
             //need to add one to the end bound to be inclusive
-            sendUdpRAW(message.substring(startIndex,endIndex+1));
+            sendUdpRAW(message.substring(startIndex, endIndex + 1))
 
             //start at the next character
-            startIndex = endIndex+1;
-        } while (endIndex != message.length() - 1);//terminate if we have reached the end
+            startIndex = endIndex + 1
+        } while (endIndex != message.length - 1) //terminate if we have reached the end
     }
-
 
     /**
      * This is a prate method to actually send a message over the udp protocol
      * @param message the message you wish to send
      */
-    private void sendUdpRAW(String message){
-        try(DatagramSocket serverSocket = new DatagramSocket()){
-            DatagramPacket datagramPacket = new DatagramPacket(
-                    message.getBytes(),
-                    message.length(),
-                    InetAddress.getByName("127.0.0.1"),//194"),
-                    clientPort);
-
-            serverSocket.send(datagramPacket);
-
-        } catch (IOException e) {
-            e.printStackTrace();
+    private fun sendUdpRAW(message: String) {
+        try {
+            DatagramSocket().use { serverSocket ->
+                val datagramPacket = DatagramPacket(
+                        message.toByteArray(),
+                        message.length,
+                        InetAddress.getByName("127.0.0.1"),  //194"),
+                        clientPort)
+                serverSocket.send(datagramPacket)
+            }
+        } catch (e: IOException) {
+            e.printStackTrace()
         }
     }
 
-
     //These are the double buffering system
-    private String lastUpdate = "";
-    private String currentUpdate = "";
+    private var lastUpdate = ""
+    private var currentUpdate = ""
 
     /**
      * This will queue a message for sending, utilizing the double buffer
      * @param string the message you wish to send
      */
-    public void addMessage(String string){
+    fun addMessage(string: String) {
         //depending on the state of the semaphore we can do two things
-        if(!sendLock.tryAcquire()){
+        if (!sendLock.tryAcquire()) {
             //if it is being used, set the last update
-            lastUpdate = string;
-        }else{
+            lastUpdate = string
+        } else {
             //we can update the current update if we got past the semaphore
-            currentUpdate = string;
+            currentUpdate = string
             //release the semaphore since we have acquired
-            sendLock.release();
+            sendLock.release()
         }
+    }
+
+    companion object {
+        var kill = false
     }
 }

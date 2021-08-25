@@ -6,9 +6,7 @@ import teamcode.util.Pose
 
 // id love for this to be a dataclass but yeah sucks to suck
 open class Waypoint(
-        @JvmField
     var x: Double = 0.0,
-        @JvmField
     var y: Double = 0.0,
     val followDistance: Double = 0.0,
     val func: Functions.Function? = null

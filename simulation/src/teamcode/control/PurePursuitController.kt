@@ -15,56 +15,41 @@ import kotlin.math.absoluteValue
 object PurePursuitController {
 //    private val mins = Pose(0.11, 0.09, 0.11)
 
-    private fun relVals(curr: Pose, target: Waypoint): Pose {
+    private fun relVals(curr: Pose, target: Waypoint): Point {
         val d = (curr.p - target.p).hypot
         val rh = (target.p - curr.p).atan2 - curr.h
-        return Pose(Point(-d * rh.sin, d * rh.cos), rh)
+        return Point(-d * rh.sin, d * rh.cos)
     }
 
     fun goToPosition(currPose: Pose, target: Waypoint) {
+
         ComputerDebugging.sendKeyPoint(FloatPoint(target.x, target.y))
 
-        var movementPoint = Point.ORIGIN
+        val relTarget = relVals(currPose, target)
 
-        val pointDeltas = relVals(currPose, target).p
+        val sumAbs = relTarget.x.absoluteValue + relTarget.y.absoluteValue
 
-        val relativeAngle = getDeltaH(currPose, target)
-        var turnPower = relativeAngle / 40.0.toRadians
-
-
-        movementPoint.x = (pointDeltas.x / (pointDeltas.x.absoluteValue + pointDeltas.y.absoluteValue))
-        movementPoint.y = (pointDeltas.y / (pointDeltas.x.absoluteValue + pointDeltas.y.absoluteValue))
-
-        movementPoint.x *= pointDeltas.x.absoluteValue / 12.0
-        movementPoint.y *= pointDeltas.y.absoluteValue / 12.0
-
-        movementPoint = movementPoint.clip(1.0)
+        val movementPowers = (relTarget / sumAbs)
+        movementPowers.x *= relTarget.x.absoluteValue / 30.0
+        movementPowers.y *= relTarget.y.absoluteValue / 30.0
 
 
-
-        movementPoint.x *= (pointDeltas.x / 2.5).clip(1.0)
-        movementPoint.y *= (pointDeltas.y / 2.5).clip(1.0)
-
-        turnPower *= (relativeAngle.absoluteValue / 3.0.toRadians).clip(1.0).clip(1.0)
+//        movementPowers.x = relTarget.x / 30.0
+//        movementPowers.y = relTarget.y / 30.0
 
 
-        if(currPose.distance(target) < 4) {
-            turnPower = 0.0
-        }
+        val deltaH = getDeltaH(currPose, target)
+        val turnPower = deltaH / 90.0.toRadians
 
-        var errorTurnScale = Range.clip(1.0-(relativeAngle / 45.0.toRadians).absoluteValue, 0.4, 1.0)
+        MovementVars.movement_x = movementPowers.x.clip(1.0)
+        MovementVars.movement_y = movementPowers.y.clip(1.0)
+//        MovementVars.movement_turn = turnPower TODO fix how turning physics works
 
-        if(turnPower.absoluteValue < 0.0001) {
-            errorTurnScale = 1.0
-        }
-
-        movementPoint *= errorTurnScale
-
-
-
-        MovementVars.movement_x = movementPoint.x
-        MovementVars.movement_y = movementPoint.y
-        MovementVars.movement_turn = turnPower
+        println(movementPowers.x)
+        println(movementPowers.y)
+        println(turnPower)
+        println()
+        println()
     }
 
     private fun getDeltaH(curr: Pose, target: Waypoint): Double {
@@ -82,9 +67,25 @@ object PurePursuitController {
 
     fun followPath(start: Waypoint, end: Waypoint) {
         val currPose = Pose(Point(Azusa.worldXPosition, Azusa.worldYPosition), Angle(Azusa.worldAngleRad, AngleUnit.RAD))
+        val (normalX, normalY) = circleLineIntersection(currPose.p, start.p, end.p, end.followDistance)
+
+        var x = normalX
+        var y = normalY
+
+        if (x == 69420.0) {
+            val clip: Point = clipIntersection(start.p, end.p, currPose.p)
+            val (clipIntX, clipIntY) = circleLineIntersection(clip, start.p, end.p, end.followDistance)
+            x = clipIntX
+            y = clipIntY
+        }
+
 
         val clip: Point = clipIntersection(start.p, end.p, currPose.p)
-        val (x, y) = circleLineIntersection(clip, start.p, end.p, end.followDistance)
+        val (clipIntX, clipIntY) = circleLineIntersection(clip, start.p, end.p, end.followDistance)
+        x = clipIntX
+        y = clipIntY
+
+
         val followPoint = end.copy
         followPoint.x = x
         followPoint.y = y
