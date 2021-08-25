@@ -5,18 +5,13 @@ import sim.company.ComputerDebugging;
 import sim.company.FloatPoint;
 
 import sim.robotUtil.OpMode;
-import teamcode.util.Pose;
 
 public class Main {
 
-    public static Robot robot = new Robot();
+    public static Azusa robot = new Azusa();
 
     public static void main(String[] args) {
         new Main().run();
-
-        Pose curr = new Pose(5,5,Math.toRadians(45));
-        Pose tar = new Pose(10);
-        System.out.println(curr.relVals(tar));
     }
 
 
@@ -26,7 +21,7 @@ public class Main {
     public void run(){
         //this is a test of the coding
         ComputerDebugging computerDebugging = new ComputerDebugging();
-        robot = new Robot();
+        robot = new Azusa();
         OpMode opMode = new MyOpMode();
         opMode.init();
 
@@ -48,9 +43,10 @@ public class Main {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+
             robot.update();
             ComputerDebugging.sendRobotLocation(robot);
-            ComputerDebugging.sendLogPoint(new FloatPoint(Robot.worldXPosition,Robot.worldYPosition));
+            ComputerDebugging.sendLogPoint(new FloatPoint(Azusa.Companion.getWorldXPosition(), Azusa.Companion.getWorldYPosition()));
             ComputerDebugging.markEndOfUpdate();
         }
     }

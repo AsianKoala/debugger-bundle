@@ -1,8 +1,8 @@
 package sim.company;
 
-import main.Robot;
-
 import java.text.DecimalFormat;
+
+import main.Azusa;
 
 public class ComputerDebugging {
     //this is what actually sends our messages
@@ -28,17 +28,15 @@ public class ComputerDebugging {
     /**
      * Sends the robot location to the debug computer
      */
-    public static void sendRobotLocation(Robot robot){
-        //return if not using computer
-        if(!Robot.usingComputer){return;}
+    public static void sendRobotLocation(Azusa azusa){
 
         //first send the robot location
         messageBuilder.append("ROBOT,");
-        messageBuilder.append(df.format(robot.getXPos()));
+        messageBuilder.append(df.format(azusa.getXPos()));
         messageBuilder.append(",");
-        messageBuilder.append(df.format(robot.getYPos()));
+        messageBuilder.append(df.format(azusa.getYPos()));
         messageBuilder.append(",");
-        messageBuilder.append(df.format(robot.getWorldAngle_rad()));
+        messageBuilder.append(df.format(azusa.getWorldAngle_rad()));
         messageBuilder.append("%");
 
     }
@@ -48,7 +46,6 @@ public class ComputerDebugging {
      * @param floatPoint the point you want to send
      */
     public static void sendKeyPoint(FloatPoint floatPoint) {
-        if(!Robot.usingComputer){return;}
 
 
         messageBuilder.append("P,")
@@ -64,7 +61,6 @@ public class ComputerDebugging {
      * @param floatPoint the point you want to send
      */
     public static void sendLogPoint(FloatPoint floatPoint) {
-        if(!Robot.usingComputer){return;}
 
 
         messageBuilder.append("LP,")
@@ -82,7 +78,6 @@ public class ComputerDebugging {
      */
     public static void sendLine(FloatPoint point1, FloatPoint point2){
         //return if not using the computer
-        if(!Robot.usingComputer){return;}
         messageBuilder.append("LINE,")
                 .append(df.format(point1.x))
                 .append(",")
@@ -99,7 +94,6 @@ public class ComputerDebugging {
      * This kills the udpServer background thread
      */
     public static void stopAll() {
-        if(!Robot.usingComputer){return;}
 
         UdpServer.kill = true;
     }
@@ -108,7 +102,6 @@ public class ComputerDebugging {
      * Sends the data accumulated over the update by adding it to the udpServer
      */
     public static void markEndOfUpdate() {
-        if(!Robot.usingComputer){return;}
         messageBuilder.append("CLEAR,%");
 
 //        udpServer.addMessage(messageBuilder.toString());
@@ -120,7 +113,6 @@ public class ComputerDebugging {
      * Forces a clear log
      */
     public static void clearLogPoints() {
-        if(!Robot.usingComputer){return;}
         udpServer.splitAndSend("CLEARLOG,%");
 
     }

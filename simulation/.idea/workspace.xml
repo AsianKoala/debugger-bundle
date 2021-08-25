@@ -23,23 +23,78 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06f710b7-470c-4d99-91ff-deca9af1f0aa" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/ktlint.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/KotlinJavaRuntime.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/kotlin-reflect-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/kotlin-reflect.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/kotlin-stdlib-jdk7-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/kotlin-stdlib-jdk7.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/kotlin-stdlib-jdk8-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/kotlin-stdlib-jdk8.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/kotlin-stdlib-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/kotlin-stdlib.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/kotlin-test-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/kotlin-test.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/test/Point.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/test/t.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Azusa.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/teamcode/control/PPController.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/teamcode/control/Path.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/teamcode/control/builders/PathBuilder.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/teamcode/control/path/funcs/Functions.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/teamcode/control/path/funcs/SysFunc.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/teamcode/control/path/funcs/SysPoseFunc.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/teamcode/control/path/funcs/SysTimeFunc.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/teamcode/control/waypoints/LockedWaypoint.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/teamcode/control/waypoints/PointTurnWaypoint.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/teamcode/control/waypoints/StopWaypoint.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/teamcode/control/waypoints/Waypoint.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/teamcode/util/Angle.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/teamcode/util/AngleUnit.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/teamcode/util/MathUtil.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/teamcode/util/Point.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/teamcode/util/Pose.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/teamcode/util/Range.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../debugger/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../debugger/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../debugger/src/com/company/Robot.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PurePursuitTutorial.iml" beforeDir="false" afterPath="$PROJECT_DIR$/PurePursuitTutorial.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/lib/math/geometry/Line.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/lib/math/geometry/Line.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/lib/math/geometry/Point.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/lib/math/geometry/Point.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/lib/math/geometry/Pose.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/lib/math/geometry/Pose.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/main/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/main/MyOpMode$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/main/MyOpMode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/main/MyOpMode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/sim/company/ComputerDebugging.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/sim/company/ComputerDebugging.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/sim/company/Point.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/sim/company/Robot.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/main/Robot.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/main/Robot.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/sim/company/UdpServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/sim/company/UdpServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/sim/robotUtil/SpeedOmeter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/sim/robotUtil/SpeedOmeter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/sim/robotUtil/Point.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/sim/robotUtil/Point.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/teamcode/control/controllers/PurePursuitController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/teamcode/control/controllers/PurePursuitController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/teamcode/control/path/Path.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/teamcode/control/path/Path.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/teamcode/util/MathUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/teamcode/util/MathUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PurePursuitTutorial/teamcode/util/Pose.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PurePursuitTutorial/teamcode/util/Pose.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/math/MathUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/math/geometry/Line.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/math/geometry/Point.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/math/geometry/Pose.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/math/geometry/Segment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/MyOpMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/MyOpMode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Robot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/teamcode/util/Pose.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamcode/util/Pose.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Robot.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sim/company/ComputerDebugging.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/company/ComputerDebugging.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sim/robotUtil/SpeedOmeter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/robotUtil/SpeedOmeter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/teamcode/control/controllers/PurePursuitController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/teamcode/control/path/Function.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/teamcode/control/path/Path.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/teamcode/control/path/PathPoints.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/teamcode/control/path/builders/PathBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/teamcode/control/path/builders/PathPointBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/teamcode/util/MathUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/teamcode/util/OpModeClock.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/teamcode/util/Point.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/teamcode/util/Pose.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/teamcode/util/SignaturePose.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/LineTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/PoseTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/TestUtil.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,11 +104,16 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/PurePursuitTutorial$Main.coverage" NAME="Main Coverage Results" MODIFIED="1558827337852" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="FxmlFile" />
         <option value="Class" />
+        <option value="Kotlin File" />
+        <option value="Kotlin Data Class" />
+        <option value="Kotlin Object" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -75,26 +135,30 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../FTC_14607" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/teamcode/control" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.language.Kotlin.scripting" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Neil\Documents\FTC\debugger bundle\simulation\src" />
-    </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="treamcode" />
       <recent name="com.company" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\neilm\Documents\FTC\debugger-bundle\simulation\src\teamcode\control" />
       <recent name="C:\Users\Neil\Documents\FTC\simulation\src\treamcode" />
       <recent name="C:\Users\peter\IdeaProjects\PurePursuitTutorial\src" />
       <recent name="C:\Users\peter\IdeaProjects\PurePursuitTutorial\src\com\company" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Neil\Documents\FTC\debugger bundle\simulation\src" />
+    </key>
+    <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="teamcode.control" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
@@ -134,8 +198,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="t" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test.t" />
+      <module name="PurePursuitTutorial" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.t" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.PoseTest" />
         <item itemvalue="Application.LineTest" />
@@ -202,30 +280,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="-1125" y="519" key="FileChooserDialogImpl" timestamp="1626420948067">
-      <screen x="-1920" y="123" width="1920" height="1200" />
-    </state>
-    <state x="1060" y="475" key="FileChooserDialogImpl/-1920.123.1920.1200/2560.-387.1200.1920/0.0.2560.1440@0.0.2560.1440" timestamp="1626327868061" />
-    <state x="-1125" y="519" key="FileChooserDialogImpl/2560.-387.1200.1920/-1920.123.1920.1200/0.0.2560.1440@-1920.123.1920.1200" timestamp="1626420948067" />
-    <state x="1060" y="475" key="FileChooserDialogImpl/2560.4.1200.1920/-1920.417.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1618214502338" />
-    <state width="1899" height="209" key="GridCell.Tab.0.bottom" timestamp="1626340669813">
-      <screen x="-1920" y="123" width="1920" height="1200" />
-    </state>
-    <state width="1899" height="209" key="GridCell.Tab.0.bottom/-1920.123.1920.1200/2560.-387.1200.1920/0.0.2560.1440@-1920.123.1920.1200" timestamp="1626340669813" />
-    <state width="1899" height="209" key="GridCell.Tab.0.center" timestamp="1626340669813">
-      <screen x="-1920" y="123" width="1920" height="1200" />
-    </state>
-    <state width="1899" height="209" key="GridCell.Tab.0.center/-1920.123.1920.1200/2560.-387.1200.1920/0.0.2560.1440@-1920.123.1920.1200" timestamp="1626340669813" />
-    <state width="1899" height="209" key="GridCell.Tab.0.left" timestamp="1626340669813">
-      <screen x="-1920" y="123" width="1920" height="1200" />
-    </state>
-    <state width="1899" height="209" key="GridCell.Tab.0.left/-1920.123.1920.1200/2560.-387.1200.1920/0.0.2560.1440@-1920.123.1920.1200" timestamp="1626340669813" />
-    <state width="1899" height="209" key="GridCell.Tab.0.right" timestamp="1626340669813">
-      <screen x="-1920" y="123" width="1920" height="1200" />
-    </state>
-    <state width="1899" height="209" key="GridCell.Tab.0.right/-1920.123.1920.1200/2560.-387.1200.1920/0.0.2560.1440@-1920.123.1920.1200" timestamp="1626340669813" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
